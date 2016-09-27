@@ -1,86 +1,60 @@
 NAME =	libft.a
 
-SRCS =	str/ft_strlen.c \
-		str/ft_strdup.c \
-		str/ft_strcpy.c \
-		str/ft_strncpy.c \
-		str/ft_strcat.c \
-		str/ft_strncat.c \
-		str/ft_strlcat.c \
-		str/ft_strchr.c
-		str/ft_strrchr.c \
-		str/ft_strstr.c \
-		str/ft_strnstr.c \
-		str/ft_strcmp.c \
-		str/ft_strncmp.c \
-
-		str/ft_strnew.c \
-		str/ft_strdel.c \
-		str/ft_strclr.c \
-		str/ft_striter.c \
-		str/ft_striteri.c \
-		str/ft_strmap.c \
-		str/ft_strmapi.c \
-		str/ft_strequ.c \
-		str/ft_strnequ.c \
-		str/ft_strsub.c \
-		str/ft_strjoin.c \
-		str/ft_strtrim.c \
-		str/ft_strsplit.c \
-
-		mem/ft_memset.c \
-		mem/ft_memcpy.c \
-		mem/ft_memccpy.c \
-		mem/ft_memmove.c \
-		mem/ft_memchr.c \
-		mem/ft_memcmp.c \
-		mem/ft_mem.c \
-
-		mem/ft_memalloc.c \
-		mem/ft_memdel.c \
-
-		put/ft_putchar.c \
-		put/ft_putstr.c \
-		put/ft_putendl.c \
-		put/ft_putnbr.c \
-		put/ft_putchar_fd.c \
-		put/ft_putstr_fd.c \
-		put/ft_putendl_fd.c \
-		put/ft_putnbr_fd.c \
-
-		/ft_bzero.c \
-		/ft_atoi.c \
-		/ft_isalpha.c \
-		/ft_isdigit.c \
-		/ft_isalnum.c \
-		/ft_isascii.c \
-		/ft_isprint.c \
-		/ft_toupper.c \
-		/ft_tolower.c \
-
-		/ft_itoa.c \
-
-		lst/ft_lstnew.c \
-		lst/ft_lstdelone.c \
-		lst/ft_lstdel.c \
-		lst/ft_lstadd.c \
-		lst/ft_lstiter.c \
-		lst/ft_lstmap.c \
-		lst/ft_lst.c \
+SRCS =	ft_atoi.c \
+		ft_bzero.c \
+		ft_isalnum.c \
+		ft_isalpha.c \
+		ft_isascii.c \
+		ft_isdigit.c \
+		ft_islower.c \
+		ft_isprint.c \
+		ft_ispunct.c \
+		ft_isspace.c \
+		ft_isupper.c \
+		ft_memccpy.c \
+		ft_memchr.c \
+		ft_memcmp.c \
+		ft_memcpy.c \
+		ft_memset.c \
+		ft_strcat.c \
+		ft_strcpy.c \
+		ft_strdup.c \
+		ft_strlcat.c \
+		ft_strlen.c \
+		ft_strncat.c \
+		ft_strncpy.c \
+		ft_tolower.c \
+		ft_toupper.c \
+		ft_memalloc.c \
+		ft_memdel.c \
+		ft_itoa.c \
+		ft_putchar.c \
+		ft_putstr.c \
+		ft_putendl.c \
+		ft_putnbr.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
+		ft_memmove.c
 
 OBJS = $(SRCS:.c=.o)
 
 all:	$(NAME)
 
 $(NAME):
-		gcc -Wall -Werror - Wextra -c $(SRCS)
+		gcc -Wall -Werror -Wextra -c $(SRCS)
 		ar rc $(NAME) $(OBJS)
-		ranlib $(NAME)
 
 clean:
-		rm -f $(OBJS)
+		rm -rf $(OBJS)
 
 fclean: clean
-		rm -f $(NAME)
+		rm -rf $(NAME)
 
 re:		fclean all
+
+test:	$(NAME)
+		gcc -Wall -Werror -Wextra -g -c $(SRCS)
+		ar rc $(NAME) $(OBJS)
+		gcc main.c -I. -L. -lft
