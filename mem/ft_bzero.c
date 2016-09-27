@@ -6,18 +6,17 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/17 18:38:28 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/17 20:33:36 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/09/27 12:20:24 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_bzero(void *s, size_t n)
 {
 	if (!*s)
-		return (NULL)
-	while (n)
+		return ;
+	while (n != 0)
 	{
 		((t_uchar*)s)[n] = '\0';
 		n--;
 	}
-	return (s);
 }

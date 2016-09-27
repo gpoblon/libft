@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 16:36:47 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/23 17:12:53 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/09/27 10:57:05 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_memdel(void **ap)
 {
 	if (!ap)
-		return (1);
+		return ;
 	free(ap);
 	ap = NULL;
 }

@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 18:21:16 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/27 12:59:47 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/09/27 12:48:24 by gpoblon           #+#    #+#             */
+/*   Updated: 2016/09/27 12:59:24 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	*ft_memchr(const void *b, int c, size_t len)
+void	*ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
+	int		diff;
 
 	i = 0;
-	while (i < len)
+	diff = 0;
+	while (i < n)
 	{
-		if (((t_uchar*)s)[i] == (t_uchar)c)
-			return ((void*)((t_uchar*)(s + i)));
+		diff = ((t_uchar*)s1)[i] - ((t_uchar*)s2)[i];
+		if (diff != 0)
+			return (diff);
+		i++;
 	}
-	return (NULL);
+	return (0);
 }

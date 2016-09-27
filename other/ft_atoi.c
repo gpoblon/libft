@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/18 17:18:05 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/18 19:33:33 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/09/27 12:15:48 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int ft_atoi(const char *nptr)
 {
-	int i;
+	size_t i;
 	int result;
 	char sign;
 

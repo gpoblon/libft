@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/30 14:37:46 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/17 18:36:41 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/09/27 12:14:34 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t  ft_strlen(const char *s)
 {
-	int len;
+	size_t len;
 
 	len = 0;
 	while (s[len])

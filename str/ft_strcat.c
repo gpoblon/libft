@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 16:56:52 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/23 17:39:35 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/09/27 12:14:59 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char *strcat(char *dest, const char *src)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (src[i++]);

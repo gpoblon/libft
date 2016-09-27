@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/18 19:28:04 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/19 00:11:20 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/09/27 12:16:06 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int		n_length(int n)
 {
-	int len;
+	size_t len;
 
 	len = 0;
 	if (n == 0)
@@ -33,7 +33,7 @@ char			*ft_itoa(int n)
 {
 	long int nb;
 	char *result;
-	int i;
+	size_t i;
 
 	nb = n;
 	i = 0;

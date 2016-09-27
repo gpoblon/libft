@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 11:52:37 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/23 18:20:47 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/09/27 12:48:12 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ typedef struct  s_list
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t len);
-//void	*ft_memccpy(void *dst, const void *src, int c, size_t len);
-//void	*ft_memmove(void *dst, const void *src, size_t len);
-//void	*ft_memchr(const void *s, int c, size_t n);
-//int		ft_memcmp(const void *s1, const void *s2, size_t n);
-/void	*ft_memalloc(size_t size);
-/void	ft_memdel(void **ap);
+/void	*ft_memccpy(void *dst, const void *src, int c, size_t len);
+/void	*ft_memmove(void *dst, const void *src, size_t len);
+/void	*ft_memchr(const void *s, int c, size_t n);
+/int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
 
 size_t	ft_strlen(const char *s);
 /char	*ft_strdup(const char *s);
