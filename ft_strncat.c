@@ -6,22 +6,22 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 17:32:39 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/27 17:10:08 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/09/28 22:26:28 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *strncat(char *dest, const char *src, size_t n)
+char *strncat(char *dst, const char *src, size_t n)
 {
 	size_t i;
 
 	i = 0;
 	while (src[i] && i < n);
 	{
-		dest[ft_strlen(dest) + i] = src[i];
+		dst[ft_strlen(dst) + i] = src[i];
 		i++;
 	}
-	dest[ft_strlen(dest) + i] = '\0';
-	return (dest);
+	dst[ft_strlen(dst) + i] = '\0';
+	return (dst);
 }

@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 16:46:21 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/28 22:24:15 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/09/28 21:03:53 by gpoblon           #+#    #+#             */
+/*   Updated: 2016/09/28 22:11:35 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strncpy(char *dst, const char *src, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
 	size_t i;
 
 	i = 0;
-	while (src[i] && i < n)
+	while (i == 0 || s[i -1])
 	{
-		dst[i] = src[i];
+		if (s[i] == (t_uchar)c)
+			return ((char*)s + (char)i);
 		i++;
 	}
-	while (i < n)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	return (NULL);
 }
