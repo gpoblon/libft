@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 22:27:54 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/28 22:51:35 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/10/01 16:47:17 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,21 @@
 
 char	*ft_strstr(const char *s1, const char *s2)
 {
-	size_t i;
-	size_t j;
-	size_t tmp_i;
+	int i;
+	int j;
 
 	i = 0;
 	j = 0;
-	tmp_i = 0;
-	while (i == 0 || s1[i - 1])
+	if (s2[j] == 0)
+		return ((char *)s1);
+	while (s1[i])
 	{
-		tmp_i = i;
-		while (s1[i] == s2[j])
-		{
-			i++;
-			j++;
-			if (s2[j] == s2[ft_strlen(s2)])
-				return((char*)s1 + (char)tmp_i);
-		}
-		i = tmp_i + 1;
 		j = 0;
+		while (s1[i + j] && s2[j] && s1[i + j] == s2[j])
+			j++;
+		if (s2[j] == '\0')
+			return ((char *)s1 + i);
+		i++;
 	}
 	return (NULL);
 }

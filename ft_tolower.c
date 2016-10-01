@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/18 14:00:28 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/27 17:10:17 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/10/01 21:14:05 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@ int		ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		return (c + 32);
-	else
-		return (c);
+	return (c);
 }

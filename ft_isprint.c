@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/18 13:39:15 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/27 17:07:16 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/10/01 21:11:44 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int		ft_isprint(int c)
 {
-	return (c >= 32 && c <= 126);
+	if (ft_isspace(c) || ft_isalnum(c) || ft_ispunct(c))
+		return (1);
+	return (0);
 }

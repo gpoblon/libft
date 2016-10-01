@@ -30,15 +30,30 @@ SRCS =	ft_atoi.c \
 		ft_putstr.c \
 		ft_strcat.c \
 		ft_strchr.c \
+		ft_strclr.c \
+		ft_strcmp.c \
 		ft_strcpy.c \
+		ft_strdel.c \
 		ft_strdup.c \
+		ft_strequ.c \
+		ft_strnequ.c \
+		ft_striter.c \
+		ft_striteri.c \
+		ft_strjoin.c \
 		ft_strlcat.c \
 		ft_strlen.c \
+		ft_strmap.c \
+		ft_strmapi.c \
 		ft_strncat.c \
+		ft_strncmp.c \
 		ft_strncpy.c \
+		ft_strnew.c \
 		ft_strnstr.c \
-		ft_strrchr \
+		ft_strsplit.c \
+		ft_strrchr.c \
 		ft_strstr.c \
+		ft_strsub.c \
+		ft_strtrim.c \
 		ft_tolower.c \
 		ft_toupper.c \
 
@@ -48,18 +63,19 @@ OBJS = $(SRCS:.c=.o)
 all:	$(NAME)
 
 $(NAME):
-		gcc -Wall -Werror -Wextra -c $(SRCS)
-		ar rc $(NAME) $(OBJS)
+			gcc -Wall -Werror -Wextra -c $(SRCS)
+			ar rc $(NAME) $(OBJS)
 
 clean:
-		rm -rf $(OBJS)
+			rm -rf $(OBJS)
 
 fclean: clean
-		rm -rf $(NAME)
+			rm -rf $(NAME)
 
 re:		fclean all
 
 test:	$(NAME)
-		gcc -Wall -Werror -Wextra -g -c $(SRCS)
-		ar rc $(NAME) $(OBJS)
-		gcc main.c -I. -L. -lft
+			gcc -Wall -Werror -Wextra -g -c $(SRCS)
+			ar rc $(NAME) $(OBJS)
+			gcc main.c -I../libft -L../libft -lft
+			valgrind --track-origins=yes --leak-check=full ./a.out

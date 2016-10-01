@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/18 13:22:26 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/27 17:06:58 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/10/01 21:07:20 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int		ft_isalpha(int c)
 {
-	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	if (ft_isupper(c) || ft_islower(c))
+		return (1);
+	return (0);
 }

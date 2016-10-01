@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/18 13:30:49 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/27 17:06:43 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/10/01 21:08:09 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int		ft_isalnum(int c)
 {
-	return ((c >= 48 && c <= 57) || (c >= 65 && c <= 90)
-			|| (c >= 97 && c <= 122));
+	if (ft_isdigit(c) || ft_isalpha(c))
+		return (1);
+	return (0);
 }

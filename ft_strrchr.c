@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 22:11:58 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/28 22:16:47 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/10/01 16:15:06 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t len;
+	int i;
 
-	len = ft_strlen(s);
-	while (len != 0)
+	i = ft_strlen(s);
+	while (i != -1)
 	{
-		if (s[len] == (t_uchar)c)
-			return ((char*)s + (char)len);
-		len--;
+		if (s[i] == (t_uchar)c)
+			return ((char*)s + (t_uchar)i);
+		i--;
 	}
 	return (NULL);
 }

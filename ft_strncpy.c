@@ -6,13 +6,13 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 16:46:21 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/28 22:24:15 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/10/01 18:55:44 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strncpy(char *dst, const char *src, size_t n)
+char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
 	size_t i;
 

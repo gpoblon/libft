@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/18 14:03:45 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/27 17:10:21 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/10/01 21:13:54 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@ int		ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		return (c - 32);
-	else
-		return (c);
+	return (c);
 }

@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 17:35:41 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/28 22:26:04 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/10/01 20:25:27 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t i;
+	size_t	i;
+	size_t	dst_len;
 
 	i = 0;
-	if (size < ft_strlen(dst))
+	dst_len = ft_strlen(dst);
+	if (size < dst_len)
 		return (size + ft_strlen(src));
-	while (src[i] && i < (size - ft_strlen(dst) - 1))
+	while (src[i] && i < (size - dst_len - 1))
 	{
-		dst[ft_strlen(dst) + i] = src[i];
+		dst[dst_len + i] = src[i];
 		i++;
 	}
-	dst[ft_strlen(dst) + i] = '\0';
-	return (ft_strlen(dst) + ft_strlen(src));
+	dst[dst_len + i] = '\0';
+	return (dst_len + ft_strlen(src));
 }

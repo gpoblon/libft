@@ -6,7 +6,7 @@
 /*   By: student@ <student@@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@          #+#    #+#             */
-/*   Updated: 2016/09/27 22:27:09 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/10/01 20:20:13 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,40 +155,40 @@ int					main(void)
 	D_ADD_HCTEST(memccpy);
 #define	D_MEMMOVE
  	D_ADD_HCTEST(memmove);
-// #define	D_MEMCHR
- // 	D_ADD_HCTEST(memchr);
+//#define	D_MEMCHR
+// 	D_ADD_HCTEST(memchr);
 #define	D_MEMCMP
 	D_ADD_HCTEST(memcmp);
 #define	D_STRLEN
 	D_ADD_TEST(strlen);
 #define	D_STRDUP
 	D_ADD_TEST(strdup);
-// #define	D_STRCPY
-// 	D_ADD_HCTEST(strcpy);
-// #define	D_STRNCPY
-// 	D_ADD_HCTEST(strncpy);
-// #define	D_STRCAT
-// 	D_ADD_TEST(strcat);
-// #define	D_STRNCAT
-// 	D_ADD_TEST(strncat);
+#define	D_STRCPY
+ 	D_ADD_HCTEST(strcpy);
+#define	D_STRNCPY
+ 	D_ADD_HCTEST(strncpy);
+#define	D_STRCAT
+ 	D_ADD_TEST(strcat);
+#define	D_STRNCAT
+	D_ADD_TEST(strncat);
 #ifndef __linux
 	#define	D_STRLCAT
 		D_ADD_TEST(strlcat);
 #endif
-// #define	D_STRCHR
-// 	D_ADD_TEST(strchr);
-// #define	D_STRRCHR
-// 	D_ADD_TEST(strrchr);
-// #define	D_STRSTR
-// 	D_ADD_TEST(strstr);
-// #ifndef __linux
-// 	#define	D_STRNSTR
-// 		D_ADD_TEST(strnstr);
-// #endif
-// #define	D_STRCMP
-// 	D_ADD_TEST(strcmp);
-// #define	D_STRNCMP
-// 	D_ADD_TEST(strncmp);
+#define	D_STRCHR
+ 	D_ADD_TEST(strchr);
+#define	D_STRRCHR
+ 	D_ADD_TEST(strrchr);
+#define	D_STRSTR
+ 	D_ADD_TEST(strstr);
+#ifndef __linux
+ 	#define	D_STRNSTR
+ 		D_ADD_TEST(strnstr);
+#endif
+#define	D_STRCMP
+ 	D_ADD_TEST(strcmp);
+#define	D_STRNCMP
+ 	D_ADD_TEST(strncmp);
 #define	D_ATOI
 	D_ADD_HCTEST(atoi);
 #define	D_ISALPHA
@@ -207,28 +207,28 @@ int					main(void)
 	D_ADD_HCTEST(tolower);
 #define	D_MEMALLOC_AND_DEL
 	D_ADD_TEST(memalloc_and_del);
-// #define	D_STRNEW
-// 	D_ADD_TEST(strnew);
-// #define	D_STRDEL
-// 	D_ADD_TEST(strdel);
-// #define	D_STRCLR
-// 	D_ADD_TEST(strclr);
-// #define	D_STRITER
-// 	D_ADD_TEST(striter);
-// #define	D_STRITERI
-// 	D_ADD_TEST(striteri);
-// #define	D_STRMAP
-// 	D_ADD_TEST(strmap);
-// #define	D_STRMAPI
-// 	D_ADD_TEST(strmapi);
-// #define	D_STREQU
-// 	D_ADD_TEST(strequ);
-// #define	D_STRNEQU
-// 	D_ADD_TEST(strnequ);
-// #define	D_STRSUB
-// 	D_ADD_TEST(strsub);
-// #define	D_STRJOIN
-// 	D_ADD_TEST(strjoin);
+#define	D_STRNEW
+ 	D_ADD_TEST(strnew);
+#define	D_STRDEL
+ 	D_ADD_TEST(strdel);
+#define	D_STRCLR
+ 	D_ADD_TEST(strclr);
+#define	D_STRITER
+ 	D_ADD_TEST(striter);
+#define	D_STRITERI
+ 	D_ADD_TEST(striteri);
+#define	D_STRMAP
+ 	D_ADD_TEST(strmap);
+#define	D_STRMAPI
+ 	D_ADD_TEST(strmapi);
+#define	D_STREQU
+ 	D_ADD_TEST(strequ);
+#define	D_STRNEQU
+ 	D_ADD_TEST(strnequ);
+#define	D_STRSUB
+	D_ADD_TEST(strsub);
+#define	D_STRJOIN
+ 	D_ADD_TEST(strjoin);
 // #define	D_STRSPLIT
 // 	D_ADD_TEST(strsplit);
 #define	D_ITOA
