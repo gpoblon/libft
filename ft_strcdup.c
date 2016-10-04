@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcdup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 18:21:16 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/02 12:16:22 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/10/04 12:59:34 by gpoblon           #+#    #+#             */
+/*   Updated: 2016/10/04 18:53:37 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *b, int c, size_t len)
+char	*ft_strcdup(const char *s, char c)
 {
-	size_t i;
+	char	*s_dup;
+	int	i;
 
 	i = 0;
-	if (!b)
+	if (!s)
 		return (NULL);
-	while (i < len)
-	{
-		if (((t_uchar*)b)[i] == (t_uchar)c)
-			return ((void*)((t_uchar*)(b + i)));
+	while (s[i] && s[i] != c)
 		i++;
+	s_dup = (char *)malloc(sizeof(char) * (i + 1));
+	if (!s_dup)
+		return (NULL);
+	s_dup[i] = '\0';
+	i--;
+	while (i >= 0)
+	{
+		s_dup[i] = s[i];
+		i--;
 	}
-	return (NULL);
+	return (s_dup);
 }

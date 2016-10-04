@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/17 20:38:54 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/27 17:08:12 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/10/02 12:48:52 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t len)
 	size_t i;
 
 	i = 0;
-	while (((t_uchar*)src)[i] != (t_uchar)(c) && i < len)
+	if (!dst || !src)
+		return (NULL);
+	while (i < len && ((t_uchar*)src)[i] != (t_uchar)c)
 	{
 		((t_uchar*)dst)[i] = ((t_uchar*)src)[i];
 		i++;

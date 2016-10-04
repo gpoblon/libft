@@ -56,6 +56,8 @@ SRCS =	ft_atoi.c \
 		ft_strtrim.c \
 		ft_tolower.c \
 		ft_toupper.c \
+		ft_strcdup.c \
+		ft_iswhitespace.c \
 
 
 OBJS = $(SRCS:.c=.o)
@@ -79,3 +81,9 @@ test:	$(NAME)
 			ar rc $(NAME) $(OBJS)
 			gcc main.c -I../libft -L../libft -lft
 			valgrind --track-origins=yes --leak-check=full ./a.out
+
+martest: $(NAME)
+			gcc -Wall -Werror -Wextra -g -c $(SRCS)
+			ar rc $(NAME) $(OBJS)
+			gcc tests/*.c tests/libtest/*c -o ./tests/a.out -g -L. -lft
+			valgrind --track-origins=yes --leak-check=full ./tests/a.out
