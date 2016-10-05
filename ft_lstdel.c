@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 18:21:16 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/05 19:00:11 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/10/04 21:37:38 by gpoblon           #+#    #+#             */
+/*   Updated: 2016/10/05 21:20:41 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *b, int c, size_t len)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t i;
+	t_list	*list;
+	t_list	*listodel;
 
-	i = 0;
-	CHECKPVN(b)
-	while (i < len)
+	list = *alst;
+	while (list)
 	{
-		if (((t_uchar*)b)[i] == (t_uchar)c)
-			return ((void*)((t_uchar*)(b + i)));
-		i++;
+		listtodel = list;
+		list = list->next;
+		ft_lstdelone(&listodel, del);
 	}
-	return (NULL);
+	ft_lstdelone(&listodel, del);
+	*alst = NULL;
 }

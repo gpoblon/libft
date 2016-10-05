@@ -58,6 +58,22 @@ SRCS =	ft_atoi.c \
 		ft_toupper.c \
 		ft_strcdup.c \
 		ft_iswhitespace.c \
+		ft_lstnew.c \
+		ft_lstdelone.c \
+		ft_lstdel.c \
+		ft_lstadd.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
+		ft_lstadd.c \
+		ft_lstdup.c \
+		ft_lstdel.c \
+		ft_lstdelone.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
+		ft_lstnew.c \
+		ft_lst_push_back.c \
+		ft_lstsize.c
+
 
 
 OBJS = $(SRCS:.c=.o)

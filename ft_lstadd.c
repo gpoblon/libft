@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 18:21:16 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/05 19:00:11 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/10/04 21:37:36 by gpoblon           #+#    #+#             */
+/*   Updated: 2016/10/04 22:11:47 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *b, int c, size_t len)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	size_t i;
-
-	i = 0;
-	CHECKPVN(b)
-	while (i < len)
-	{
-		if (((t_uchar*)b)[i] == (t_uchar)c)
-			return ((void*)((t_uchar*)(b + i)));
-		i++;
-	}
-	return (NULL);
+	new->next = *alst;
+	*alst = new;
 }

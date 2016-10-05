@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 11:52:37 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/04 17:23:24 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/10/05 18:54:57 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+# define CHECKPV(p) if (!p) return;
+# define CHECKPVN(p) if (!p) return (NULL);
+# define CHECKPV0(p) if (!p) return (0);
+
 typedef unsigned char		t_uchar;
 
 typedef struct  s_list
 {
-  void		*content;
-  size_t	content_size;
-  struct	s_list *next;
+  void			*content;
+  size_t		content_size;
+  struct s_list	*next;
 }				t_list;
 
 void	*ft_memset(void *s, int c, size_t n);
@@ -93,6 +97,16 @@ void    ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void    ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+void	ft_lstadd(t_list **alst, t_list *new);
+t_list	*ft_lstdup(t_list *list);
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list	*ft_lstnew(void const *content, size_t content_size);
+void	ft_lst_push_back(t_list **begin_list, t_list *elem);
+int		ft_lstsize(t_list *list);
 
 char	*ft_strcdup(const char *s, char c);
 int		ft_iswhitespace(int c);

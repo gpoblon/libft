@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 18:21:16 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/05 19:00:11 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/10/04 22:18:22 by gpoblon           #+#    #+#             */
+/*   Updated: 2016/10/04 22:18:24 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *b, int c, size_t len)
+void	ft_lst_push_back(t_list **begin_list, t_list *elem)
 {
-	size_t i;
+	t_list	*list;
 
-	i = 0;
-	CHECKPVN(b)
-	while (i < len)
+	list = *begin_list;
+	if (!list)
 	{
-		if (((t_uchar*)b)[i] == (t_uchar)c)
-			return ((void*)((t_uchar*)(b + i)));
-		i++;
+		list = elem;
+		*begin_list = list;
 	}
-	return (NULL);
+	else
+	{
+		while (list->next)
+			list = list->next;
+		list->next = elem;
+	}
 }

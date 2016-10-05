@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 18:21:16 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/05 19:00:11 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/10/04 21:37:43 by gpoblon           #+#    #+#             */
+/*   Updated: 2016/10/05 19:00:20 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *b, int c, size_t len)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	size_t i;
+	t_list	*list;
 
-	i = 0;
-	CHECKPVN(b)
-	while (i < len)
+	list = NULL;
+	list = (t_list *)malloc(sizeof(*list));
+	CHECKPVN(list)
+	if (content)
 	{
-		if (((t_uchar*)b)[i] == (t_uchar)c)
-			return ((void*)((t_uchar*)(b + i)));
-		i++;
+		list->content_size = content_size;
+		list->content = ft_memalloc(content_size);
+		ft_memcpy(list->content, (void *)content, content_size);
 	}
-	return (NULL);
+	else
+	{
+		list->content = NULL;
+		list->content_size = 0;
+	}
+	list->next = NULL;
+	return (list);
 }
