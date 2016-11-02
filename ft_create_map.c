@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_create_map.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/04 21:37:41 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/10 11:16:31 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/10/13 10:21:41 by gpoblon           #+#    #+#             */
+/*   Updated: 2016/10/13 11:18:45 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+char	**ft_create_map(char **map, int size_x, int size_y, char c)
 {
-	CHECKPV(alst)
-	CHECKPV(*alst)
-	CHECKPV(del)
-	(*del)((*alst)->content, (*alst)->content_size);
-	free(*alst);
-	*alst = NULL;
+	int x;
+	int y;
+
+	y = 0;
+	while (y < size_y)
+	{
+		x = 0;
+		map[y] = (char *)malloc(sizeof(char) * (size_x + 1));
+		CHECKPV0(map[y])
+		while (x < size_x)
+			{
+				map[y][x] = c;
+				x++;
+			}
+		map[y][x] = '\0';
+		y++;
+	}
+	map[y] = NULL;
+	return (map);
 }

@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_free_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/04 21:37:41 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/10 11:16:31 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/10/13 10:38:21 by gpoblon           #+#    #+#             */
+/*   Updated: 2016/10/13 10:39:18 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+void	ft_free_map(char **map)
 {
-	CHECKPV(alst)
-	CHECKPV(*alst)
-	CHECKPV(del)
-	(*del)((*alst)->content, (*alst)->content_size);
-	free(*alst);
-	*alst = NULL;
+	int	y;
+
+	y = 0;
+	while (map[y])
+	{
+		free(map[y]);
+		y++;
+	}
+	free(map);
 }

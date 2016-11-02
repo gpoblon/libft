@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/04 21:37:41 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/10 11:16:31 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/10/13 13:46:04 by gpoblon           #+#    #+#             */
+/*   Updated: 2016/10/13 16:48:50 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+char	*ft_strndup(const char *src, size_t n)
 {
-	CHECKPV(alst)
-	CHECKPV(*alst)
-	CHECKPV(del)
-	(*del)((*alst)->content, (*alst)->content_size);
-	free(*alst);
-	*alst = NULL;
+	char	*str_new;
+
+	str_new = (char*)malloc(sizeof(char) * n + 1);
+	CHECKPVN(str_new)
+	str_new = ft_strncpy(str_new, src, n);
+	str_new[n] = '\0';
+	return (str_new);
 }

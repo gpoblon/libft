@@ -57,6 +57,7 @@ SRCS =	ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c \
 		ft_strcdup.c \
+		ft_strndup.c \
 		ft_iswhitespace.c \
 		ft_lstnew.c \
 		ft_lstdelone.c \
@@ -71,10 +72,14 @@ SRCS =	ft_atoi.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
 		ft_lstnew.c \
-		ft_lst_push_back.c \
-		ft_lstsize.c
-
-
+		ft_lstpushback.c \
+		ft_exit.c \
+		ft_create_map.c \
+		ft_putmap.c \
+		ft_mapcpy.c \
+		ft_mapdup.c \
+		ft_free_map.c \
+		ft_strndup.c \
 
 OBJS = $(SRCS:.c=.o)
 

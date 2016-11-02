@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_mapcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/04 21:37:41 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/10 11:16:31 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/10/13 10:46:00 by gpoblon           #+#    #+#             */
+/*   Updated: 2016/10/13 17:02:39 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+void	ft_cpy_map(char **dst, const char **src)
 {
-	CHECKPV(alst)
-	CHECKPV(*alst)
-	CHECKPV(del)
-	(*del)((*alst)->content, (*alst)->content_size);
-	free(*alst);
-	*alst = NULL;
+	int y;
+	int x;
+
+	y = 0;
+	while (src[y])
+	{
+		x = 0;
+		while (src[y][x])
+		{
+			dst[y][x] = src[y][x];
+			x++;
+		}
+		y++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 11:52:37 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/05 18:54:57 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/10/13 13:48:25 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,14 @@ void	ft_lst_push_back(t_list **begin_list, t_list *elem);
 int		ft_lstsize(t_list *list);
 
 char	*ft_strcdup(const char *s, char c);
+char	*ft_strndup(const char *src, size_t n);
 int		ft_iswhitespace(int c);
+void	ft_exit(const char *message);
+
+char	**ft_create_map(char **map, int size_x, int size_y, char c);
+void	ft_putmap(char **map);
+void	ft_mapcpy(char **dst, const char **src);
+char	**ft_mapdup(char **map);
+void	ft_free_map(char **map);
 
 #endif
