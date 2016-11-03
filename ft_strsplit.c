@@ -6,29 +6,41 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/01 18:01:42 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/04 18:51:38 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/03 19:58:44 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_wordslen (char const *s, char c)
+static int	ft_wordslen(char const *s, char c)
 {
-	size_t	i;
-	size_t	len;
+	size_t	count;
 
-	i = 0;
-	len = 0;
-	while (s[i])
+	count = 0;
+	while (s[count] && s[count] != c)
 	{
-		if ((i == 0 && s[i] != c) || (s[i] != c && s[i - 1] == c))
-			len++;
-		i++;
+		count++;
 	}
-	return (len + 1);
+	return (count);
 }
 
-char	**ft_strsplit(char const *s, char c)
+static int	ft_wordsnb(char const *s, char c)
+{
+	size_t	i;
+	size_t	count;
+
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
+			count++;
+		i++;
+	}
+	return (count);
+}
+
+char		**ft_strsplit(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -39,18 +51,18 @@ char	**ft_strsplit(char const *s, char c)
 	char_tab = NULL;
 	if (!s)
 		return (NULL);
-	char_tab = (char **)malloc(sizeof(char *) * ft_wordslen(s, c) + 1);
+	char_tab = (char**)malloc(sizeof(char *) * ft_wordsnb(s, c) + ft_wordslen(s, c) + 1);
 	if (!char_tab)
 		return (NULL);
 	while (s[i])
 	{
-		if ((i == 0 && s[i] != c) || (s[i] != c && s[i - 1] == c))
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
 		{
 			char_tab[j] = ft_strcdup((s + i), c);
 			j++;
 		}
 		i++;
 	}
-	char_tab[j] = '\0';
+	char_tab[j] = NULL;
 	return (char_tab);
 }

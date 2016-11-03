@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/01 18:01:30 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/04 17:24:31 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/03 18:41:15 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ char	*ft_strtrim(char const *s)
 	if (!s)
 		return (NULL);
 	i = 0;
-	new_s = NULL;
 	while (s[i] && ft_iswhitespace(s[i]))
 		i++;
 	start = i;
@@ -32,8 +31,10 @@ char	*ft_strtrim(char const *s)
 			end = i;
 		i++;
 	}
-	new_s = ft_strnew(end - start + 2);
+	new_s = (char*)malloc(sizeof(char) * end - start + 2);
 	if (new_s)
 		new_s = ft_strncpy(new_s, (s + start), end - start + 1);
+	else
+		return (NULL);
 	return (new_s);
 }

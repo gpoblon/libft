@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/01 09:56:18 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/01 22:18:02 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/03 19:15:23 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*new_s;
+	char	*new_s;
 	size_t	i;
 
 	i = 0;
 	new_s = NULL;
 	if (!s || !f)
 		return (NULL);
-	new_s = ft_strnew(ft_strlen(s) + 1);
+	new_s = ft_strnew(ft_strlen(s));
 	if (!new_s)
 		return (NULL);
 	while (s[i])

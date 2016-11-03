@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/17 18:14:49 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/27 17:22:35 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/03 14:38:04 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(const char *s)
 {
-	char *s_dup;
-	size_t i;
+	char	*s_dup;
+	size_t	i;
 
 	i = 0;
 	s_dup = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1));

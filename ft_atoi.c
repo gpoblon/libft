@@ -6,17 +6,17 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/18 17:18:05 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/27 17:06:50 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/03 14:30:30 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_atoi(const char *nptr)
+int		ft_atoi(const char *nptr)
 {
-	size_t i;
-	int result;
-	char sign;
+	size_t	i;
+	int		result;
+	char	sign;
 
 	i = 0;
 	result = 0;

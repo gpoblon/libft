@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/13 10:56:47 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/13 11:36:04 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/03 15:10:21 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	**ft_mapdup(char **map)
 	size_t	len_x;
 	char	**new_map;
 
-
 	y = 0;
 	x = 0;
+	len_x = 0;
 	new_map = NULL;
 	while (map[y][x])
 	{
@@ -32,14 +32,10 @@ char	**ft_mapdup(char **map)
 	{
 		x = 0;
 		new_map[y] = (char *)malloc(sizeof(char) * (x + 1));
-		CHECKPV0(map[y])
-		while (map[y][x])
-		{
+		CHECKPV0(map[y]);
+		while (map[y][x++])
 			new_map[y][x] = map[y][x];
-			x++;
-		}
-		map[y][x] = '\0';
-		y++;
+		map[y++][x] = '\0';
 	}
 	map[y] = NULL;
 	return (map);

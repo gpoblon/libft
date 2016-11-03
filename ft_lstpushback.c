@@ -6,13 +6,13 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 22:18:22 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/04 22:18:24 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/03 15:42:12 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lst_push_back(t_list **begin_list, t_list *elem)
+void	ft_lstpushback(t_list **begin_list, t_list *elem)
 {
 	t_list	*list;
 

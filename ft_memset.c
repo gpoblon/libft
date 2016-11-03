@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/17 18:38:03 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/27 17:56:18 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/03 18:46:24 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	if (!s)
-		return (NULL);
 	while (n--)
 		((t_uchar*)s)[n] = (t_uchar)c;
 	return (s);

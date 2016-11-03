@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/30 14:37:46 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/01 20:50:55 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/03 14:38:31 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ size_t	ft_strlen(const char *s)
 	len = 0;
 	while (s[len])
 		len++;
-	return(len);
+	return (len);
 }

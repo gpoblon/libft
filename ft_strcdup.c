@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 12:59:34 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/04 18:53:37 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/03 14:37:46 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strcdup(const char *s, char c)
 {
 	char	*s_dup;
-	int	i;
+	int		i;
 
 	i = 0;
 	if (!s)

@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/01 11:52:29 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/10/02 11:42:45 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/03 19:15:42 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return ((char*)NULL);
-	new_s = ft_strnew(len + 1);
+	new_s = ft_strnew(len);
 	if (!new_s)
 		return (NULL);
 	while (i < len)

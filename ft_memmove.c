@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 22:28:17 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/27 22:39:31 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/03 19:33:35 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,16 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-	t_uchar	tmp[len];
-
-	i = 0;
-	while (i < len)
+	if (len == 0)
+		return (dst);
+	if (dst <= src)
+		return (ft_memcpy(dst, src, len));
+	len--;
+	while (len > 0)
 	{
-		((t_uchar*)tmp)[i] = ((t_uchar*)src)[i];
-		i++;
+		((char *)dst)[len] = ((char *)src)[len];
+		len--;
 	}
-	i = 0;
-	while (i < len)
-	{
-		((t_uchar*)dst)[i] = ((t_uchar*)tmp)[i];
-		i++;
-	}
+	((char *)dst)[len] = ((char *)src)[len];
 	return (dst);
 }

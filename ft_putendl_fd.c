@@ -6,13 +6,13 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/17 16:44:39 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/27 17:08:54 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/03 14:34:57 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putendl_fd(char const *s, int fd)
+void	ft_putendl_fd(char const *s, int fd)
 {
 	while (*s)
 		write(fd, s++, 1);

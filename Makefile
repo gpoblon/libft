@@ -79,32 +79,20 @@ SRCS =	ft_atoi.c \
 		ft_mapcpy.c \
 		ft_mapdup.c \
 		ft_free_map.c \
-		ft_strndup.c \
+		ft_strndup.c
 
 OBJS = $(SRCS:.c=.o)
 
-all:	$(NAME)
+all: $(NAME)
 
 $(NAME):
-			gcc -Wall -Werror -Wextra -c $(SRCS)
-			ar rc $(NAME) $(OBJS)
+	gcc -Wall -Wextra -Werror -c $(SRCS)
+	ar rc $(NAME) $(OBJS)
 
 clean:
-			rm -rf $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-			rm -rf $(NAME)
+	rm -f $(NAME)
 
-re:		fclean all
-
-test:	$(NAME)
-			gcc -Wall -Werror -Wextra -g -c $(SRCS)
-			ar rc $(NAME) $(OBJS)
-			gcc main.c -I../libft -L../libft -lft
-			valgrind --track-origins=yes --leak-check=full ./a.out
-
-martest: $(NAME)
-			gcc -Wall -Werror -Wextra -g -c $(SRCS)
-			ar rc $(NAME) $(OBJS)
-			gcc tests/*.c tests/libtest/*c -o ./tests/a.out -g -L. -lft
-			valgrind --track-origins=yes --leak-check=full ./tests/a.out
+re:	fclean all

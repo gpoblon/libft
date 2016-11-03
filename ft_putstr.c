@@ -6,14 +6,14 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 11:51:19 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/09/30 13:40:19 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/03 14:35:16 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putstr(char const *s)
+void	ft_putstr(char const *s)
 {
-    while (*s)
-        write(1, s++, 1);
+	while (*s)
+		write(1, s++, 1);
 }
