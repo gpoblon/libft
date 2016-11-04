@@ -72,6 +72,7 @@ SRCS =	ft_atoi.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
 		ft_lstnew.c \
+		ft_lstcpy.c \
 		ft_lstsize.c \
 		ft_lstpushback.c \
 		ft_exit.c \
