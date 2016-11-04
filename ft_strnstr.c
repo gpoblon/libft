@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 23:31:02 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 18:43:40 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/04 10:57:38 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	if (*big && little[j] == 0)
+	if (*big && ft_strlen(little) == 0)
 		return ((char *)big);
+	if (len < ft_strlen(little))
+		return (NULL);
 	while (big[i])
 	{
 		j = 0;

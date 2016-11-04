@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 11:52:37 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 19:43:48 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/04 14:49:16 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list					*ft_lstnew(void const *content, size_t content_size);
 void					ft_lstpushback(t_list **begin_list, t_list *elem);
-int						ft_lstsize(t_list *list);
+size_t					ft_lstsize(t_list *list);
 
 char					*ft_strcdup(const char *s, char c);
 char					*ft_strndup(const char *src, size_t n);

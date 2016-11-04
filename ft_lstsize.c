@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/04 21:37:33 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/04 15:04:47 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/11/04 14:45:29 by gpoblon           #+#    #+#             */
+/*   Updated: 2016/11/04 14:46:06 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+size_t	ft_lstsize(t_list *list)
 {
-	t_list	*list;
-	t_list	*tmplst;
-	size_t	check;
+	size_t i;
 
-	list = NULL;
-	tmplst = NULL;
-	check = 0;
-	if (!(f && lst))
-		return (NULL);
-	while (lst)
+	i = 0;
+	while (list)
 	{
-		tmplst = f(lst);
-		ft_lstpushback(&list, ft_lstnew(tmplst->content, tmplst->content_size));
-		CHECKPVN(list);
-		if (check == ft_lstsize(list))
-			return (NULL);
-		else
-			check = ft_lstsize(list);
-		lst = lst->next;
+		i++;
+		list = list->next;
 	}
-	return (list);
+	return (i);
 }

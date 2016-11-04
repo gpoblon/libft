@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/01 17:56:22 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 14:34:05 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/04 10:32:31 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_putendl(char const *s)
 {
+	CHECKPV(s);
 	while (*s)
 		write(1, s++, 1);
 	write(1, "\n", 1);

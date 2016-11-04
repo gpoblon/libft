@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/01 18:01:30 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 18:41:15 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/04 14:04:17 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ char	*ft_strtrim(char const *s)
 			end = i;
 		i++;
 	}
-	new_s = (char*)malloc(sizeof(char) * end - start + 2);
-	if (new_s)
+	new_s = ft_strnew(start == ft_strlen(s) ? 0 : end - start + 2);
+	CHECKPVN(new_s);
+	if (new_s && start != ft_strlen(s))
 		new_s = ft_strncpy(new_s, (s + start), end - start + 1);
-	else
-		return (NULL);
+	new_s[ft_strlen(new_s)] = '\0';
 	return (new_s);
 }

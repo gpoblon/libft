@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/01 18:01:42 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 19:58:44 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/04 14:03:17 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ char		**ft_strsplit(char const *s, char c)
 	char_tab = NULL;
 	if (!s)
 		return (NULL);
-	char_tab = (char**)malloc(sizeof(char *) * ft_wordsnb(s, c) + ft_wordslen(s, c) + 1);
+	char_tab = (char**)malloc(sizeof(char *) * ft_wordsnb(s, c) +
+				ft_wordslen(s, c) + 1);
 	if (!char_tab)
 		return (NULL);
 	while (s[i])

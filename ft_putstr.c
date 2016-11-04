@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 11:51:19 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 14:35:16 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/04 10:31:54 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_putstr(char const *s)
 {
+	CHECKPV(s);
 	while (*s)
 		write(1, s++, 1);
 }

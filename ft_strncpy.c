@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 16:46:21 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 14:28:51 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/04 12:58:32 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t n)
 	size_t i;
 
 	i = 0;
-	while (src[i] && i < n)
+	while (i < n && src[i])
 	{
 		dst[i] = src[i];
 		i++;
