@@ -6,23 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/01 18:01:42 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/04 14:03:17 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/22 23:54:33 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_wordslen(char const *s, char c)
-{
-	size_t	count;
-
-	count = 0;
-	while (s[count] && s[count] != c)
-	{
-		count++;
-	}
-	return (count);
-}
 
 static int	ft_wordsnb(char const *s, char c)
 {
@@ -51,8 +39,7 @@ char		**ft_strsplit(char const *s, char c)
 	char_tab = NULL;
 	if (!s)
 		return (NULL);
-	char_tab = (char**)malloc(sizeof(char *) * ft_wordsnb(s, c) +
-				ft_wordslen(s, c) + 1);
+	char_tab = (char**)malloc(sizeof(char *) * ft_wordsnb(s, c) + 1);
 	if (!char_tab)
 		return (NULL);
 	while (s[i])

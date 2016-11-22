@@ -81,7 +81,8 @@ SRCS =	ft_atoi.c \
 		ft_mapcpy.c \
 		ft_mapdup.c \
 		ft_free_map.c \
-		ft_strndup.c
+		ft_strndup.c \
+		ft_get_next_line.c
 
 OBJS = $(SRCS:.c=.o)
 

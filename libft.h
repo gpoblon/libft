@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 11:52:37 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/04 14:49:16 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/11/22 23:51:14 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include "get_next_line.h"
 
 # define CHECKPV(p) if (!p) return;
 # define CHECKPVN(p) if (!p) return (NULL);
