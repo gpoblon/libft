@@ -84,21 +84,29 @@ SRCS =	ft_atoi.c \
 		ft_strndup.c \
 		ft_get_next_line.c \
 		ft_lstsort.c \
-		ft_lstrev.c
+		ft_lstrev.c \
+		ft_strncdup.c
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(addprefix $(OBJS_D),$(SRCS:.c=.o))
+
+OBJS_D	=	./obj/
 
 all: $(NAME)
 
-$(NAME):
-	gcc -Wall -Wextra -Werror -c $(SRCS)
-	ar rc $(NAME) $(OBJS)
+$(OBJS_D)%.o:%.c
+		gcc -Wall -Wextra -Werror -o $@ -c $<
+
+$(OBJS_D):
+	mkdir $(OBJS_D)
+
+$(NAME): $(OBJS_D) $(OBJS)
+		ar rc $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJS)
+		rm -rf $(OBJS_D)
 
 fclean: clean
-	rm -f $(NAME)
+		rm -rf $(NAME)
 
 re:	fclean all
 

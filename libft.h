@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 11:52:37 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/24 14:23:48 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/12/06 19:47:04 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ t_list					*ft_lstsort(t_list *lst,
 
 char					*ft_strcdup(const char *s, char c);
 char					*ft_strndup(const char *src, size_t n);
+char					*ft_strncdup(const char *src, size_t n, char c);
 int						ft_iswhitespace(int c);
 void					ft_exit(const char *message);
 
