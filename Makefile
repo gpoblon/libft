@@ -105,10 +105,13 @@ CC		=	gcc
 CFLAGS	=	-Wall -Werror -Wextra
 
 OBJDIR	=	obj
+OBJDIR2	=	obj/ft_printf
 OBJ_LIB	=	$(addprefix obj/,$(SRC_LIB:.c=.o))
 OBJ_PF	=	$(addprefix obj/,$(SRC_PF:.c=.o))
 
 $(OBJDIR)/%.o: %.c
+			@mkdir $(OBJDIR) 2> /dev/null || true
+			@mkdir $(OBJDIR2) 2> /dev/null || true
 			$(CC) $(CFLAGS) -c -o $@ $<
 
 all: $(NAME)
@@ -117,7 +120,7 @@ $(NAME): $(OBJ_LIB) $(OBJ_PF)
 			ar rcs $(NAME) $(OBJ_LIB) $(OBJ_PF)
 
 clean:
-			rm -rf $(OBJ_LIB) $(OBJ_PF)
+			rm -rf $(OBJDIR)
 
 fclean: clean
 			rm -rf $(NAME)
@@ -125,6 +128,6 @@ fclean: clean
 re:	fclean all
 
 list:
-			@echo $(OBJ_LIB) $(OBJ_PF)
+			@echo $(OBJDIR) 2> /dev/null || true
 
 .PHONY: all clean fclean re
