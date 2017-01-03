@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncdup.c                                      :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/04 12:59:34 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/12/07 15:25:30 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/12/17 14:46:29 by gpoblon           #+#    #+#             */
+/*   Updated: 2016/12/17 16:27:46 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncdup(const char *src, size_t n, char c)
+unsigned long long	ft_pow(unsigned long long n, unsigned long long pow)
 {
-	char	*str_new;
-
-	str_new = (char*)malloc(sizeof(char) * n + 1);
-	CHECKPVN(str_new);
-	str_new = ft_strncpy(str_new, src, n);
-	str_new[n] = '\0';
-	--n;
-	while (n)
-	{
-		str_new[n] = c;
-		--n;
-	}
-	return (str_new);
+	if (pow == 0)
+		return (1);
+	return (n * ft_pow(n, pow - 1));
 }

@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_strcnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/20 18:55:55 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/12/20 18:55:57 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/10/04 12:59:34 by gpoblon           #+#    #+#             */
+/*   Updated: 2016/12/12 20:02:08 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+char	*ft_strcnew(size_t n, char c)
 {
-	t_list	*list;
-	t_list	*listodel;
+	char	*str_new;
 
-	list = *alst;
-	while (list)
+	str_new = ft_strnew(n);
+	CHECKPVN(str_new);
+	while (n)
 	{
-		listodel = list;
-		list = list->next;
-		ft_lstdelone(&listodel, del);
+		--n;
+		str_new[n] = c;
 	}
-	*alst = NULL;
+	return (str_new);
 }

@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_str_tolower.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/20 18:55:55 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/12/20 18:55:57 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/12/09 15:29:21 by gpoblon           #+#    #+#             */
+/*   Updated: 2016/12/11 18:48:21 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+char	*ft_str_tolower(char *str)
 {
-	t_list	*list;
-	t_list	*listodel;
+	size_t	i;
 
-	list = *alst;
-	while (list)
+	i = 0;
+	CHECKPVN(str);
+	while (str[i])
 	{
-		listodel = list;
-		list = list->next;
-		ft_lstdelone(&listodel, del);
+		str[i] = ft_tolower(str[i]);
+		++i;
 	}
-	*alst = NULL;
+	return (str);
 }

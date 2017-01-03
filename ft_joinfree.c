@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_joinfree.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/01 18:00:26 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/12/11 18:57:08 by gpoblon          ###   ########.fr       */
+/*   Updated: 2016/12/12 18:19:21 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+static void	ft_free_params(void *s1, void *s2, int free_params)
+{
+	if (free_params & NO_FREE)
+		return ;
+	if ((free_params & FREE_P1) || (free_params & FREE_ALL))
+		free(s1);
+	if ((free_params & FREE_P2) || (free_params & FREE_ALL))
+		free(s2);
+}
+
+char		*ft_joinfree(char const *s1, char const *s2, int free_params)
 {
 	char	*new_s;
 	int		i;
@@ -35,5 +45,6 @@ char		*ft_strjoin(char const *s1, char const *s2)
 		++j;
 	}
 	new_s[i] = '\0';
+	ft_free_params((void*)s1, (void*)s2, free_params);
 	return (new_s);
 }

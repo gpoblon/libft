@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 11:52:37 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/12/06 19:47:04 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/01/03 14:48:37 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,18 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include "get_next_line.h"
+# include "ft_printf/ftprintf.h"
 
 # define CHECKPV(p) if (!p) return;
 # define CHECKPVN(p) if (!p) return (NULL);
 # define CHECKPV0(p) if (!p) return (0);
+
+# define NO_FREE	1 << 0
+# define FREE_P1	1 << 1
+# define FREE_P2	1 << 2
+# define FREE_ALL	1 << 3
 
 typedef unsigned char	t_uchar;
 
@@ -71,14 +76,21 @@ char					*ft_strmapi(char const *s, char (*f)(unsigned int,
 									char));
 int						ft_strequ(char const *s1, char const *s2);
 int						ft_strnequ(char const *s1, char const *s2, size_t n);
-char					*ft_strsub(char const *s, unsigned int start,
-									size_t l);
+char					*ft_subfree(char const *s, unsigned int start,
+														size_t l, int free_p);
+char					*ft_joinfree(char const *s1, char const *s2, int free);
+char					*ft_strsub(char const *s, unsigned int start, size_t l);
 char					*ft_strjoin(char const *s1, char const *s2);
+
 char					*ft_strtrim(char const *s);
 char					**ft_strsplit(char const *s, char c);
+char					*ft_str_tolower(char *str);
+char					*ft_str_toupper(char *str);
 
 int						ft_atoi(const char *nptr);
 char					*ft_itoa(int n);
+char					*ft_itoa_base(long long nb, int base);
+char					*ft_itoa_base_llu(unsigned long long nb, int base);
 
 int						ft_isalpha(int c);
 int						ft_isdigit(int c);
@@ -96,6 +108,7 @@ int						ft_tolower(int c);
 
 void					ft_putchar(char c);
 void					ft_putstr(char const *s);
+void					ft_putnstr(char const *s, int n);
 void					ft_putendl(char const *s);
 void					ft_putnbr(int n);
 void					ft_putchar_fd(char c, int fd);
@@ -113,17 +126,9 @@ t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list					*ft_lstnew(void const *content, size_t content_size);
 void					ft_lstpushback(t_list **begin_list, t_list *elem);
 size_t					ft_lstsize(t_list *list);
-void					ft_list_reverse(t_list **begin_list);
-t_list					*ft_lstsort(t_list *lst,
-							int (*cmp)(const void *, const void *));
-
-
-
-
-
 char					*ft_strcdup(const char *s, char c);
 char					*ft_strndup(const char *src, size_t n);
-char					*ft_strncdup(const char *src, size_t n, char c);
+char					*ft_strcnew(size_t n, char c);
 int						ft_iswhitespace(int c);
 void					ft_exit(const char *message);
 
@@ -132,5 +137,7 @@ void					ft_putmap(char **map);
 void					ft_mapcpy(char **dst, const char **src);
 char					**ft_mapdup(char **map);
 void					ft_free_map(char **map);
+
+unsigned long long		ft_pow(unsigned long long n, unsigned long long pow);
 
 #endif

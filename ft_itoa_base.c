@@ -1,57 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/18 19:28:04 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/12/09 17:21:28 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/12/08 23:15:12 by gpoblon           #+#    #+#             */
+/*   Updated: 2017/01/03 14:08:37 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		n_length(long int n)
+static int	ft_nblen_base(long long nb, int base)
 {
 	size_t	len;
 
 	len = 0;
-	if (n <= 0)
-		len++;
-	while (n)
+	if (nb <= 0)
+		++len;
+	while (nb)
 	{
-		n /= 10;
-		len++;
+		nb /= base;
+		++len;
 	}
 	return (len);
 }
 
-char			*ft_itoa(int n)
+char		*ft_itoa_base(long long n, int base)
 {
-	long int	nb;
-	char		*result;
-	size_t		i;
+	char const			base_digit[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+	char				*str;
+	unsigned long long	nb;
+	int					i;
 
 	nb = n;
-	i = 0;
-	result = (char*)malloc(sizeof(char) * (n_length(nb) + 1));
-	if (!result)
+	i = ft_nblen_base(n, base);
+	str = (char *)malloc(sizeof(char) * i + 1);
+	if (base < 2 || base > 36 || !str)
 		return (NULL);
-	if (nb < 0)
+	if (n == 0)
+		str[0] = '0';
+	if (n < 0)
 	{
-		nb *= -1;
-		result[i] = '-';
+		str[0] = '-';
+		nb = -n;
 	}
-	i = n_length(n);
-	result[i] = '\0';
-	if (nb == 0)
-		result[--i] = 0 + '0';
+	str[i] = '\0';
 	while (nb != 0)
 	{
-		i--;
-		result[i] = (nb % 10) + '0';
-		nb /= 10;
+		str[--i] = base_digit[nb % base];
+		nb /= base;
 	}
-	return (result);
+	return (str);
 }
