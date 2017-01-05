@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 10:40:44 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/12/11 19:00:37 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/01/05 15:30:47 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static char		*ft_manage_leftover(char *line, t_fd *cur_fd, char *buff, int i)
 	if (!cur_fd->leftover && i != cur_fd->reader)
 	{
 		cur_fd->leftover = ft_subfree(buff, i + 1, cur_fd->reader - (i + 1),
-																	FREE_P1);
+																	NO_FREE);
 		line = ft_joinfree(line, ft_subfree(buff, 0, i, NO_FREE), FREE_ALL);
 	}
 	else
@@ -58,7 +58,7 @@ static char		*ft_manage_leftover(char *line, t_fd *cur_fd, char *buff, int i)
 		line = ft_joinfree(cur_fd->leftover, ft_subfree(buff, 0, i, NO_FREE),
 																	FREE_P2);
 		cur_fd->leftover = ft_subfree(buff, i + 1, cur_fd->reader - (i + 1),
-																	FREE_P1);
+																	NO_FREE);
 	}
 	return (line);
 }
