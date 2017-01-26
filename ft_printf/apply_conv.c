@@ -68,8 +68,8 @@ static void			ft_wide_char_to_str(t_info *i, t_rule *r)
 	j = 0;
 	if (r->conv == 'C' || r->conv == 'c')
 	{
-		i->arg_str = ft_strnew(ft_count_wchar((wchar_t)i->arg) + 1);
-		ft_compute_wchar((wchar_t)i->arg, i->arg_str, i);
+		i->arg_str = ft_strnew(ft_count_wchar((wchar_t)(uintptr_t)i->arg) + 1);
+		ft_compute_wchar((wchar_t)(uintptr_t)i->arg, i->arg_str, i);
 	}
 	if (r->conv == 'S' || r->conv == 's')
 	{
@@ -91,7 +91,7 @@ void				ft_char_arg_to_str(t_info *i, t_rule *r)
 	if ((r->conv == 'C' || r->conv == 'c') && !i->arg && ++i->null_char)
 		i->arg_str = ft_strcnew(1, -1);
 	else if (r->conv == 'c' && !(r->modifier & MOD_L))
-		i->arg_str = ft_strcnew(1, (char)i->arg);
+		i->arg_str = ft_strcnew(1, (char)(uintptr_t)i->arg);
 	else if (r->conv == 'C' || ((r->modifier & MOD_L) &&
 														r->conv == 'c'))
 		ft_wide_char_to_str(i, r);

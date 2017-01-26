@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 11:52:37 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/01/03 14:48:37 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/01/26 18:41:11 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,17 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <stdlib.h>
-# include "get_next_line.h"
+# include <inttypes.h>
+# include <limits.h>
+# include <stdarg.h>
+# include <wchar.h>
+# include <stdio.h>
 # include "ft_printf/ftprintf.h"
+
+# define TRUE 1
+# define FALSE 0
+
+# define BUFF_SIZE 1
 
 # define CHECKPV(p) if (!p) return;
 # define CHECKPVN(p) if (!p) return (NULL);
@@ -30,6 +39,17 @@
 # define FREE_P1	1 << 1
 # define FREE_P2	1 << 2
 # define FREE_ALL	1 << 3
+
+# define MSK0		1 << 0
+# define MSK1		1 << 1
+# define MSK2		1 << 2
+# define MSK3		1 << 3
+# define MSK4		1 << 4
+# define MSK5		1 << 5
+# define MSK6		1 << 6
+# define MSK7		1 << 7
+# define MSK8		1 << 8
+# define MSK9		1 << 9
 
 typedef unsigned char	t_uchar;
 
@@ -88,6 +108,8 @@ char					*ft_str_tolower(char *str);
 char					*ft_str_toupper(char *str);
 
 int						ft_atoi(const char *nptr);
+int						ft_atoi_base(const char *nptr, int str_base);
+double					ft_atof(const char *nptr);
 char					*ft_itoa(int n);
 char					*ft_itoa_base(long long nb, int base);
 char					*ft_itoa_base_llu(unsigned long long nb, int base);
@@ -130,7 +152,7 @@ char					*ft_strcdup(const char *s, char c);
 char					*ft_strndup(const char *src, size_t n);
 char					*ft_strcnew(size_t n, char c);
 int						ft_iswhitespace(int c);
-void					ft_exit(const char *message);
+void					ft_exit_fd(const char *message, int fd);
 
 char					**ft_create_map(char **map, int x, int y, char c);
 void					ft_putmap(char **map);
@@ -139,5 +161,6 @@ char					**ft_mapdup(char **map);
 void					ft_free_map(char **map);
 
 unsigned long long		ft_pow(unsigned long long n, unsigned long long pow);
+int						get_next_line(const int fd, char **line);
 
 #endif

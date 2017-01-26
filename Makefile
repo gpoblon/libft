@@ -1,6 +1,8 @@
 NAME	=	libft.a
 
 SRC_LIB	=	ft_atoi.c \
+			ft_atoi_base.c \
+			ft_atof.c \
 			ft_bzero.c \
 			ft_isalnum.c \
 			ft_isalpha.c \
@@ -75,13 +77,12 @@ SRC_LIB	=	ft_atoi.c \
 			ft_lstcpy.c \
 			ft_lstsize.c \
 			ft_lstpushback.c \
-			ft_exit.c \
+			ft_exit_fd.c \
 			ft_create_map.c \
 			ft_putmap.c \
 			ft_mapcpy.c \
 			ft_mapdup.c \
 			ft_free_map.c \
-			ft_get_next_line.c \
 			ft_strcnew.c \
 			ft_itoa_base.c \
 			ft_itoa_base_llu.c \
@@ -91,6 +92,7 @@ SRC_LIB	=	ft_atoi.c \
 			ft_joinfree.c \
 			ft_putnstr.c \
 			ft_pow.c \
+			ft_gnl.c \
 
 SRC_PF	=	ft_printf/ft_printf.c \
 			ft_printf/get_rules.c \

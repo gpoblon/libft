@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 11:59:13 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/01/03 12:13:51 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/01/18 12:25:26 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,30 +40,30 @@ static void	ft_sub_get_color(t_info *i, int n, char *color, int len)
 
 static void	ft_get_color_2(t_info *i)
 {
-	if (ft_strncmp("{blue}", i->printstr + i->i, 6) == 0)
-		ft_sub_get_color(i, 6, "\033[34m", 5);
-	else if (ft_strncmp("{purple}", i->printstr + i->i, 8) == 0)
-		ft_sub_get_color(i, 8, "\033[35m", 5);
-	else if (ft_strncmp("{BGcyan}", i->printstr + i->i, 8) == 0)
-		ft_sub_get_color(i, 8, "\033[46m", 5);
-	else if (ft_strncmp("{BGblack}", i->printstr + i->i, 9) == 0)
-		ft_sub_get_color(i, 9, "\033[40m", 5);
-	else if (ft_strncmp("{BGyellow}", i->printstr + i->i, 10) == 0)
-		ft_sub_get_color(i, 10, "\033[43m", 5);
-	else if (ft_strncmp("{BGred}", i->printstr + i->i, 7) == 0)
-		ft_sub_get_color(i, 7, "\033[41m", 5);
-	else if (ft_strncmp("{BGwhite}", i->printstr + i->i, 9) == 0)
-		ft_sub_get_color(i, 9, "\033[47m", 5);
-	else if (ft_strncmp("{BGgreen}", i->printstr + i->i, 9) == 0)
-		ft_sub_get_color(i, 9, "\033[42m", 5);
-	else if (ft_strncmp("{BGblue}", i->printstr + i->i, 8) == 0)
-		ft_sub_get_color(i, 8, "\033[44m", 5);
-	else if (ft_strncmp("{BGpurple}", i->printstr + i->i, 10) == 0)
-		ft_sub_get_color(i, 10, "\033[45m", 5);
-	else if (ft_strncmp("{bold}", i->printstr + i->i, 6) == 0)
-		ft_sub_get_color(i, 6, "\033[1m", 4);
-	else if (ft_strncmp("{underline}", i->printstr + i->i, 11) == 0)
-		ft_sub_get_color(i, 11, "\033[4m", 4);
+	if (ft_strncmp("{BE}", i->printstr + i->i, 4) == 0)
+		ft_sub_get_color(i, 4, "\033[34m", 5);
+	else if (ft_strncmp("{P}", i->printstr + i->i, 3) == 0)
+		ft_sub_get_color(i, 3, "\033[35m", 5);
+	else if (ft_strncmp("{BC}", i->printstr + i->i, 4) == 0)
+		ft_sub_get_color(i, 4, "\033[46m", 5);
+	else if (ft_strncmp("{BBK}", i->printstr + i->i, 5) == 0)
+		ft_sub_get_color(i, 5, "\033[40m", 5);
+	else if (ft_strncmp("{BY}", i->printstr + i->i, 4) == 0)
+		ft_sub_get_color(i, 4, "\033[43m", 5);
+	else if (ft_strncmp("{BR}", i->printstr + i->i, 4) == 0)
+		ft_sub_get_color(i, 4, "\033[41m", 5);
+	else if (ft_strncmp("{BW}", i->printstr + i->i, 4) == 0)
+		ft_sub_get_color(i, 4, "\033[47m", 5);
+	else if (ft_strncmp("{BG}", i->printstr + i->i, 4) == 0)
+		ft_sub_get_color(i, 4, "\033[42m", 5);
+	else if (ft_strncmp("{BBE}", i->printstr + i->i, 5) == 0)
+		ft_sub_get_color(i, 5, "\033[44m", 5);
+	else if (ft_strncmp("{BP}", i->printstr + i->i, 4) == 0)
+		ft_sub_get_color(i, 4, "\033[45m", 5);
+	else if (ft_strncmp("{b}", i->printstr + i->i, 3) == 0)
+		ft_sub_get_color(i, 3, "\033[1m", 4);
+	else if (ft_strncmp("{u}", i->printstr + i->i, 3) == 0)
+		ft_sub_get_color(i, 3, "\033[4m", 4);
 }
 
 int			ft_get_color(t_info *i)
@@ -71,20 +71,20 @@ int			ft_get_color(t_info *i)
 	int	check;
 
 	check = i->printflen;
-	if (ft_strncmp("{eoc}", i->printstr + i->i, 5) == 0)
-		ft_sub_get_color(i, 5, "\033[0m", 4);
-	else if (ft_strncmp("{cyan}", i->printstr + i->i, 6) == 0)
-		ft_sub_get_color(i, 6, "\x1b[36m", 5);
-	else if (ft_strncmp("{black}", i->printstr + i->i, 7) == 0)
-		ft_sub_get_color(i, 7, "\033[30m", 5);
-	else if (ft_strncmp("{yellow}", i->printstr + i->i, 8) == 0)
-		ft_sub_get_color(i, 8, "\033[33m", 5);
-	else if (ft_strncmp("{red}", i->printstr + i->i, 5) == 0)
-		ft_sub_get_color(i, 5, "\033[31m", 5);
-	else if (ft_strncmp("{white}", i->printstr + i->i, 7) == 0)
-		ft_sub_get_color(i, 7, "\033[37m", 5);
-	else if (ft_strncmp("{green}", i->printstr + i->i, 7) == 0)
-		ft_sub_get_color(i, 7, "\033[32m", 5);
+	if (ft_strncmp("{E}", i->printstr + i->i, 3) == 0)
+		ft_sub_get_color(i, 3, "\033[0m", 4);
+	else if (ft_strncmp("{C}", i->printstr + i->i, 3) == 0)
+		ft_sub_get_color(i, 3, "\x1b[36m", 5);
+	else if (ft_strncmp("{BK}", i->printstr + i->i, 4) == 0)
+		ft_sub_get_color(i, 4, "\033[30m", 5);
+	else if (ft_strncmp("{Y}", i->printstr + i->i, 3) == 0)
+		ft_sub_get_color(i, 3, "\033[33m", 5);
+	else if (ft_strncmp("{R}", i->printstr + i->i, 3) == 0)
+		ft_sub_get_color(i, 3, "\033[31m", 5);
+	else if (ft_strncmp("{W}", i->printstr + i->i, 3) == 0)
+		ft_sub_get_color(i, 3, "\033[37m", 5);
+	else if (ft_strncmp("{G}", i->printstr + i->i, 3) == 0)
+		ft_sub_get_color(i, 3, "\033[32m", 5);
 	else
 		ft_get_color_2(i);
 	if (check == i->printflen)

@@ -51,9 +51,7 @@ void		ft_listdel(t_lst **bgn_lst, t_lst *lst)
 static int	ft_check_null_char(char *s)
 {
 	size_t	i;
-	char	c;
 
-	c = 0;
 	i = 0;
 	CHECKPV0(s);
 	while (s[i] != -1)

@@ -35,7 +35,7 @@ static void	ft_sub_rules_to_int(t_info *i, t_rule *r)
 																		FX);
 		i->arg_str = ft_joinfree(str_prec, i->arg_str, FX);
 	}
-	if (r->prec == 0 && (int)i->arg == 0)
+	if (r->prec == 0 && (int)(uintptr_t)i->arg == 0)
 		i->arg_str = ft_strdup("");
 }
 
@@ -80,7 +80,7 @@ void		ft_apply_rules_to_unsigned_int(t_info *i, t_rule *r)
 	i->diff_w = r->min_w - ft_strlen(i->arg_str);
 	if ((r->flag & FL_POUND || r->conv == 'p'))
 	{
-		if ((r->conv == 'p' || ((int)i->arg && ((r->conv == 'x' ||
+		if ((r->conv == 'p' || ((int)(uintptr_t)i->arg && ((r->conv == 'x' ||
 										r->conv == 'X')))) && (i->diff_w -= 2))
 			i->str_opt = ft_strdup("0x");
 		else if ((r->conv == 'o' || r->conv == 'O') && (!(r->prec == -1 &&

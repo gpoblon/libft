@@ -14,10 +14,6 @@
 # define FTPRINTF_H
 
 # include "../libft.h"
-# include <stdio.h>
-# include <stdarg.h>
-# include <wchar.h>
-# include <limits.h>
 
 # define XF					1 << 0
 # define F1					1 << 1
