@@ -1,50 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_joinfree.c                                  :+:      :+:    :+:   */
+/*   ft_strfsub.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/01 18:00:26 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/10/22 18:24:23 by gpoblon          ###   ########.fr       */
+/*   Created: 2016/10/01 11:52:29 by gpoblon           #+#    #+#             */
+/*   Updated: 2017/11/07 16:29:06 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_free_params(void *s1, void *s2, int free_params)
+static void	ft_free_param(void *s, int free_param)
 {
-	if (free_params & F_N)
+	if (free_param & F_N)
 		return ;
-	if ((free_params & F_1) || (free_params & F_A))
-		free(s1);
-	if ((free_params & F_2) || (free_params & F_A))
-		free(s2);
+	if ((free_param & F_1) || (free_param & F_A))
+		free(s);
 }
 
-char		*ft_strfjoin(char const *s1, char const *s2, int free_params)
+char		*ft_strfsub(char const *s, unsigned int start, size_t len,
+																int free_param)
 {
 	char	*new_s;
-	int		i;
-	int		j;
+	size_t	i;
 
 	new_s = NULL;
-	if (!s1 || !s2)
+	i = 0;
+	if (!s)
 		return ((char *)NULL);
-	new_s = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
+	new_s = ft_strnew(len);
 	if (!new_s)
 		return (NULL);
-	i = -1;
-	while (s1[++i])
-		new_s[i] = s1[i];
-	j = 0;
-	while (s2[j])
+	while (i < len)
 	{
-		new_s[i] = s2[j];
-		++i;
-		++j;
+		new_s[i] = s[i + start];
+		i++;
 	}
 	new_s[i] = '\0';
-	ft_free_params((void*)s1, (void*)s2, free_params);
+	ft_free_param((void*)s, free_param);
 	return (new_s);
 }
