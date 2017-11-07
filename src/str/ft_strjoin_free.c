@@ -14,15 +14,15 @@
 
 static void	ft_free_params(void *s1, void *s2, int free_params)
 {
-	if (free_params & NO_FREE)
+	if (free_params & F_N)
 		return ;
-	if ((free_params & FREE_P1) || (free_params & FREE_ALL))
+	if ((free_params & F_1) || (free_params & F_A))
 		free(s1);
-	if ((free_params & FREE_P2) || (free_params & FREE_ALL))
+	if ((free_params & F_2) || (free_params & F_A))
 		free(s2);
 }
 
-char		*ft_strjoin_free(char const *s1, char const *s2, int free_params)
+char		*ft_strfjoin(char const *s1, char const *s2, int free_params)
 {
 	char	*new_s;
 	int		i;

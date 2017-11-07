@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_tolower.c                                   :+:      :+:    :+:   */
+/*   pop.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jhalford <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/09 15:29:21 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/07 15:46:27 by gwojda           ###   ########.fr       */
+/*   Created: 2016/11/04 11:09:56 by jhalford          #+#    #+#             */
+/*   Updated: 2017/03/24 20:05:13 by jhalford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_str_tolower(char *str)
+int		pop(t_list **lst)
 {
-	size_t	i;
+	t_list	*top;
+	int		item;
 
-	i = 0;
-	if (!str)
-		return (NULL);
-	while (str[i])
-	{
-		str[i] = ft_tolower(str[i]);
-		++i;
-	}
-	return (str);
+	top = *lst;
+	item = top ? *(int*)top->content : 0;
+	if (lst && *lst)
+		*lst = (*lst)->next;
+	ft_lstdelone(&top, ft_lst_cfree);
+	return (item);
 }

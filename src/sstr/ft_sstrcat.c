@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sstrdup.c                                       :+:      :+:    :+:   */
+/*   ft_sstrcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 15:49:09 by gwojda            #+#    #+#             */
-/*   Updated: 2017/11/07 15:51:20 by gwojda           ###   ########.fr       */
+/*   Created: 2017/11/07 15:48:53 by gwojda            #+#    #+#             */
+/*   Updated: 2017/11/07 15:48:53 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_sstrdup(char **list)
+char	*ft_sstrcat(char **sstr, char sep)
 {
+	int		len;
 	int		i;
-	int		size;
-	char	**cpy;
+	char	*out;
 
 	i = 0;
-	size = 0;
-	while (list[size])
-		size++;
-	if (!(cpy = (char **)malloc(sizeof(char *) * (size + 1))))
+	len = 0;
+	if (!sstr)
 		return (NULL);
-	while (*list)
+	while (sstr[i])
+		len += ft_strlen(sstr[i++]);
+	if (!(out = ft_strnew(sizeof(char) * (len + i + 1))))
+		return (NULL);
+	ft_strcpy(out, sstr[0]);
+	i = 1;
+	while (sstr[i])
 	{
-		cpy[i++] = ft_strdup(*list);
-		list++;
+		ft_strcat(out, (char[]){sep, 0});
+		ft_strcat(out, sstr[i++]);
 	}
-	cpy[i] = NULL;
-	return (cpy);
+	return (out);
 }

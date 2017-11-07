@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_tolower.c                                   :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jhalford <jack@crans.org>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/09 15:29:21 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/07 15:46:27 by gwojda           ###   ########.fr       */
+/*   Created: 2017/02/09 15:59:39 by jhalford          #+#    #+#             */
+/*   Updated: 2017/03/02 20:59:42 by jhalford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_str_tolower(char *str)
+t_list	*push(t_list **stack, int elem)
 {
-	size_t	i;
-
-	i = 0;
-	if (!str)
-		return (NULL);
-	while (str[i])
-	{
-		str[i] = ft_tolower(str[i]);
-		++i;
-	}
-	return (str);
+	ft_lstadd(stack, ft_lstnew(&elem, sizeof(elem)));
+	return (*stack);
 }

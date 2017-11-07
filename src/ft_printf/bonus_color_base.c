@@ -28,10 +28,10 @@ void		ft_base_rule(const char *s, t_info *info, t_rule *rule, va_list va)
 static void	ft_sub_get_color(t_info *i, int n, char *color, int len)
 {
 	i->lst = ft_newlink(&(i->bgn_lst), i->i);
-	i->lst->s_part = ft_strsub_free(i->printstr, 0, i->i, XF);
+	i->lst->s_part = ft_strfsub(i->printstr, 0, i->i, XF);
 	i->printflen += i->i + len;
 	i->i += n;
-	i->printstr = ft_strsub_free(i->printstr, i->i,
+	i->printstr = ft_strfsub(i->printstr, i->i,
 		ft_strlen(i->printstr) - i->i, F1);
 	i->lst = ft_newlink(&(i->bgn_lst), len);
 	i->lst->s_part = ft_strdup(color);

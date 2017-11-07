@@ -19,7 +19,7 @@ static char	*ft_apply_rules_to_float(t_info *i, t_rule *r, char *s)
 	if (s[0] == '-' && --i->diff_w)
 	{
 		i->sign = 1;
-		s = ft_strsub_free(s, 1, ft_strlen(s) - 1, F1);
+		s = ft_strfsub(s, 1, ft_strlen(s) - 1, F1);
 		i->str_opt = ft_strdup("-");
 	}
 	else if (!i->sign && r->flag & FL_SPACE && !(r->flag & FL_PLUS) &&
@@ -30,14 +30,14 @@ static char	*ft_apply_rules_to_float(t_info *i, t_rule *r, char *s)
 	else
 		i->str_opt = ft_strdup("");
 	if (i->diff_w > 0 && r->flag & FL_LEFT)
-		s = ft_strjoin_free(s, ft_strcnew(i->diff_w, ' '), FX);
+		s = ft_strfjoin(s, ft_strcnew(i->diff_w, ' '), FX);
 	else if (i->diff_w > 0 && !(r->flag & FL_ZERO) && !i->sign)
-		s = ft_strjoin_free(ft_strcnew(i->diff_w, ' '), s, FX);
+		s = ft_strfjoin(ft_strcnew(i->diff_w, ' '), s, FX);
 	else if (i->diff_w > 0 && r->flag & FL_ZERO)
-		s = ft_strjoin_free(ft_strcnew(i->diff_w, '0'), s, FX);
-	s = ft_strjoin_free(i->str_opt, s, FX);
+		s = ft_strfjoin(ft_strcnew(i->diff_w, '0'), s, FX);
+	s = ft_strfjoin(i->str_opt, s, FX);
 	if (i->diff_w > 0 && !(r->flag & FL_ZERO) && i->sign == 1)
-		s = ft_strjoin_free(ft_strcnew(i->diff_w, ' '), s, FX);
+		s = ft_strfjoin(ft_strcnew(i->diff_w, ' '), s, FX);
 	return (s);
 }
 
@@ -80,18 +80,18 @@ char		*ft_floats_conv(t_info *info, t_rule *rule)
 	if (info->arg_double < 0)
 		info->arg_double *= -1;
 	floats.whole = info->arg_double;
-	floats.s_whole = ft_strjoin_free(floats.s_whole,
+	floats.s_whole = ft_strfjoin(floats.s_whole,
 										ft_itoa_base(floats.whole, 10), FX);
 	if (rule->prec > 0)
 	{
 		info->arg_double = info->arg_double - floats.whole;
 		info->arg_double *= 10;
 		ft_floats_to_str(info, rule, &floats);
-		floats.s_full = ft_strjoin_free(floats.s_whole, ".", F1);
-		floats.s_full = ft_strjoin_free(floats.s_full, floats.s_dec, FX);
+		floats.s_full = ft_strfjoin(floats.s_whole, ".", F1);
+		floats.s_full = ft_strfjoin(floats.s_full, floats.s_dec, FX);
 	}
 	else if (rule->prec == 0 && (rule->flag & FL_POUND))
-		floats.s_full = ft_strjoin_free(floats.s_whole, ".", F1);
+		floats.s_full = ft_strfjoin(floats.s_whole, ".", F1);
 	else
 		floats.s_full = ft_strdup(floats.s_whole);
 	floats.s_full = ft_apply_rules_to_float(info, rule, floats.s_full);

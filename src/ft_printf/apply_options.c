@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 13:56:01 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/02/20 17:26:11 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/11/07 16:22:51 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ static void	ft_sub_rules_to_int(t_info *i, t_rule *r)
 	if (diff_prec >= 0)
 	{
 		if (i->sign == 1)
-			i->arg_str = ft_strsub_free(i->arg_str, 1,
+			i->arg_str = ft_strfsub(i->arg_str, 1,
 				ft_strlen(i->arg_str) - 1, F1);
 		if (i->sign == 1)
 			str_prec = ft_strdup("-");
 		else
 			str_prec = ft_strdup("");
-		str_prec = ft_strjoin_free(str_prec,
+		str_prec = ft_strfjoin(str_prec,
 			ft_strcnew(diff_prec + i->sign, '0'), FX);
-		i->arg_str = ft_strjoin_free(str_prec, i->arg_str, FX);
+		i->arg_str = ft_strfjoin(str_prec, i->arg_str, FX);
 	}
 	if (r->prec == 0 && (int)(uintptr_t)i->arg == 0)
 		i->arg_str = ft_strdup("");
@@ -42,13 +42,13 @@ static void	ft_sub_rules_to_int(t_info *i, t_rule *r)
 static void	ft_sub_apply_rules_to_int(t_info *i)
 {
 	if (i->sign == 1)
-		i->arg_str = ft_strsub_free(i->arg_str, 1, ft_strlen(i->arg_str) - 1,
+		i->arg_str = ft_strfsub(i->arg_str, 1, ft_strlen(i->arg_str) - 1,
 																	F1);
 	if (i->sign == 1)
 		i->str_opt = ft_strdup("-");
 	if (!i->str_opt)
 		i->str_opt = ft_strdup("");
-	i->str_opt = ft_strjoin_free(i->str_opt, ft_strcnew(i->diff_w, '0'), FX);
+	i->str_opt = ft_strfjoin(i->str_opt, ft_strcnew(i->diff_w, '0'), FX);
 }
 
 void		ft_apply_rules_to_int(t_info *i, t_rule *r)
@@ -64,12 +64,12 @@ void		ft_apply_rules_to_int(t_info *i, t_rule *r)
 		ft_sub_apply_rules_to_int(i);
 	if (!i->str_opt)
 		i->str_opt = ft_strdup("");
-	i->arg_str = ft_strjoin_free(i->str_opt, i->arg_str, F2);
+	i->arg_str = ft_strfjoin(i->str_opt, i->arg_str, F2);
 	if (i->diff_w > 0 && r->flag & FL_LEFT)
-		i->arg_str = ft_strjoin_free(i->arg_str, ft_strcnew(i->diff_w, ' '), FX);
+		i->arg_str = ft_strfjoin(i->arg_str, ft_strcnew(i->diff_w, ' '), FX);
 	else if (i->diff_w > 0 && (!(r->flag & FL_ZERO) || ((r->flag & FL_ZERO) &&
 																r->prec != -1)))
-		i->arg_str = ft_strjoin_free(ft_strcnew(i->diff_w, ' '), i->arg_str, FX);
+		i->arg_str = ft_strfjoin(ft_strcnew(i->diff_w, ' '), i->arg_str, FX);
 	free(i->str_opt);
 }
 
@@ -91,12 +91,12 @@ void		ft_apply_rules_to_unsigned_int(t_info *i, t_rule *r)
 	if (!i->str_opt)
 		i->str_opt = ft_strdup("");
 	if (i->diff_w > 0 && (r->flag & FL_ZERO) && !(r->flag & FL_LEFT))
-		i->str_opt = ft_strjoin_free(i->str_opt, ft_strcnew(i->diff_w, '0'), FX);
-	i->arg_str = ft_strjoin_free(i->str_opt, i->arg_str, F2);
+		i->str_opt = ft_strfjoin(i->str_opt, ft_strcnew(i->diff_w, '0'), FX);
+	i->arg_str = ft_strfjoin(i->str_opt, i->arg_str, F2);
 	if ((i->diff_w > 0 || r->conv == 0) && r->flag & FL_LEFT)
-		i->arg_str = ft_strjoin_free(i->arg_str, ft_strcnew(i->diff_w, ' '), FX);
+		i->arg_str = ft_strfjoin(i->arg_str, ft_strcnew(i->diff_w, ' '), FX);
 	else if (i->diff_w > 0 && !(r->flag & FL_ZERO))
-		i->arg_str = ft_strjoin_free(ft_strcnew(i->diff_w, ' '), i->arg_str, FX);
+		i->arg_str = ft_strfjoin(ft_strcnew(i->diff_w, ' '), i->arg_str, FX);
 	free(i->str_opt);
 	if (r->conv == 'X')
 		i->arg_str = ft_str_toupper(i->arg_str);
@@ -106,16 +106,16 @@ void		ft_apply_rules_to_char(t_info *i, t_rule *r)
 {
 	i->str_opt = ft_strdup("");
 	if (r->prec > 0 && (r->conv == 'c' || r->conv == 'C'))
-		i->arg_str = ft_strsub_free(i->arg_str, 0, r->prec, F1);
+		i->arg_str = ft_strfsub(i->arg_str, 0, r->prec, F1);
 	if (r->prec != -1 && r->prec < (int)ft_strlen(i->arg_str) && r->conv == 's')
-		i->arg_str = ft_strsub_free(i->arg_str, 0, r->prec, F1);
+		i->arg_str = ft_strfsub(i->arg_str, 0, r->prec, F1);
 	i->diff_w = r->min_w - ft_strlen(i->arg_str);
 	if (i->diff_w > 0 && (r->flag & FL_ZERO) && !(r->flag & FL_LEFT))
-		i->str_opt = ft_strjoin_free(i->str_opt, ft_strcnew(i->diff_w, '0'), FX);
-	i->arg_str = ft_strjoin_free(i->str_opt, i->arg_str, F2);
+		i->str_opt = ft_strfjoin(i->str_opt, ft_strcnew(i->diff_w, '0'), FX);
+	i->arg_str = ft_strfjoin(i->str_opt, i->arg_str, F2);
 	if (i->diff_w > 0 && r->flag & FL_LEFT)
-		i->arg_str = ft_strjoin_free(i->arg_str, ft_strcnew(i->diff_w, ' '), FX);
+		i->arg_str = ft_strfjoin(i->arg_str, ft_strcnew(i->diff_w, ' '), FX);
 	else if (i->diff_w > 0 && !(r->flag & FL_ZERO))
-		i->arg_str = ft_strjoin_free(ft_strcnew(i->diff_w, ' '), i->arg_str, FX);
+		i->arg_str = ft_strfjoin(ft_strcnew(i->diff_w, ' '), i->arg_str, FX);
 	free(i->str_opt);
 }

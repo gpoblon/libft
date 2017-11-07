@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 21:37:33 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/03/30 13:11:05 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/11/07 15:27:12 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	{
 		tmplst = f(lst);
 		ft_lstpushback(&list, ft_lstnew(tmplst->content, tmplst->content_size));
-		CHECKPVN(list);
-		if (check == ft_lstsize(list))
+		if (!list || check == ft_lstsize(list))
 			return (NULL);
 		else
 			check = ft_lstsize(list);

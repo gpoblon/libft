@@ -14,13 +14,13 @@
 
 static void	ft_free_param(void *s, int free_param)
 {
-	if (free_param & NO_FREE)
+	if (free_param & F_N)
 		return ;
-	if ((free_param & FREE_P1) || (free_param & FREE_ALL))
+	if ((free_param & F_1) || (free_param & F_A))
 		free(s);
 }
 
-char		*ft_strsub_free(char const *s, unsigned int start, size_t len,
+char		*ft_strfsub(char const *s, unsigned int start, size_t len,
 																int free_param)
 {
 	char	*new_s;

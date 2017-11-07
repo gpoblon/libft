@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 21:37:41 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 16:03:02 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/11/07 15:26:50 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	CHECKPV(alst);
-	CHECKPV(*alst);
-	CHECKPV(del);
+	if (alst || *alst || del)
+		return ;
 	(*del)((*alst)->content, (*alst)->content_size);
 	free(*alst);
 	*alst = NULL;

@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sstrdup.c                                       :+:      :+:    :+:   */
+/*   ft_sstrmerge.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 15:49:09 by gwojda            #+#    #+#             */
-/*   Updated: 2017/11/07 15:51:20 by gwojda           ###   ########.fr       */
+/*   Created: 2017/11/07 15:49:22 by gwojda            #+#    #+#             */
+/*   Updated: 2017/11/07 15:49:22 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_sstrdup(char **list)
+char	**ft_sstrmerge(char **s1, char **s2)
 {
-	int		i;
-	int		size;
-	char	**cpy;
+	char	**out;
 
-	i = 0;
-	size = 0;
-	while (list[size])
-		size++;
-	if (!(cpy = (char **)malloc(sizeof(char *) * (size + 1))))
-		return (NULL);
-	while (*list)
+	out = ft_sstrdup(s1);
+	if (!s2)
+		return (out);
+	while (*s2)
 	{
-		cpy[i++] = ft_strdup(*list);
-		list++;
+		out = ft_sstradd(out, *s2);
+		s2++;
 	}
-	cpy[i] = NULL;
-	return (cpy);
+	return (out);
 }

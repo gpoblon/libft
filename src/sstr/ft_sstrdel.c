@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sstrdup.c                                       :+:      :+:    :+:   */
+/*   ft_sstrdel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 15:49:09 by gwojda            #+#    #+#             */
-/*   Updated: 2017/11/07 15:51:20 by gwojda           ###   ########.fr       */
+/*   Created: 2017/11/07 15:49:05 by gwojda            #+#    #+#             */
+/*   Updated: 2017/11/07 15:49:05 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_sstrdup(char **list)
+void	ft_sstrdel(char **sstr, int index)
 {
 	int		i;
-	int		size;
-	char	**cpy;
 
-	i = 0;
-	size = 0;
-	while (list[size])
-		size++;
-	if (!(cpy = (char **)malloc(sizeof(char *) * (size + 1))))
-		return (NULL);
-	while (*list)
+	i = index;
+	ft_strdel(&sstr[index]);
+	while (i == index || sstr[i])
 	{
-		cpy[i++] = ft_strdup(*list);
-		list++;
+		sstr[i] = sstr[i + 1];
+		++i;
 	}
-	cpy[i] = NULL;
-	return (cpy);
 }

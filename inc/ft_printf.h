@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftprintf.h                                         :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:27:58 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/10/22 18:17:25 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/11/07 15:19:46 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTPRINTF_H
-# define FTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include "libft.h"
 
-# define XF					1 << 0
-# define F1					1 << 1
-# define F2					1 << 2
-# define FX					1 << 3
+# define XF					(1 << 0)
+# define F1					(1 << 1)
+# define F2					(1 << 2)
+# define FX					(1 << 3)
 
-# define FL_LEFT			1 << 0
-# define FL_POUND			1 << 1
-# define FL_PLUS			1 << 2
-# define FL_SPACE			1 << 3
-# define FL_ZERO			1 << 4
+# define FL_LEFT			(1 << 0)
+# define FL_POUND			(1 << 1)
+# define FL_PLUS			(1 << 2)
+# define FL_SPACE			(1 << 3)
+# define FL_ZERO			(1 << 4)
 
-# define MOD_J				1 << 5
-# define MOD_LL				1 << 4
-# define MOD_L				1 << 3
-# define MOD_Z				1 << 2
-# define MOD_H				1 << 1
-# define MOD_HH				1 << 0
+# define MOD_HH				(1 << 0)
+# define MOD_H				(1 << 1)
+# define MOD_Z				(1 << 2)
+# define MOD_L				(1 << 3)
+# define MOD_LL				(1 << 4)
+# define MOD_J				(1 << 5)
 
-# define WC_MIN_W			1 << 0
-# define WC_PREC			1 << 1
-# define WC_BASE			1 << 2
+# define WC_MIN_W			(1 << 0)
+# define WC_PREC			(1 << 1)
+# define WC_BASE			(1 << 2)
 
 typedef unsigned char		t_uchar;
 typedef unsigned int		t_uint;

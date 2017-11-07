@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 12:59:34 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/12/12 20:02:08 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/11/07 15:32:54 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char	*ft_strcnew(size_t n, char c)
 {
 	char	*str_new;
 
-	str_new = ft_strnew(n);
-	CHECKPVN(str_new);
+	if (!(str_new = ft_strnew(n)))
+		return (NULL);
 	while (n)
 	{
 		--n;

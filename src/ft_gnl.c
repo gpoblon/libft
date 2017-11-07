@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 10:40:44 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/01/18 15:07:53 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/11/07 15:25:24 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ static int		ft_check_leftover(char **leftover, char **line, int i)
 	{
 		while ((*leftover)[i] && (*leftover)[i] != '\n')
 			i++;
-		*line = ft_strjoin_free(*line,
-				ft_strsub_free(*leftover, 0, i, NO_FREE), FREE_ALL);
+		*line = ft_strfjoin(*line,
+				ft_strfsub(*leftover, 0, i, F_N), F_A);
 		if ((size_t)i < ft_strlen(*leftover))
 		{
-			*leftover = ft_strsub_free(*leftover, i + 1,
-							ft_strlen(*leftover) - i, FREE_P1);
+			*leftover = ft_strfsub(*leftover, i + 1,
+							ft_strlen(*leftover) - i, F_1);
 			return (1);
 		}
 		else
@@ -47,12 +47,12 @@ static int		ft_read_fd(char **leftover, char **line, char *buff, int fd)
 			i++;
 		if (buff[i] == '\n')
 		{
-			*leftover = ft_strsub_free(buff, i + 1, reader - (i + 1), NO_FREE);
-			*line = ft_strjoin_free(*line, ft_strsub_free(buff, 0, i, 0), FREE_ALL);
+			*leftover = ft_strfsub(buff, i + 1, reader - (i + 1), F_N);
+			*line = ft_strfjoin(*line, ft_strfsub(buff, 0, i, 0), F_A);
 			return (1);
 		}
 		else
-			*line = ft_strjoin_free(*line, buff, FREE_P1);
+			*line = ft_strfjoin(*line, buff, F_1);
 	}
 	if (*line[0] != 0)
 		return (1);

@@ -81,7 +81,7 @@ static void			ft_wide_char_to_str(t_info *i, t_rule *r)
 		{
 			len = ft_compute_wchar(((wchar_t*)i->arg)[k], i->arg_str + j, i);
 			if ((j += len) > r->prec && r->prec != -1)
-				i->arg_str = ft_strsub_free(i->arg_str, 0, j - len, F1);
+				i->arg_str = ft_strfsub(i->arg_str, 0, j - len, F1);
 		}
 	}
 }

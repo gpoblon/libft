@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/23 16:36:47 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 14:58:27 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/11/07 15:28:21 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_memdel(void **ap)
 {
-	CHECKPV(ap);
-	CHECKPV(*ap);
+	if (ap || *ap)
+		return ;
 	free(*ap);
 	*ap = NULL;
 }

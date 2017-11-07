@@ -6,12 +6,14 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/22 17:56:24 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/10/22 18:32:36 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/11/07 16:12:55 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LST_H
 # define LST_H
+
+# include <stdlib.h>
 
 typedef struct		s_list
 {
@@ -20,6 +22,8 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+void				ft_insert_lst(t_list **begin_list, t_list *elem,
+					int (*cmp)(void *, void *));
 void				ft_lst_swap(t_list *elem);
 void				ft_lstadd(t_list **alst, t_list *new);
 t_list				*ft_lstcpy(t_list *list);
@@ -32,5 +36,10 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstpushback(t_list **begin_list, t_list *elem);
 size_t				ft_lstsize(t_list *list);
+void				ft_lst_cfree(void *ptr, size_t size);
+
+t_list				*push(t_list **stack, int elem);
+int					pop(t_list **lst);
+int					top(t_list *top);
 
 #endif

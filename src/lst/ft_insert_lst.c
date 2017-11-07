@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sstrdup.c                                       :+:      :+:    :+:   */
+/*   ft_insert_lst.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 15:49:09 by gwojda            #+#    #+#             */
-/*   Updated: 2017/11/07 15:51:20 by gwojda           ###   ########.fr       */
+/*   Created: 2017/11/07 15:53:54 by gwojda            #+#    #+#             */
+/*   Updated: 2017/11/07 15:55:21 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lst.h"
 
-char	**ft_sstrdup(char **list)
+void		ft_insert_lst(t_list **begin_list, t_list *elem,
+			int (*cmp)(void *, void *))
 {
-	int		i;
-	int		size;
-	char	**cpy;
+	t_list *list;
 
-	i = 0;
-	size = 0;
-	while (list[size])
-		size++;
-	if (!(cpy = (char **)malloc(sizeof(char *) * (size + 1))))
-		return (NULL);
-	while (*list)
+	list = *begin_list;
+	if (!list || cmp(list->content, elem->content))
 	{
-		cpy[i++] = ft_strdup(*list);
-		list++;
+		list = elem;
+		list->next = *begin_list;
+		*begin_list = list;
 	}
-	cpy[i] = NULL;
-	return (cpy);
+	else
+		ft_insert_lst(&list->next, elem, cmp);
 }

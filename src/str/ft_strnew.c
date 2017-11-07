@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/29 16:49:43 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/01/18 14:48:45 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/11/07 15:33:21 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	*ft_strnew(size_t size)
 
 	i = 0;
 	str = NULL;
-	str = (char *)malloc(sizeof(char) * size + 1);
-	CHECKPVN(str);
+	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
+		return (NULL);
 	while (i < size + 1)
 	{
 		str[i] = '\0';

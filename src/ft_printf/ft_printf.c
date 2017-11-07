@@ -103,7 +103,7 @@ static void	ft_sub_print_formatted_str(t_info *info, t_rule *rule, va_list va)
 		else
 			info->lst = ft_newlink(&(info->bgn_lst), -1);
 		info->lst->check_null = info->null_char;
-		info->lst->s_part = ft_strsub_free(info->arg_str, 0,
+		info->lst->s_part = ft_strfsub(info->arg_str, 0,
 										ft_strlen(info->arg_str), F1);
 	}
 }
@@ -128,9 +128,9 @@ void		ft_print_formatted_str(const char *s, t_info *info, t_rule *rule,
 		}
 		info->printflen += info->i;
 		info->lst = ft_newlink(&(info->bgn_lst), info->i);
-		info->lst->s_part = ft_strsub_free(info->printstr, 0, info->i, XF);
+		info->lst->s_part = ft_strfsub(info->printstr, 0, info->i, XF);
 		ft_sub_print_formatted_str(info, rule, va);
-		info->printstr = ft_strsub_free(info->printstr, info->i,
+		info->printstr = ft_strfsub(info->printstr, info->i,
 									ft_strlen(info->printstr) - info->i, F1);
 		info->i = 0;
 		info->color = 0;

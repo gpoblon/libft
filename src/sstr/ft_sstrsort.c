@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sstrdup.c                                       :+:      :+:    :+:   */
+/*   ft_sstrsort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 15:49:09 by gwojda            #+#    #+#             */
-/*   Updated: 2017/11/07 15:51:20 by gwojda           ###   ########.fr       */
+/*   Created: 2017/11/07 15:49:44 by gwojda            #+#    #+#             */
+/*   Updated: 2017/11/07 15:49:46 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_sstrdup(char **list)
+void	ft_sstrsort(char **list, int (*cmp)())
 {
 	int		i;
-	int		size;
-	char	**cpy;
+	char	*tmp;
 
 	i = 0;
-	size = 0;
-	while (list[size])
-		size++;
-	if (!(cpy = (char **)malloc(sizeof(char *) * (size + 1))))
-		return (NULL);
-	while (*list)
+	while (list[i] && list[i + 1])
 	{
-		cpy[i++] = ft_strdup(*list);
-		list++;
+		if ((*cmp)(list[i], list[i + 1]) > 0)
+		{
+			tmp = list[i];
+			list[i] = list[i + 1];
+			list[i + 1] = tmp;
+			i = 0;
+		}
+		else
+			i++;
 	}
-	cpy[i] = NULL;
-	return (cpy);
 }

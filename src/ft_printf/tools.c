@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 12:28:32 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/12/20 17:42:18 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/11/07 16:22:55 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ static int	ft_check_null_char(char *s)
 	size_t	i;
 
 	i = 0;
-	CHECKPV0(s);
+	if (!s)
+		return (0);
 	while (s[i] != -1)
 	{
 		++i;
@@ -74,11 +75,10 @@ void		ft_printstr(t_info *i)
 	null_index_marker = -1;
 	while (i->lst)
 	{
-		if ((i->lst->next && i->lst->next->len == -1) || (i->lst->len == -1 &&
-																		--ret))
+		if ((i->lst->next && i->lst->next->len == -1) ||
+		(i->lst->len == -1 && --ret))
 			break ;
-		s = ft_strjoin_free(s,
-				ft_strsub_free(i->lst->s_part, 0, i->lst->len, F1), FX);
+		s = ft_strfjoin(s, ft_strfsub(i->lst->s_part, 0, i->lst->len, F1), FX);
 		s_len += i->lst->len;
 		if (i->lst->check_null == 1)
 			null_index_marker = ft_check_null_char(s);

@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 21:37:43 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/01/25 14:06:47 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/11/07 15:27:40 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*list;
 
-	list = (t_list *)malloc(sizeof(*list));
-	CHECKPVN(list);
+	if (!(list = (t_list *)malloc(sizeof(*list))))
+		return (NULL);
 	if (content)
 	{
 		list->content_size = content_size;
