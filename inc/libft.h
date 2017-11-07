@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 11:52:37 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/07 15:23:13 by gwojda           ###   ########.fr       */
+/*   Updated: 2017/11/07 19:15:05 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # include <stdio.h>
 
 # include "char.h"
+# include "err.h"
 # include "lst.h"
 # include "math.h"
 # include "mem.h"

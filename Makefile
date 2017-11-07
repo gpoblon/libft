@@ -125,12 +125,12 @@ all: $(OBJ_D) $(NAME)
 
 $(NAME): $(OBJ_P)
 			@ar rcs $(NAME) $(OBJ_P)
-			@printf "\r$(CYAN)$(PROJECT) | $(GREEN)💯 ️ done creating object files$(WHITE)$(OVERRIDE)\n"
+			@printf "$(OVERRIDE)$(CYAN)$(PROJECT) | $(GREEN)⌛  source to object files...\t💯 ️ done creating object files$(WHITE)\n"
 			@printf "$(CYAN)$(PROJECT) | $(GREEN)🆗  static lib created from object files$(WHITE)\n"
 
 $(OBJ_D)%.o: $(SRC_D)%.c
 			@$(CC) -c $< -o $@ $(CFLAGS) -I $(INC_D)
-			@printf "\r$(CYAN)$(PROJECT) | $(GREEN)⌛  source to object files... $(YELLOW)%*s$(WHITE)$(OVERRIDE)" $(CURSOR_R) "$<"
+			@printf "$(OVERRIDE)$(CYAN)$(PROJECT) | $(GREEN)⌛  source to object files... $(YELLOW)%*s$(WHITE)" $(CURSOR_R) "$<"
 
 $(OBJ_D):
 	@mkdir -p $(OBJ_D)
@@ -143,7 +143,7 @@ CYAN		=	`echo "\033[36m"`
 GREEN		=	`echo "\033[32m"`
 RED			=	`echo "\033[31m"`
 YELLOW		=	`echo "\033[33m"`
-OVERRIDE	=	`echo "\033[K"`
+OVERRIDE	=	`echo "\r\033[K"`
 CURSOR_R	=	`echo "$$(tput cols) - 37"|bc`
 PROJECT		=	"LIBFT"
 
