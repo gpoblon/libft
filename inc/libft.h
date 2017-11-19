@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 11:52:37 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/07 19:15:05 by gpoblon          ###   ########.fr       */
+/*   Updated: 2017/11/07 18:57:38 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 # include "printing.h"
 # include "sstr.h"
 # include "str.h"
+
 # include "ft_printf.h"
 
 # define TRUE 1
@@ -40,10 +41,10 @@
 
 # define BUFF_SIZE 32
 
-# define F_N		(1 << 0)
-# define F_1		(1 << 1)
-# define F_2		(1 << 2)
-# define F_A		(1 << 3)
+# define F_N		    (1 << 0)
+# define F_1		    (1 << 1)
+# define F_2		    (1 << 2)
+# define F_A		    (1 << 3)
 
 # define MSK0			(1 << 0)
 # define MSK1			(1 << 1)

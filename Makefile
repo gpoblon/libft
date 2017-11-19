@@ -68,6 +68,7 @@ sstr/ft_sstrcpy.c\
 sstr/ft_sstrdel.c\
 sstr/ft_sstrdup.c\
 sstr/ft_sstrfree.c\
+sstr/ft_sstrlen.c\
 sstr/ft_sstrmerge.c\
 sstr/ft_sstrprint.c\
 sstr/ft_sstrprint_fd.c\
