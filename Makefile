@@ -122,9 +122,9 @@ OBJ_P		=	$(addprefix $(OBJ_D), $(SRC:.c=.o))
 CC			=	gcc -g
 CFLAGS		=	-Wall -Werror -Wextra
 
-all: $(OBJ_D) $(NAME)
+all: $(NAME)
 
-$(NAME): $(OBJ_P)
+$(NAME): $(OBJ_D) $(OBJ_P)
 			@ar rcs $(NAME) $(OBJ_P)
 			@printf "$(OVERRIDE)$(CYAN)$(PROJECT) | $(GREEN)⌛  source to object files...\t💯 ️ done creating object files$(WHITE)\n"
 			@printf "$(CYAN)$(PROJECT) | $(GREEN)🆗  static lib created from object files$(WHITE)\n"
