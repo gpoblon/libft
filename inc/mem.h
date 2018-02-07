@@ -6,12 +6,15 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/22 17:53:58 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/07 15:15:59 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/02/07 15:37:30 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MEM_H
 # define MEM_H
+
+# include <unistd.h>
+# include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n);
 void	ft_free_ptr(void **ptr);

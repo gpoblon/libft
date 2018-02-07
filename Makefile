@@ -13,6 +13,15 @@ char/ft_isupper.c\
 char/ft_iswhitespace.c\
 char/ft_tolower.c\
 char/ft_toupper.c\
+circular_buffer/circular_buffer_append.c \
+circular_buffer/circular_buffer_clear.c \
+circular_buffer/circular_buffer_fclear.c \
+circular_buffer/circular_buffer_read.c \
+circular_buffer/circular_buffer_set_delim.c \
+circular_buffer/circular_buffer_write.c \
+circular_buffer/delete_circular_buffer.c \
+circular_buffer/init_circular_buffer.c \
+circular_buffer/search_delim.c \
 err/ft_exit_fd.c\
 ft_gnl.c\
 ft_printf/apply_conv.c\
@@ -51,6 +60,8 @@ mem/ft_memcpy.c\
 mem/ft_memdel.c\
 mem/ft_memmove.c\
 mem/ft_memset.c\
+net/create_server.c\
+net/create_client.c\
 printing/ft_putchar.c\
 printing/ft_putchar_fd.c\
 printing/ft_putendl.c\
@@ -119,8 +130,8 @@ SRC_D		=	src/
 OBJ_D		=	obj/
 OBJ_P		=	$(addprefix $(OBJ_D), $(SRC:.c=.o))
 
-CC			=	gcc -g
-CFLAGS		=	-Wall -Werror -Wextra
+CC			=	clang
+CFLAGS		=	-Wall -Werror -Wextra -g
 
 all: $(NAME)
 
