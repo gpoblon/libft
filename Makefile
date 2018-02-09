@@ -19,6 +19,7 @@ circular_buffer/circular_buffer_fclear.c \
 circular_buffer/circular_buffer_read.c \
 circular_buffer/circular_buffer_set_delim.c \
 circular_buffer/circular_buffer_write.c \
+circular_buffer/circular_buffer_len.c \
 circular_buffer/delete_circular_buffer.c \
 circular_buffer/init_circular_buffer.c \
 circular_buffer/search_delim.c \
