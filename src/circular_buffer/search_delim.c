@@ -9,7 +9,7 @@ void circular_buffer_search_delim(t_cbuffer *cbuf)
 		return ;
 	i = 0;
 	cbuf->state = DELIM;
-	cbuf->dpos = 0;
+	cbuf->dpos = cbuf->start;
 	if (cbuf->start < cbuf->ind)
 	{
 		while (cbuf->start + i < cbuf->ind) {

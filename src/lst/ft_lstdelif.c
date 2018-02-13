@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_cfree.c                                     :+:      :+:    :+:   */
+/*   ft_lstdelif.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 16:12:45 by gwojda            #+#    #+#             */
-/*   Updated: 2017/11/07 16:12:46 by gwojda           ###   ########.fr       */
+/*   Created: 2018/02/13 10:51:15 by gwojda            #+#    #+#             */
+/*   Updated: 2018/02/13 10:51:42 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lst_cfree(void *ptr, size_t size)
+void	ft_lst_delif(t_list **alst,	void *data_ref,
+		int (*cmp)(), void (*del)(void *, size_t))
 {
-	(void)size;
-	if (ptr)
-		free(ptr);
+	t_list	*tmp;
+	t_list	**indirect;
+
+	indirect = alst;
+	while (*indirect)
+	{
+		if ((*cmp)((*indirect)->content, data_ref) == 0)
+		{
+			tmp = (*indirect);
+			(*indirect) = (*indirect)->next;
+			ft_lstdelone(&tmp, del);
+		}
+		else
+			indirect = &(*indirect)->next;
+	}
 }

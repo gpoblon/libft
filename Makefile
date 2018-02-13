@@ -23,6 +23,7 @@ circular_buffer/circular_buffer_len.c \
 circular_buffer/delete_circular_buffer.c \
 circular_buffer/init_circular_buffer.c \
 circular_buffer/search_delim.c \
+err/ft_usage.c\
 err/ft_exit_fd.c\
 ft_gnl.c\
 ft_printf/apply_conv.c\
@@ -38,6 +39,7 @@ lst/ft_lst_swap.c\
 lst/ft_lstadd.c\
 lst/ft_lstcpy.c\
 lst/ft_lstdel.c\
+lst/ft_lstdelif.c\
 lst/ft_lstdel_content.c\
 lst/ft_lstdelone.c\
 lst/ft_lstdup.c\
@@ -106,6 +108,7 @@ str/ft_strdup.c\
 str/ft_strequ.c\
 str/ft_striter.c\
 str/ft_striteri.c\
+str/ft_strsplit_whitespaces.c \
 str/ft_strjoin.c\
 str/ft_strfjoin.c\
 str/ft_strlcat.c\
