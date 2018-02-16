@@ -8,7 +8,7 @@ int	circular_buffer_write(t_cbuffer *cbuf, char *str)
 	if (!cbuf || !str)
 		return -1;
 	olen = cbuf->size - cbuf->ind;
-	slen = ft_strlen(str);
+	slen = (ft_strlen(str) > cbuf->size) ? cbuf->size : ft_strlen(str);
 	if (slen > olen) {
 		ft_memcpy(cbuf->buffer + cbuf->ind, str, olen);
 		ft_memcpy(cbuf->buffer, str + olen, slen - olen);
