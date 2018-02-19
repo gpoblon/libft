@@ -1,5 +1,20 @@
 NAME		=	libft.a
 
+
+INC			=	\
+inc/char.h\
+inc/circular_buffer.h\
+inc/err.h\
+inc/ft_printf.h\
+inc/libft.h\
+inc/lst.h\
+inc/math.h\
+inc/mem.h\
+inc/net.h\
+inc/printing.h\
+inc/sstr.h\
+inc/str.h
+
 SRC			=	\
 char/ft_isalnum.c\
 char/ft_isalpha.c\
@@ -144,7 +159,7 @@ $(NAME): $(OBJ_D) $(OBJ_P)
 			@printf "$(OVERRIDE)$(CYAN)$(PROJECT) | $(GREEN)⌛  source to object files...\t💯 ️ done creating object files$(WHITE)\n"
 			@printf "$(CYAN)$(PROJECT) | $(GREEN)🆗  static lib created from object files$(WHITE)\n"
 
-$(OBJ_D)%.o: $(SRC_D)%.c
+$(OBJ_D)%.o: $(SRC_D)%.c $(INC)
 			@$(CC) -c $< -o $@ $(CFLAGS) -I $(INC_D)
 			@printf "$(OVERRIDE)$(CYAN)$(PROJECT) | $(GREEN)⌛  source to object files... $(YELLOW)%*s$(WHITE)" $(CURSOR_R) "$<"
 
@@ -160,7 +175,7 @@ GREEN		=	`echo "\033[32m"`
 RED			=	`echo "\033[31m"`
 YELLOW		=	`echo "\033[33m"`
 OVERRIDE	=	`echo "\r\033[K"`
-CURSOR_R	=	`echo "$$(tput cols) - 37"|bc`
+CURSOR_R	=	`echo "$$(tput cols) - 38"|bc`
 PROJECT		=	"LIBFT"
 
 clean:
