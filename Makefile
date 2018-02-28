@@ -91,6 +91,7 @@ printing/ft_putsstr.c\
 printing/ft_putstr.c\
 printing/ft_putstr_fd.c\
 sstr/ft_sstradd.c\
+sstr/ft_sstradd_front.c\
 sstr/ft_sstrcat.c\
 sstr/ft_sstrchr.c\
 sstr/ft_sstrcpy.c\

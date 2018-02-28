@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/22 18:00:56 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/18 14:55:54 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/02/28 13:58:18 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ void	ft_sstrprint_fd(int fd, char **list, char sep);
 void	ft_sstrprint(char **list, char sep);
 void	ft_sstrsort(char **list, int (*cmp)());
 char	*ft_sstrstr(char **sstr, char *find);
+char	**ft_sstradd_front(char **sstr, char *new);
 
 #endif
