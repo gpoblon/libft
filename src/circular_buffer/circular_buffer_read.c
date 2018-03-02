@@ -7,9 +7,9 @@ int	circular_buffer_read(t_cbuffer *cbuf, char **output)
 	size_t len;
 
 	if (!cbuf)
-		return -1;
+		return (-1);
 	if (cbuf->state == NO_DELIM)
-		return 0;
+		return (0);
 	len = (cbuf->dpos < cbuf->start)
 		? cbuf->dpos + (cbuf->size - cbuf->start)
 		: cbuf->dpos - cbuf->start;
@@ -22,5 +22,5 @@ int	circular_buffer_read(t_cbuffer *cbuf, char **output)
 	(*output)[len] = '\0';
 	cbuf->start = (cbuf->dpos < cbuf->size) ? cbuf->dpos + 1 : 0;
 	circular_buffer_search_delim(cbuf);
-	return 0;
+	return (0);
 }

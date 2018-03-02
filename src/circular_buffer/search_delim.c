@@ -1,4 +1,5 @@
 #include "circular_buffer.h"
+#include "libft.h"
 
 // a rendre plus elegant : MAIS JAI LA FLEMME AJD
 void circular_buffer_search_delim(t_cbuffer *cbuf)
@@ -12,8 +13,10 @@ void circular_buffer_search_delim(t_cbuffer *cbuf)
 	cbuf->dpos = cbuf->start;
 	if (cbuf->start < cbuf->ind)
 	{
-		while (cbuf->start + i < cbuf->ind) {
-			if (cbuf->buffer[cbuf->start + i] == cbuf->delim) {
+		while (cbuf->start + i < cbuf->ind)
+		{
+			if (cbuf->buffer[cbuf->start + i] == cbuf->delim)
+			{
 				cbuf->dpos = cbuf->start + i;
 				return ;
 			}
@@ -22,16 +25,20 @@ void circular_buffer_search_delim(t_cbuffer *cbuf)
 	}
 	else if (cbuf->start > cbuf->ind)
 	{
-		while (cbuf->start + i < cbuf->size) {
-			if (cbuf->buffer[cbuf->start + i] == cbuf->delim) {
+		while (cbuf->start + i < cbuf->size)
+		{
+			if (cbuf->buffer[cbuf->start + i] == cbuf->delim)
+			{
 				cbuf->dpos = cbuf->start + i;
 				return ;
 			}
 			++i;
 		}
 		i = 0;
-		while (i < cbuf->ind) {
-			if (cbuf->buffer[i] == cbuf->delim) {
+		while (i < cbuf->ind)
+		{
+			if (cbuf->buffer[i] == cbuf->delim)
+			{
 				cbuf->dpos = i;
 				return ;
 			}
