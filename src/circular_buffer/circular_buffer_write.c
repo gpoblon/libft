@@ -1,13 +1,12 @@
 #include "circular_buffer.h"
-#include "libft.h"
 
-int	circular_buffer_write(t_cbuffer *cbuf, char *str)
+void	circular_buffer_write(t_cbuffer *cbuf, char *str)
 {
 	size_t olen; //len before overflowing the circular buffer
 	size_t slen; //str len
 
 	if (!cbuf || !str)
-		return (-1);
+		return ;
 	olen = cbuf->size - cbuf->ind;
 	slen = (ft_strlen(str) > cbuf->size) ? cbuf->size : ft_strlen(str);
 	if (slen > olen)
@@ -23,5 +22,4 @@ int	circular_buffer_write(t_cbuffer *cbuf, char *str)
 	}
 	if (cbuf->state == NO_DELIM)
 		circular_buffer_search_delim(cbuf);
-	return (0);
 }

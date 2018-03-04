@@ -39,8 +39,8 @@ void init_circular_buffer(t_cbuffer *cbuf, size_t size);
 t_cbuffer *circular_buffer_append(size_t size);
 void delete_circular_buffer(t_cbuffer **cbuf);
 
-int	circular_buffer_write(t_cbuffer *cbuf, char *str);
-int	circular_buffer_read(t_cbuffer *cbuf, char **output);
+void	circular_buffer_write(t_cbuffer *cbuf, char *str);
+void	circular_buffer_read(t_cbuffer *cbuf, char **output);
 char	*get_circular_buffer(t_cbuffer *cbuf);
 void circular_buffer_clear(t_cbuffer *cbuf);
 void circular_buffer_fclear(t_cbuffer *cbuf);
