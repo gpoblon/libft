@@ -9,6 +9,6 @@
 # include <arpa/inet.h>
 
 int		create_server(int port, int backlog, char *protoname);
-int		create_client(char *addr, int port, char *protoname);
+int		create_tcpclient(char *host, char *port);
 
 #endif
