@@ -3,7 +3,7 @@ NAME		=	libft.a
 
 INC			=	\
 inc/char.h\
-inc/circular_buffer.h\
+inc/cb.h\
 inc/err.h\
 inc/ft_printf.h\
 inc/libft.h\
@@ -28,16 +28,16 @@ char/ft_isupper.c\
 char/ft_iswhitespace.c\
 char/ft_tolower.c\
 char/ft_toupper.c\
-circular_buffer/circular_buffer_append.c \
-circular_buffer/circular_buffer_clear.c \
-circular_buffer/circular_buffer_fclear.c \
-circular_buffer/circular_buffer_read.c \
-circular_buffer/circular_buffer_set_delim.c \
-circular_buffer/circular_buffer_write.c \
-circular_buffer/circular_buffer_len.c \
-circular_buffer/delete_circular_buffer.c \
-circular_buffer/init_circular_buffer.c \
-circular_buffer/search_delim.c \
+circular_buffer/cb_append.c \
+circular_buffer/cb_clear.c \
+circular_buffer/cb_fclear.c \
+circular_buffer/cb_read.c \
+circular_buffer/cb_set_delim.c \
+circular_buffer/cb_write.c \
+circular_buffer/cb_len.c \
+circular_buffer/delete_cb.c \
+circular_buffer/init_cb.c \
+circular_buffer/cb_search_delim.c \
 err/ft_usage.c\
 err/ft_exit_fd.c\
 ft_gnl.c\

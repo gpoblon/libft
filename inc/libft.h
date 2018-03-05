@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 11:52:37 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/02/17 19:19:48 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/03/05 14:35:46 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include <stdio.h>
 
 # include "char.h"
-# include "circular_buffer.h"
+# include "cb.h"
 # include "err.h"
 # include "lst.h"
 # include "net.h"

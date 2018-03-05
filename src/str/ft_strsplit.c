@@ -6,12 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/01 18:01:42 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/02/13 16:56:26 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/03/05 14:33:48 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 static char	*ft_strdupi(char const *s, char c)
 {

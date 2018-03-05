@@ -1,4 +1,15 @@
-#include "net.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   create_client.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/03/05 14:27:55 by gwojda            #+#    #+#             */
+/*   Updated: 2018/03/05 14:44:29 by gwojda           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int				create_tcpclient(char *host, char *port)
@@ -19,10 +30,10 @@ int				create_tcpclient(char *host, char *port)
 	{
 		if ((sock = socket(a->ai_family, a->ai_socktype, a->ai_protocol)) < 0)
 			return (-1);
-		if (connect(sock, a->ai_addr, a->ai_addrlen) != 0)
-			close(sock);
-		else
+		if (connect(sock, a->ai_addr, a->ai_addrlen) == 0)
 			break ;
+		close(sock);
+		sock = -1;
 		a = a->ai_next;
 	}
 	freeaddrinfo(tmp);
