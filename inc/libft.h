@@ -35,6 +35,7 @@
 # include "printing.h"
 # include "sstr.h"
 # include "str.h"
+# include "get_next_line.h"
 
 # include "ft_printf.h"
 
@@ -63,7 +64,5 @@
 typedef int				t_bmask;
 typedef int				t_bool;
 typedef unsigned char	t_uchar;
-
-int						get_next_line(const int fd, char **line);
 
 #endif
