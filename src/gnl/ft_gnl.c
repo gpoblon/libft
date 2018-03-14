@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 10:40:44 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/07 15:25:24 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/03/14 11:08:37 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int			ft_check_buff(char **line, char **content)
 	return (0);
 }
 
-static int	ft_reader_2(char **line, t_lst *lst, char *buff)
+static int	ft_reader_2(char **line, t_gnllst *lst, char *buff)
 {
 	char	*tmp;
 	char	*tmp2;
@@ -73,12 +73,12 @@ static int	ft_reader_2(char **line, t_lst *lst, char *buff)
 	return (0);
 }
 
-int			ft_reader(char **line, t_lst *lst)
+int			ft_reader(char **line, t_gnllst *lst)
 {
 	int		ret;
-	char	buff[BUFF_SIZE + 1];
+	char	buff[GNL_BUFF_SIZE + 1];
 
-	while ((ret = read(lst->fd, buff, BUFF_SIZE)))
+	while ((ret = read(lst->fd, buff, GNL_BUFF_SIZE)))
 	{
 		if (ret == -1)
 			return (ret);
@@ -94,8 +94,8 @@ int			ft_reader(char **line, t_lst *lst)
 
 int			get_next_line(int const fd, char **line)
 {
-	static t_lst	*begin_list = NULL;
-	t_lst			*lst;
+	static t_gnllst	*begin_list = NULL;
+	t_gnllst			*lst;
 	char			tmp;
 
 	if (!line || read(fd, &tmp, 0) == -1 || fd < 0)

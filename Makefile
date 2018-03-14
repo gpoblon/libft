@@ -41,7 +41,8 @@ circular_buffer/init_cb.c \
 circular_buffer/cb_search_delim.c \
 err/ft_usage.c\
 err/ft_exit_fd.c\
-ft_gnl.c\
+gnl/ft_gnl.c\
+gnl/gnl2.c\
 ft_printf/apply_conv.c\
 ft_printf/apply_options.c\
 ft_printf/bonus_color_base.c\
