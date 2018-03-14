@@ -13,7 +13,8 @@ inc/mem.h\
 inc/net.h\
 inc/printing.h\
 inc/sstr.h\
-inc/str.h
+inc/str.h\
+inc/get_next_line.h
 
 SRC			=	\
 char/ft_isalnum.c\
