@@ -9,6 +9,7 @@ inc/ft_printf.h\
 inc/libft.h\
 inc/lst.h\
 inc/math.h\
+inc/matrix.h\
 inc/mem.h\
 inc/net.h\
 inc/printing.h\
@@ -69,6 +70,9 @@ lst/pop.c\
 lst/push.c\
 lst/top.c\
 math/ft_pow.c\
+matrix/identity_matrix.c\
+matrix/transform_vector.c\
+matrix/translate_vector.c\
 mem/ft_bzero.c\
 mem/ft_free_ptr.c\
 mem/ft_free_sstr.c\
