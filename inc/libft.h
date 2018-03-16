@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/23 11:52:37 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/03/05 14:35:46 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/03/16 17:46:32 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@
 # include "err.h"
 # include "lst.h"
 # include "net.h"
-# include "math.h"
+# include "ftmath.h"
+# include "matrix.h"
 # include "mem.h"
 # include "printing.h"
 # include "sstr.h"
