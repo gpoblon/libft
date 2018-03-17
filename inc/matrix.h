@@ -6,7 +6,7 @@
 /*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 15:36:03 by gwojda            #+#    #+#             */
-/*   Updated: 2018/03/16 18:04:26 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/03/16 12:37:26 by mlaroche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,9 +119,9 @@ float	dot_vector3f(fvect3 a, fvect3 b);
 ** identity matrix init
 */
 
-void	indentity_matrix4f(fmat3 matrix);
-void	indentity_matrix3f(fmat3 matrix);
-void	indentity_matrix2f(fmat2 matrix);
+void	identity_matrix4f(fmat3 matrix);
+void	identity_matrix3f(fmat3 matrix);
+void	identity_matrix2f(fmat2 matrix);
 
 /*
 ** translate matrix
