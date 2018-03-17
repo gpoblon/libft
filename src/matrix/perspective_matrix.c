@@ -18,10 +18,10 @@ void	perspective_matrix4f(fmat4 mat, t_perspective pers)
 
 	init_matrix4f(mat);
 
-    tan_half_angle = tan(pers.angle / 2);
-    mat[0] =  (1 / (pers.ratio * tan_half_angle));
-    mat[5] = (1 / (tan_half_angle));
+    tan_half_angle = tan(pers.angle / 2.0f);
+    mat[0] =  (1.0f / (pers.ratio * tan_half_angle));
+    mat[5] = (1.0f / (tan_half_angle));
     mat[10] = (-(pers.far + pers.near) / (pers.far - pers.near));
-    mat[14] = -1;
-    mat[11] = (-(2 * pers.far * pers.near) / (pers.far - pers.near));
+    mat[14] = -1.0f;
+    mat[11] = (-(2.0f * pers.far * pers.near) / (pers.far - pers.near));
 }
