@@ -6,7 +6,7 @@
 /*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/16 14:04:39 by gwojda            #+#    #+#             */
-/*   Updated: 2018/03/16 15:32:54 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/03/19 11:10:13 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 /*
 ** fking norme
+*/
+
+/*
+** xaxis.x       xaxis.y         xaxis.z      -dot(xaxis, eye)
+** yaxis.x       yaxis.y         yaxis.z      -dot(yaxis, eye)
+** zaxis.x       zaxis.y         zaxis.z       -dot(zaxis, eye)
+** 0                 0                  0              1
 */
 
 static void	set_mat(fmat4 mat, fvect3 x, fvect3 y, fvect3 z)
@@ -35,7 +42,7 @@ static void	set_mat(fmat4 mat, fvect3 x, fvect3 y, fvect3 z)
 
 void	lookat_matrix(fmat4 mat, fvect3 eye, fvect3 center, fvect3 up)
 {
-    fvect3	x;
+	fvect3	x;
 	fvect3	y;
 	fvect3	z;
 

@@ -71,18 +71,22 @@ lst/push.c\
 lst/top.c\
 math/deg_to_rad.c\
 math/ft_pow.c\
+matrix/cpy_matrix.c\
 matrix/cross_vector.c\
 matrix/dot_vector.c\
 matrix/identity_matrix.c\
 matrix/init_matrix.c\
 matrix/lookat_matrix.c\
+matrix/mult_matrix.c\
 matrix/normalize_vector.c\
 matrix/norme_vector.c\
 matrix/perspective_matrix.c\
+matrix/rotation_matrix.c\
 matrix/sub_vector.c\
 matrix/sum_vector.c\
 matrix/transform_vector.c\
 matrix/translate_matrix.c\
+matrix/vector_mult.c\
 matrix/vector_cpy.c\
 mem/ft_bzero.c\
 mem/ft_free_ptr.c\
@@ -169,6 +173,7 @@ OBJ_P		=	$(addprefix $(OBJ_D), $(SRC:.c=.o))
 
 CC			=	clang
 CFLAGS		=	-Wall -Werror -Wextra -g
+
 
 all: $(NAME)
 
