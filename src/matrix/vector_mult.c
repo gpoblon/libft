@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dot_vector.c                                       :+:      :+:    :+:   */
+/*   vector_mult.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/16 14:58:31 by gwojda            #+#    #+#             */
-/*   Updated: 2018/03/18 19:13:23 by gwojda           ###   ########.fr       */
+/*   Created: 2018/03/19 13:29:38 by gwojda            #+#    #+#             */
+/*   Updated: 2018/03/19 13:30:45 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrix.h"
 
-float	dot_vector3f(fvect3 a, fvect3 b)
+void	vector_mult4ff(fvect4 vect, float mult)
 {
-	fvect3	tmp1;
-	float	t1;
-	float	t2;
-	float	t3;
+	vect[0] = vect[0] * mult;
+	vect[1] = vect[1] * mult;
+	vect[2] = vect[2] * mult;
+	vect[3] = vect[3] * mult;
+}
 
-	cpy_vector3f(tmp1, a);
-	sum_vector3f(tmp1, b);
-	t1 = norme_vector3f(tmp1) * norme_vector3f(tmp1);
-	t2 = norme_vector3f(a) * norme_vector3f(a);
-	t3 = norme_vector3f(b) * norme_vector3f(b);
-	return (0.5 * (t1 - t2 - t3));
+void	vector_mult3ff(fvect4 vect, float mult)
+{
+	vect[0] = vect[0] * mult;
+	vect[1] = vect[1] * mult;
+	vect[2] = vect[2] * mult;
+}
+
+void	vector_mult2ff(fvect4 vect, float mult)
+{
+	vect[0] = vect[0] * mult;
+	vect[1] = vect[1] * mult;
 }

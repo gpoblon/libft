@@ -6,7 +6,7 @@
 /*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 15:36:03 by gwojda            #+#    #+#             */
-/*   Updated: 2018/03/16 12:37:26 by mlaroche         ###   ########.fr       */
+/*   Updated: 2018/03/19 13:31:08 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,9 @@ void	cpy_vector2f(fvect2 a, fvect2 b);
 void	cpy_vector3f(fvect3 a, fvect3 b);
 void	cpy_vector4f(fvect4 a, fvect4 b);
 
+void	vector_mult4ff(fvect4 vect, float mult);
+void	vector_mult3ff(fvect4 vect, float mult);
+void	vector_mult2ff(fvect4 vect, float mult);
 
 /*
 ** norme vector
@@ -113,7 +116,12 @@ float	dot_vector3f(fvect3 a, fvect3 b);
 ** basic operation
 */
 
+void	mult_matrix4f(fmat4 m, fmat4 n);
+void	mult_matrix3f(fmat3 mat1, fmat3 mat2);
 
+void	cpy_matrix4f(fmat4 mat1, fmat4 mat2);
+void	cpy_matrix3f(fmat3 mat1, fmat3 mat2);
+void	cpy_matrix2f(fmat2 mat1, fmat2 mat2);
 
 /*
 ** identity matrix init
@@ -149,5 +157,13 @@ void	perspective_matrix4f(fmat4 mat, t_perspective pers);
 */
 
 void	lookat_matrix(fmat4 mat, fvect3 eye, fvect3 center, fvect3 up);
+
+/*
+** rotate matrix
+*/
+
+void	rotatex_mat4f(fmat4 mat, float angle);
+void	rotatey_mat4f(fmat4 mat, float angle);
+void	rotatez_mat4f(fmat4 mat, float angle);
 
 #endif
