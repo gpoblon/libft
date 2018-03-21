@@ -145,6 +145,7 @@ str/ft_strdup.c\
 str/ft_strequ.c\
 str/ft_striter.c\
 str/ft_striteri.c\
+str/ft_strsplit_light.c \
 str/ft_strsplit_whitespaces.c \
 str/ft_strjoin.c\
 str/ft_strfjoin.c\

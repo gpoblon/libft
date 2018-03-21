@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/22 17:55:32 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/02/14 15:33:17 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/03/21 17:39:54 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ char		**ft_strsplit(char const *s, char c);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strtrim(char const *s);
 char		**ft_split_whitespaces(char const *s);
+char		**ft_strsplit_light(char const *s, char c);
 
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
 char		*ft_strncat(char *dst, const char *src, size_t n);
