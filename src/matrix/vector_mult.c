@@ -12,7 +12,7 @@
 
 #include "matrix.h"
 
-void	vector_mult4ff(fvect4 vect, float mult)
+void	vector_mult4ff(t_fvect4 vect, float mult)
 {
 	vect[0] = vect[0] * mult;
 	vect[1] = vect[1] * mult;
@@ -20,14 +20,14 @@ void	vector_mult4ff(fvect4 vect, float mult)
 	vect[3] = vect[3] * mult;
 }
 
-void	vector_mult3ff(fvect4 vect, float mult)
+void	vector_mult3ff(t_fvect4 vect, float mult)
 {
 	vect[0] = vect[0] * mult;
 	vect[1] = vect[1] * mult;
 	vect[2] = vect[2] * mult;
 }
 
-void	vector_mult2ff(fvect4 vect, float mult)
+void	vector_mult2ff(t_fvect4 vect, float mult)
 {
 	vect[0] = vect[0] * mult;
 	vect[1] = vect[1] * mult;

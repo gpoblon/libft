@@ -23,7 +23,7 @@
 ** 0                 0                  0              1
 */
 
-static void	set_mat(fmat4 mat, fvect3 x, fvect3 y, fvect3 z)
+static void	set_mat(t_fmat4 mat, t_fvect3 x, t_fvect3 y, t_fvect3 z)
 {
     mat[0] = x[0];
     mat[1] = x[1];
@@ -40,11 +40,11 @@ static void	set_mat(fmat4 mat, fvect3 x, fvect3 y, fvect3 z)
     mat[15] = 1.0f;
 }
 
-void	lookat_matrix(fmat4 mat, fvect3 eye, fvect3 center, fvect3 up)
+void	lookat_matrix(t_fmat4 mat, t_fvect3 eye, t_fvect3 center, t_fvect3 up)
 {
-	fvect3	x;
-	fvect3	y;
-	fvect3	z;
+	t_fvect3	x;
+	t_fvect3	y;
+	t_fvect3	z;
 
 	cpy_vector3f(z, eye);
 	sub_vector3f(z, center);

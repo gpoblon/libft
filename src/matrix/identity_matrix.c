@@ -22,7 +22,7 @@
 ** \------------/
 */
 
-void	identity_matrix4f(fmat4 matrix)
+void	identity_matrix4f(t_fmat4 matrix)
 {
 	matrix[0] = 1.0;
 	matrix[1] = 0.0;
@@ -52,7 +52,7 @@ void	identity_matrix4f(fmat4 matrix)
 */
 
 
-void	identity_matrix3f(fmat3 matrix)
+void	identity_matrix3f(t_fmat3 matrix)
 {
 	matrix[0] = 1.0;
 	matrix[1] = 0.0;
@@ -74,7 +74,7 @@ void	identity_matrix3f(fmat3 matrix)
 */
 
 
-void	identity_matrix2f(fmat2 matrix)
+void	identity_matrix2f(t_fmat2 matrix)
 {
 	matrix[0] = 1.0;
 	matrix[1] = 0.0;

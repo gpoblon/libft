@@ -12,9 +12,9 @@
 
 #include "matrix.h"
 
-float	dot_vector3f(fvect3 a, fvect3 b)
+float	dot_vector3f(t_fvect3 a, t_fvect3 b)
 {
-	fvect3	tmp1;
+	t_fvect3	tmp1;
 	float	t1;
 	float	t2;
 	float	t3;

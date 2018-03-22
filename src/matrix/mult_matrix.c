@@ -30,9 +30,9 @@
 */
 
 
-void	mult_matrix4f(fmat4 m, fmat4 n)
+void	mult_matrix4f(t_fmat4 m, t_fmat4 n)
 {
-	fmat4	t;
+	t_fmat4	t;
 
 	cpy_matrix4f(t, m);
 	m[0] = (t[0] * n[0]) + (t[1] * n[4]) + (t[2] * n[8]) + (t[3] * n[12]);
@@ -68,9 +68,9 @@ void	mult_matrix4f(fmat4 m, fmat4 n)
 ** \---------/
 */
 
-void	mult_matrix3f(fmat3 mat1, fmat3 mat2)
+void	mult_matrix3f(t_fmat3 mat1, t_fmat3 mat2)
 {
-	fmat3	tmp;
+	t_fmat3	tmp;
 
 	cpy_matrix3f(tmp, mat1);
 	mat1[0] = (tmp[0] * mat2[0]) + (tmp[1] * mat2[3]) + (tmp[2] * mat2[6]);

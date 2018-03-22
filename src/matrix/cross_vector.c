@@ -28,9 +28,9 @@
 */
 
 
-void	cross_vector3f(fvect3 a, fvect3 b)
+void	cross_vector3f(t_fvect3 a, t_fvect3 b)
 {
-	fvect3	tmp;
+	t_fvect3	tmp;
 
 	cpy_vector3f(tmp, a);
 	tmp[0] = (a[1] * b[2]) - (a[2] * b[1]);

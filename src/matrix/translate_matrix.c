@@ -22,7 +22,7 @@
 ** \------------/
 */
 
-void	translate_vector4f(fmat4 matrix, fvect3 vect)
+void	translate_vector4f(t_fmat4 matrix, t_fvect3 vect)
 {
 	matrix[0] = 1;
 	matrix[1] = 0;
@@ -51,7 +51,7 @@ void	translate_vector4f(fmat4 matrix, fvect3 vect)
 ** \---------/
 */
 
-void	translate_vector3f(fmat3 matrix, fvect3 vect)
+void	translate_vector3f(t_fmat3 matrix, t_fvect3 vect)
 {
 	matrix[0] = 1;
 	matrix[1] = 0;

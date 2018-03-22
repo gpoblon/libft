@@ -22,7 +22,7 @@
 ** \----------------/
 */
 
-void	rotatex_mat4f(fmat4 mat, float angle)
+void	rotatex_mat4f(t_fmat4 mat, float angle)
 {
 	mat[0] = 1.0;
 	mat[1] = 0.0;
@@ -52,7 +52,7 @@ void	rotatex_mat4f(fmat4 mat, float angle)
 ** \---------------/
 */
 
-void	rotatey_mat4f(fmat4 mat, float angle)
+void	rotatey_mat4f(t_fmat4 mat, float angle)
 {
 	mat[0] = cos(angle);
 	mat[1] = 0.0;
@@ -82,7 +82,7 @@ void	rotatey_mat4f(fmat4 mat, float angle)
 ** \-----------------/
 */
 
-void	rotatez_mat4f(fmat4 mat, float angle)
+void	rotatez_mat4f(t_fmat4 mat, float angle)
 {
 	mat[0] = cos(angle);
 	mat[1] = -sin(angle);

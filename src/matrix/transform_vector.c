@@ -22,7 +22,7 @@
 ** \------------/   \-/   \-------------------/
 */
 
-void	transform_vector4f(fmat4 matrix, fvect4 vect)
+void	transform_vector4f(t_fmat4 matrix, t_fvect4 vect)
 {
 	vect[0] = vect[0] * matrix[0]
 			+ vect[1] * matrix[1]
@@ -51,7 +51,7 @@ void	transform_vector4f(fmat4 matrix, fvect4 vect)
 ** \---------/   \-/   \--------------/
 */
 
-void	transform_vector3f(fmat3 matrix, fvect3 vect)
+void	transform_vector3f(t_fmat3 matrix, t_fvect3 vect)
 {
 	vect[0] = vect[0] * matrix[0]
 			+ vect[1] * matrix[1]
@@ -72,7 +72,7 @@ void	transform_vector3f(fmat3 matrix, fvect3 vect)
 ** \------/   \-/   \---------/
 */
 
-void	transform_vector2f(fmat2 matrix, fvect2 vect)
+void	transform_vector2f(t_fmat2 matrix, t_fvect2 vect)
 {
 	vect[0] = vect[0] * matrix[0]
 			+ vect[1] * matrix[1];

@@ -12,7 +12,7 @@
 
 #include "matrix.h"
 
-void	perspective_matrix4f(fmat4 mat, t_perspective pers)
+void	perspective_matrix4f(t_fmat4 mat, t_perspective pers)
 {
     float	tan_half_angle;
 

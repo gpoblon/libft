@@ -12,7 +12,7 @@
 
 #include "matrix.h"
 
-void	cpy_matrix4f(fmat4 mat1, fmat4 mat2)
+void	cpy_matrix4f(t_fmat4 mat1, t_fmat4 mat2)
 {
 	mat1[0] = mat2[0];
 	mat1[1] = mat2[1];
@@ -32,7 +32,7 @@ void	cpy_matrix4f(fmat4 mat1, fmat4 mat2)
 	mat1[15] = mat2[15];
 }
 
-void	cpy_matrix3f(fmat3 mat1, fmat3 mat2)
+void	cpy_matrix3f(t_fmat3 mat1, t_fmat3 mat2)
 {
 	mat1[0] = mat2[0];
 	mat1[1] = mat2[1];
@@ -45,7 +45,7 @@ void	cpy_matrix3f(fmat3 mat1, fmat3 mat2)
 	mat1[8] = mat2[8];
 }
 
-void	cpy_matrix2f(fmat2 mat1, fmat2 mat2)
+void	cpy_matrix2f(t_fmat2 mat1, t_fmat2 mat2)
 {
 	mat1[0] = mat2[0];
 	mat1[1] = mat2[1];

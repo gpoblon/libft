@@ -12,7 +12,7 @@
 
 #include "matrix.h"
 
-void	normalize_vector4f(fvect4 vect)
+void	normalize_vector4f(t_fvect4 vect)
 {
 	float dist;
 
@@ -23,7 +23,7 @@ void	normalize_vector4f(fvect4 vect)
 	vect[3] = vect[3] / dist;
 }
 
-void	normalize_vector3f(fvect3 vect)
+void	normalize_vector3f(t_fvect3 vect)
 {
 	float dist;
 
@@ -33,7 +33,7 @@ void	normalize_vector3f(fvect3 vect)
 	vect[2] = vect[2] / dist;
 }
 
-void	normalize_vector2f(fvect2 vect)
+void	normalize_vector2f(t_fvect2 vect)
 {
 	float dist;
 

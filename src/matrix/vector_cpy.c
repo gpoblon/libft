@@ -12,7 +12,7 @@
 
 #include "matrix.h"
 
-void	cpy_vector4f(fvect4 a, fvect4 b)
+void	cpy_vector4f(t_fvect4 a, t_fvect4 b)
 {
 	a[0] = b[0];
 	a[1] = b[1];
@@ -20,14 +20,14 @@ void	cpy_vector4f(fvect4 a, fvect4 b)
 	a[3] = b[3];
 }
 
-void	cpy_vector3f(fvect3 a, fvect3 b)
+void	cpy_vector3f(t_fvect3 a, t_fvect3 b)
 {
 	a[0] = b[0];
 	a[1] = b[1];
 	a[2] = b[2];
 }
 
-void	cpy_vector2f(fvect2 a, fvect2 b)
+void	cpy_vector2f(t_fvect2 a, t_fvect2 b)
 {
 	a[0] = b[0];
 	a[1] = b[1];
