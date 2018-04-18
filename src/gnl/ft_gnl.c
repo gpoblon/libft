@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 10:40:44 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/03/14 11:08:37 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/04/18 17:13:59 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_check_buff_2(char **line, char **content, int i)
 	char	*tmp2;
 
 	tmp2 = ft_strsub(*content, 0, i);
-	*line = ft_strjoin(*line, tmp2);
+	*line = ft_strfjoin(*line, tmp2, F_1);
 	free(tmp2);
 	dup = ft_strdup(*content + i + 1);
 	free(*content);
@@ -30,7 +30,6 @@ int			ft_check_buff(char **line, char **content)
 {
 	int		i;
 	char	*tmp;
-	char	*tmp2;
 
 	if (!*content)
 		return (0);
@@ -39,9 +38,7 @@ int			ft_check_buff(char **line, char **content)
 		return (ft_check_buff_2(line, content, tmp - *content));
 	else
 	{
-		tmp2 = *line;
-		*line = ft_strjoin(*line, *content);
-		free(tmp2);
+		*line = ft_strfjoin(*line, *content, F_1);
 		ft_strdel(content);
 	}
 	return (0);
@@ -57,19 +54,13 @@ static int	ft_reader_2(char **line, t_gnllst *lst, char *buff)
 	{
 		i = tmp - buff;
 		tmp2 = ft_strsub(buff, 0, i);
-		tmp = *line;
-		*line = ft_strjoin(*line, tmp2);
+		*line = ft_strfjoin(*line, tmp2, F_1);
 		free(tmp2);
-		free(tmp);
 		lst->content = ft_strdup(buff + i + 1);
 		return (1);
 	}
 	else
-	{
-		tmp2 = *line;
-		*line = ft_strjoin(*line, buff);
-		free(tmp2);
-	}
+		*line = ft_strfjoin(*line, buff, F_1);
 	return (0);
 }
 
@@ -95,7 +86,7 @@ int			ft_reader(char **line, t_gnllst *lst)
 int			get_next_line(int const fd, char **line)
 {
 	static t_gnllst	*begin_list = NULL;
-	t_gnllst			*lst;
+	t_gnllst		*lst;
 	char			tmp;
 
 	if (!line || read(fd, &tmp, 0) == -1 || fd < 0)
