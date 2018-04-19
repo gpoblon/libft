@@ -6,7 +6,7 @@
 /*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/16 14:30:07 by gwojda            #+#    #+#             */
-/*   Updated: 2018/03/16 14:45:06 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/04/19 10:38:39 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 ** faudrait chercher pour les autre dimensions !
 */
 
-
 /*
 ** init matrix to become :
 ** /---\    /---\    /---------\
@@ -26,7 +25,6 @@
 ** | c |    | f |    | ae - db |
 ** \---/    \---/    \---------/
 */
-
 
 void	cross_vector3f(t_fvect3 a, t_fvect3 b)
 {

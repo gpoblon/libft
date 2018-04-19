@@ -6,7 +6,7 @@
 /*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 16:00:13 by gwojda            #+#    #+#             */
-/*   Updated: 2018/03/16 12:35:00 by mlaroche         ###   ########.fr       */
+/*   Updated: 2018/04/19 10:40:18 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	identity_matrix4f(t_fmat4 matrix)
 ** \---------/
 */
 
-
 void	identity_matrix3f(t_fmat3 matrix)
 {
 	matrix[0] = 1.0;
@@ -72,7 +71,6 @@ void	identity_matrix3f(t_fmat3 matrix)
 ** | 0  1 |
 ** \------/
 */
-
 
 void	identity_matrix2f(t_fmat2 matrix)
 {

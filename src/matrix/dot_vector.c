@@ -6,7 +6,7 @@
 /*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/16 14:58:31 by gwojda            #+#    #+#             */
-/*   Updated: 2018/03/18 19:13:23 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/04/19 10:38:59 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 float	dot_vector3f(t_fvect3 a, t_fvect3 b)
 {
 	t_fvect3	tmp1;
-	float	t1;
-	float	t2;
-	float	t3;
+	float		t1;
+	float		t2;
+	float		t3;
 
 	cpy_vector3f(tmp1, a);
 	sum_vector3f(tmp1, b);

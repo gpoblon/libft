@@ -6,7 +6,7 @@
 /*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 16:00:13 by gwojda            #+#    #+#             */
-/*   Updated: 2018/03/16 12:37:01 by mlaroche         ###   ########.fr       */
+/*   Updated: 2018/04/19 10:40:28 by gwojda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 ** | 0  0  0  0 |
 ** \------------/
 */
-
 
 void	init_matrix4f(t_fmat4 matrix)
 {
@@ -52,7 +51,6 @@ void	init_matrix4f(t_fmat4 matrix)
 ** \---------/
 */
 
-
 void	init_matrix3f(t_fmat3 matrix)
 {
 	matrix[0] = 0.0;
@@ -73,7 +71,6 @@ void	init_matrix3f(t_fmat3 matrix)
 ** | 0  0 |
 ** \------/
 */
-
 
 void	init_matrix2f(t_fmat2 matrix)
 {
