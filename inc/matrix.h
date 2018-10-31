@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 15:36:03 by gwojda            #+#    #+#             */
-/*   Updated: 2018/10/31 12:08:04 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 15:31:43 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,12 @@ void			ft_vec3mult(t_vec4 vec, float mult);
 void			ft_vec2mult(t_vec4 vec, float mult);
 
 /*
-** norme vecor
+** norm/length/magnitude vecor
 */
 
-float			ft_vec4norm(t_vec4 a);
-float			ft_vec3norm(t_vec3 a);
-float			ft_vec2norm(t_vec2 a);
+float			ft_vec4len(t_vec4 a);
+float			ft_vec3len(t_vec3 a);
+float			ft_vec2len(t_vec2 a);
 
 /*
 ** normalize vecor

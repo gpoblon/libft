@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/16 14:04:39 by gwojda            #+#    #+#             */
-/*   Updated: 2018/10/30 16:33:00 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 15:20:57 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 */
 
 /*
-** xaxis.x       xaxis.y         xaxis.z      -dot(xaxis, eye)
-** yaxis.x       yaxis.y         yaxis.z      -dot(yaxis, eye)
-** zaxis.x       zaxis.y         zaxis.z       -dot(zaxis, eye)
+** xaxis.x       xaxis.y         xaxis.z      -dot(xaxis, cam)
+** yaxis.x       yaxis.y         yaxis.z      -dot(yaxis, cam)
+** zaxis.x       zaxis.y         zaxis.z       -dot(zaxis, cam)
 ** 0                 0                  0              1
 */
 
@@ -40,14 +40,14 @@ static void	set_max(t_max4 max, t_vec3 x, t_vec3 y, t_vec3 z)
 	max[15] = 1.0f;
 }
 
-void		ft_maxlookat(t_max4 max, t_vec3 eye,
+void		ft_maxlookat(t_max4 max, t_vec3 cam,
 			t_vec3 center, t_vec3 up)
 {
 	t_vec3	x;
 	t_vec3	y;
 	t_vec3	z;
 
-	ft_vec3cpy(z, eye);
+	ft_vec3cpy(z, cam);
 	ft_vec3sub(z, center);
 	ft_vec3normalize(z);
 	ft_vec3cpy(x, up);
@@ -56,8 +56,8 @@ void		ft_maxlookat(t_max4 max, t_vec3 eye,
 	ft_vec3cpy(y, z);
 	ft_vec3cross(y, x);
 	ft_vec3normalize(y);
-	max[3] = -ft_vec3dot(x, eye);
-	max[7] = -ft_vec3dot(y, eye);
-	max[11] = -ft_vec3dot(z, eye);
+	max[3] = -ft_vec3dot(x, cam);
+	max[7] = -ft_vec3dot(y, cam);
+	max[11] = -ft_vec3dot(z, cam);
 	set_max(max, x, y, z);
 }

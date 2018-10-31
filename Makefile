@@ -89,8 +89,8 @@ matrix/ft_maxrotate.c\
 matrix/ft_veccpy.c\
 matrix/ft_veccross.c\
 matrix/ft_vecdot.c\
+matrix/ft_veclen.c\
 matrix/ft_vecmult.c\
-matrix/ft_vecnorm.c\
 matrix/ft_vecnormalize.c\
 matrix/ft_vecsub.c\
 matrix/ft_vecsum.c\
