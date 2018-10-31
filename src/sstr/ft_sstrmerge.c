@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sstrmerge.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 15:49:22 by gwojda            #+#    #+#             */
-/*   Updated: 2017/11/07 15:49:22 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 11:51:32 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "sstr.h"
 
 char	**ft_sstrmerge(char **s1, char **s2)
 {

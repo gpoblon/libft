@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/01 11:52:29 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/07 16:29:06 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 11:52:35 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str.h"
 
 static void	ft_free_param(void *s, int free_param)
 {

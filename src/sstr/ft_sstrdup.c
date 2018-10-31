@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sstrdup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 15:49:09 by gwojda            #+#    #+#             */
-/*   Updated: 2017/11/07 15:51:20 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 12:16:30 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "sstr.h"
 
 char	**ft_sstrdup(char **list)
 {

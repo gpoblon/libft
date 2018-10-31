@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 13:56:01 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/07 16:22:51 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 11:48:45 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static void	ft_sub_rules_to_int(t_info *i, t_rule *r)
 {

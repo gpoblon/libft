@@ -6,12 +6,23 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/22 17:55:32 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/03/21 17:39:54 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 13:21:43 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STR_H
 # define STR_H
+
+# include <unistd.h>
+# include <stdlib.h>
+# include "mem.h"
+
+# define F_N		    (1 << 0)
+# define F_1		    (1 << 1)
+# define F_2		    (1 << 2)
+# define F_A		    (1 << 3)
+
+typedef unsigned char	t_uchar;
 
 /*
 ** string to int / viceversa

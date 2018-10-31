@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/18 12:38:24 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/02/20 17:24:42 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:52:35 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str.h"
 
 int		ft_char_to_base(const char c)
 {

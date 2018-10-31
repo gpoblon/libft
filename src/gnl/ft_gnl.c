@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 10:40:44 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/04/18 17:13:59 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/30 13:36:05 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int			get_next_line(int const fd, char **line)
 		lst = lst->next;
 	if (!lst)
 	{
-		ft_lst_push_back_gnl(&begin_list, fd);
+		ft_lstpush_back_gnl(&begin_list, fd);
 		lst = begin_list;
 		while (lst && lst->fd != fd)
 			lst = lst->next;

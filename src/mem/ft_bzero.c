@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/17 18:38:28 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 18:46:38 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:50:09 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "mem.h"
 
 void	ft_bzero(void *s, size_t n)
 {

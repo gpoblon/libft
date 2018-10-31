@@ -6,14 +6,16 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:27:58 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/07 15:19:46 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 13:32:07 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft.h"
+#include <stdarg.h>
+#include <stdlib.h>
+#include "str.h"
 
 # define XF					(1 << 0)
 # define F1					(1 << 1)
@@ -80,14 +82,14 @@ typedef struct				s_rules
 	int						base;
 }							t_rule;
 
-typedef struct				s_floats
+typedef struct				s_float
 {
 	char					*s_whole;
 	char					*s_dec;
 	char					*s_full;
 	unsigned long long		whole;
 	int						i;
-}							t_floats;
+}							t_float;
 
 int							ft_printf(const char *format, ...);
 void						ft_print_formatted_str(const char *s, t_info *info,
@@ -120,7 +122,7 @@ int							ft_count_wchar(unsigned int nb);
 int							ft_isconv(char c);
 void						ft_base_rule(const char *s, t_info *info,
 													t_rule *rule, va_list va);
-char						*ft_floats_conv(t_info *info, t_rule *rule);
+char						*ft_float_conv(t_info *info, t_rule *rule);
 int							ft_get_color(t_info *i);
 t_lst						*ft_newlink(t_lst **lst, int len);
 void						ft_printstr(t_info *info);

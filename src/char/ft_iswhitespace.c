@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 17:24:46 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 14:28:51 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:47:45 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "char.h"
 
 int		ft_iswhitespace(int c)
 {

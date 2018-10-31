@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 14:41:36 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/01/16 14:41:38 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:52:35 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str.h"
 
 int		ft_atoi(const char *nptr)
 {

@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/20 17:48:15 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/04/30 14:11:33 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:48:48 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int			ft_printf(const char *format, ...)
 {

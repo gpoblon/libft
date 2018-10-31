@@ -6,14 +6,16 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/22 17:56:24 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/03/05 14:30:01 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 12:06:35 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LST_H
 # define LST_H
 
+# include <unistd.h>
 # include <stdlib.h>
+# include "mem.h"
 
 typedef struct		s_list
 {
@@ -24,7 +26,7 @@ typedef struct		s_list
 
 void				ft_insert_lst(t_list **begin_list, t_list *elem,
 					int (*cmp)(void *, void *));
-void				ft_lst_swap(t_list *elem);
+void				ft_lstswap(t_list *elem);
 void				ft_lstadd(t_list **alst, t_list *new);
 t_list				*ft_lstcpy(t_list *list);
 void				ft_lstdel_content(void *content, size_t content_size);
@@ -36,12 +38,12 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstpushback(t_list **begin_list, t_list *elem);
 size_t				ft_lstsize(t_list *list);
-void				ft_lst_cfree(void *ptr, size_t size);
-void				ft_lst_delif(t_list **alst, void *data_ref,
+void				ft_lstcfree(void *ptr, size_t size);
+void				ft_lstdelif(t_list **alst, void *data_ref,
 					int (*cmp)(), void (*del)(void *, size_t));
 
-t_list				*push(t_list **stack, int elem);
-int					pop(t_list **lst);
-int					top(t_list *top);
+t_list				*ft_push(t_list **stack, int elem);
+int					ft_pop(t_list **lst);
+int					ft_top(t_list *top);
 
 #endif

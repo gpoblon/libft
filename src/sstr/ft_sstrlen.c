@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/30 14:37:46 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/18 14:51:22 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:51:31 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "sstr.h"
 
 size_t	ft_sstrlen(const char **s)
 {

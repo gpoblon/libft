@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 16:12:24 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/02/23 16:12:27 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:50:32 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "mem.h"
 
 void	ft_free_ptr(void **ptr)
 {

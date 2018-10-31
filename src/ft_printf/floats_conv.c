@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 12:06:23 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/01/26 17:32:22 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:48:47 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static char	*ft_apply_rules_to_float(t_info *i, t_rule *r, char *s)
 {
@@ -41,7 +41,7 @@ static char	*ft_apply_rules_to_float(t_info *i, t_rule *r, char *s)
 	return (s);
 }
 
-static void	ft_floats_to_str(t_info *info, t_rule *rule, t_floats *floats)
+static void	ft_float_to_str(t_info *info, t_rule *rule, t_float *floats)
 {
 	floats->s_dec = ft_strnew(rule->prec);
 	while (++floats->i <= rule->prec)
@@ -70,11 +70,11 @@ static void	ft_floats_to_str(t_info *info, t_rule *rule, t_floats *floats)
 	}
 }
 
-char		*ft_floats_conv(t_info *info, t_rule *rule)
+char		*ft_float_conv(t_info *info, t_rule *rule)
 {
-	t_floats	floats;
+	t_float	floats;
 
-	floats = (t_floats){NULL, NULL, NULL, 0, -1};
+	floats = (t_float){NULL, NULL, NULL, 0, -1};
 	rule->prec = (rule->prec == -1) ? 6 : rule->prec;
 	floats.s_whole = (info->arg_double < 0) ? ft_strdup("-") : ft_strdup("");
 	if (info->arg_double < 0)
@@ -86,7 +86,7 @@ char		*ft_floats_conv(t_info *info, t_rule *rule)
 	{
 		info->arg_double = info->arg_double - floats.whole;
 		info->arg_double *= 10;
-		ft_floats_to_str(info, rule, &floats);
+		ft_float_to_str(info, rule, &floats);
 		floats.s_full = ft_strfjoin(floats.s_whole, ".", F1);
 		floats.s_full = ft_strfjoin(floats.s_full, floats.s_dec, FX);
 	}

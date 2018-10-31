@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/29 16:49:43 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/07 15:33:21 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 11:52:35 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str.h"
 
 char	*ft_strnew(size_t size)
 {

@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/29 10:32:07 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 16:28:14 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:52:35 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str.h"
 
 int		ft_strcmp(const char *s1, const char *s2)
 {

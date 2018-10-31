@@ -6,11 +6,12 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 12:28:32 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/07 16:22:55 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 13:33:43 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
+#include "print.h"
 
 int			ft_isconv(char c)
 {

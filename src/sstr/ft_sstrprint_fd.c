@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sstrprint_fd.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 15:49:28 by gwojda            #+#    #+#             */
-/*   Updated: 2017/11/07 15:49:28 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 12:18:08 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "sstr.h"
+#include "print.h"
 
 void	ft_sstrprint_fd(int fd, char **list, char sep)
 {
