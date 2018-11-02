@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 14:10:53 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/11/02 11:05:58 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/11/02 11:50:55 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 float	ft_vec3dot(t_vec3 a, t_vec3 b)
 {
-	return (a[0] * b[0] + a[1] * b[1] + a[2] * b[2]);
+	return (a.x * b.x + a.y * b.y + a.z * b.z);
 }

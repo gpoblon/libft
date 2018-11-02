@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 14:10:12 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/10/30 15:41:02 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/11/02 16:09:01 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,24 @@
 ** \------------/   \-/   \-------------------/
 */
 
-void	ft_vec4transform(t_max4 max, t_vec4 vect)
+void	ft_vec4transform(t_max4 max, t_vec4 *vec)
 {
-	vect[0] = vect[0] * max[0]
-			+ vect[1] * max[1]
-			+ vect[2] * max[2]
-			+ vect[3] * max[3];
-	vect[1] = vect[0] * max[4]
-			+ vect[1] * max[5]
-			+ vect[2] * max[6]
-			+ vect[3] * max[7];
-	vect[2] = vect[0] * max[8]
-			+ vect[1] * max[9]
-			+ vect[2] * max[10]
-			+ vect[3] * max[11];
-	vect[3] = vect[0] * max[12]
-			+ vect[1] * max[13]
-			+ vect[2] * max[14]
-			+ vect[3] * max[15];
+	vec->x = vec->x * max[0]
+			+ vec->y * max[1]
+			+ vec->z * max[2]
+			+ vec->w * max[3];
+	vec->y = vec->x * max[4]
+			+ vec->y * max[5]
+			+ vec->z * max[6]
+			+ vec->w * max[7];
+	vec->z = vec->x * max[8]
+			+ vec->y * max[9]
+			+ vec->z * max[10]
+			+ vec->w * max[11];
+	vec->w = vec->x * max[12]
+			+ vec->y * max[13]
+			+ vec->z * max[14]
+			+ vec->w * max[15];
 }
 
 /*
@@ -51,17 +51,17 @@ void	ft_vec4transform(t_max4 max, t_vec4 vect)
 ** \---------/   \-/   \--------------/
 */
 
-void	ft_vec3transform(t_max3 max, t_vec3 vect)
+void	ft_vec3transform(t_max3 max, t_vec3 *vec)
 {
-	vect[0] = vect[0] * max[0]
-			+ vect[1] * max[1]
-			+ vect[2] * max[2];
-	vect[1] = vect[0] * max[3]
-			+ vect[1] * max[4]
-			+ vect[2] * max[5];
-	vect[2] = vect[0] * max[6]
-			+ vect[1] * max[7]
-			+ vect[2] * max[8];
+	vec->x = vec->x * max[0]
+			+ vec->y * max[1]
+			+ vec->z * max[2];
+	vec->y = vec->x * max[3]
+			+ vec->y * max[4]
+			+ vec->z * max[5];
+	vec->z = vec->x * max[6]
+			+ vec->y * max[7]
+			+ vec->z * max[8];
 }
 
 /*
@@ -72,10 +72,10 @@ void	ft_vec3transform(t_max3 max, t_vec3 vect)
 ** \------/   \-/   \---------/
 */
 
-void	ft_vec2transform(t_max2 max, t_vec2 vect)
+void	ft_vec2transform(t_max2 max, t_vec2 *vec)
 {
-	vect[0] = vect[0] * max[0]
-			+ vect[1] * max[1];
-	vect[1] = vect[0] * max[2]
-			+ vect[1] * max[3];
+	vec->x = vec->x * max[0]
+			+ vec->y * max[1];
+	vec->y = vec->x * max[2]
+			+ vec->y * max[3];
 }

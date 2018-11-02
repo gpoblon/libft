@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 15:36:03 by gwojda            #+#    #+#             */
-/*   Updated: 2018/10/31 15:31:43 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/11/02 17:11:23 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,52 @@ typedef double	t_max4d[16];
 typedef double	t_max3d[9];
 typedef double	t_max2d[4];
 
-typedef double	t_vec4d[4];
-typedef double	t_vec3d[3];
-typedef double	t_vec2d[2];
-
+typedef float	t_max4[16];
 typedef float	t_max4[16];
 typedef float	t_max3[9];
 typedef float	t_max2[4];
 
-typedef float	t_vec4[4];
-typedef float	t_vec3[3];
-typedef float	t_vec2[2];
+typedef struct	s_vector_4d
+{
+	double		x;
+	double		y;
+	double		z;
+	double		w;
+}				t_vec4d;
+
+typedef struct	s_vector_3d
+{
+	double		x;
+	double		y;
+	double		z;
+}				t_vec3d;
+
+typedef struct	s_vector_2d
+{
+	double		x;
+	double		y;
+}				t_vec2d;
+
+typedef struct	s_vector_4
+{
+	float		x;
+	float		y;
+	float		z;
+	float		w;
+}				t_vec4;
+
+typedef struct	s_vector_3
+{
+	float		x;
+	float		y;
+	float		z;
+}				t_vec3;
+
+typedef struct	s_vector_2
+{
+	float		x;
+	float		y;
+}				t_vec2;
 
 typedef	struct	s_perspective
 {
@@ -47,21 +82,21 @@ typedef	struct	s_perspective
 ** basic operations
 */
 
-void			ft_vec2sum(t_vec2 a, t_vec2 b);
-void			ft_vec3sum(t_vec3 a, t_vec3 b);
-void			ft_vec4sum(t_vec4 a, t_vec4 b);
+void			ft_vec2sum(t_vec2 *ret, t_vec2 a, t_vec2 b);
+void			ft_vec3sum(t_vec3 *ret, t_vec3 a, t_vec3 b);
+void			ft_vec4sum(t_vec4 *ret, t_vec4 a, t_vec4 b);
 
-void			ft_vec2sub(t_vec2 a, t_vec2 b);
-void			ft_vec3sub(t_vec3 a, t_vec3 b);
-void			ft_vec4sub(t_vec4 a, t_vec4 b);
+void			ft_vec2sub(t_vec2 *ret, t_vec2 a, t_vec2 b);
+void			ft_vec3sub(t_vec3 *ret, t_vec3 a, t_vec3 b);
+void			ft_vec4sub(t_vec4 *ret, t_vec4 a, t_vec4 b);
 
-void			ft_vec2cpy(t_vec2 a, t_vec2 b);
-void			ft_vec3cpy(t_vec3 a, t_vec3 b);
-void			ft_vec4cpy(t_vec4 a, t_vec4 b);
+void			ft_vec2cpy(t_vec2 *a, t_vec2 b);
+void			ft_vec3cpy(t_vec3 *a, t_vec3 b);
+void			ft_vec4cpy(t_vec4 *a, t_vec4 b);
 
-void			ft_vec4mult(t_vec4 vec, float mult);
-void			ft_vec3mult(t_vec4 vec, float mult);
-void			ft_vec2mult(t_vec4 vec, float mult);
+void			ft_vec4mult(t_vec2 *ret, float mult);
+void			ft_vec3mult(t_vec3 *ret, float mult);
+void			ft_vec2mult(t_vec4 *vec, float mult);
 
 /*
 ** norm/length/magnitude vecor
@@ -75,9 +110,9 @@ float			ft_vec2len(t_vec2 a);
 ** normalize vecor
 */
 
-void			ft_vec4normalize(t_vec4 vec);
-void			ft_vec3normalize(t_vec3 vec);
-void			ft_vec2normalize(t_vec2 vec);
+void			ft_vec4normalize(t_vec4 *vec);
+void			ft_vec3normalize(t_vec3 *vec);
+void			ft_vec2normalize(t_vec2 *vec);
 
 /*
 ** cross vecor
@@ -95,9 +130,9 @@ float			ft_vec3dot(t_vec3 a, t_vec3 b);
 ** IN BETWEEN
 */
 
-void			ft_vec2transform(t_max2 matrix, t_vec2 vec);
-void			ft_vec3transform(t_max3 matrix, t_vec3 vec);
-void			ft_vec4transform(t_max4 matrix, t_vec4 vec);
+void			ft_vec2transform(t_max2 matrix, t_vec2 *vec);
+void			ft_vec3transform(t_max3 matrix, t_vec3 *vec);
+void			ft_vec4transform(t_max4 matrix, t_vec4 *vec);
 
 void			ft_vec4translate(t_max4 matrix, t_vec3 vec);
 void			ft_vec3translate(t_max3 matrix, t_vec3 vec);

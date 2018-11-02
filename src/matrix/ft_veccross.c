@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 14:10:57 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/11/02 11:41:57 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/11/02 14:09:46 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,20 @@
 ** \---/    \---/    \---------/
 */
 
-void	ft_vec3cross(t_vec3 a, t_vec3 b)
-{
-	t_vec3	tmp;
-
-	ft_vec3cpy(tmp, a);
-	tmp[0] = (a[1] * b[2]) - (a[2] * b[1]);
-	tmp[1] = (b[0] * a[2]) - (a[0] * b[2]);
-	tmp[2] = (a[0] * b[1]) - (a[1] * b[0]);
-	ft_vec3cpy(a, tmp);
-}
-
-// void	ft_vec3cross(t_vec3 a, t_vec3 b, t_vec3 res)
+// void	ft_vec3cross(t_vec3 a, t_vec3 b)
 // {
-// 	res[0] = (a[1] * b[2]) - (a[2] * b[1]);
-// 	res[1] = (b[0] * a[2]) - (a[0] * b[2]);
-// 	res[2] = (a[0] * b[1]) - (a[1] * b[0]);
+// 	t_vec3	tmp;
+
+// 	ft_vec3cpy(tmp, a);
+// 	tmp.x = (a.y * b.z) - (a.z * b.y);
+// 	tmp.y = (b.x * a.z) - (a.x * b.z);
+// 	tmp.z = (a.x * b.y) - (a.y * b.x);
+// 	ft_vec3cpy(a, tmp);
 // }
+
+void	ft_vec3cross(t_vec3 *ret, t_vec3 a, t_vec3 b)
+{
+	ret->x = (a.y * b.z) - (a.z * b.y);
+	ret->y = (b.x * a.z) - (a.x * b.z);
+	ret->z = (a.x * b.y) - (a.y * b.x);
+}
