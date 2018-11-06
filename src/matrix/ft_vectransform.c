@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 14:10:12 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/11/06 13:45:36 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/11/06 15:24:02 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 ** \------------/   \-/   \-------------------/
 */
 
-void	ft_vec4transform(t_max4 max, t_vec4 *vec)
+void	ft_vec4transform(t_vec4 *vec, t_max4 max)
 {
 	vec->x = vec->x * max.x.x
 			+ vec->y * max.x.y
@@ -51,7 +51,7 @@ void	ft_vec4transform(t_max4 max, t_vec4 *vec)
 ** \---------/   \-/   \--------------/
 */
 
-void	ft_vec3transform(t_max3 max, t_vec3 *vec)
+void	ft_vec3transform(t_vec3 *vec, t_max3 max)
 {
 	vec->x = vec->x * max.x.x
 			+ vec->y * max.x.y
@@ -72,7 +72,7 @@ void	ft_vec3transform(t_max3 max, t_vec3 *vec)
 ** \------/   \-/   \---------/
 */
 
-void	ft_vec2transform(t_max2 max, t_vec2 *vec)
+void	ft_vec2transform(t_vec2 *vec, t_max2 max)
 {
 	vec->x = vec->x * max.x.x
 			+ vec->y * max.x.y;

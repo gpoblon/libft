@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/16 14:04:39 by gwojda            #+#    #+#             */
-/*   Updated: 2018/11/06 13:50:29 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/11/06 15:48:13 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,19 @@
 ** zaxis.x       zaxis.y         zaxis.z       -dot(zaxis, from)
 ** 0                 0                  0              1
 */
-// should i return t_max instea
-static t_max4	*set_max(t_vec3 from, t_vec3 right, t_vec3 up, t_vec3 forward)
-{
-	t_max4	*max;
 
+void		ft_maxlookat(t_max4 *max, t_vec3 from, t_vec3 to, t_vec3 ref_vec)
+{
+	t_vec3 forward;
+	t_vec3 right;
+	t_vec3 up;
+
+	ft_vec3normalize(&ref_vec, ref_vec);
+	ft_vec3sub(&forward, from, to);
+	ft_vec3normalize(&forward, forward);
+	ft_vec3cross(&right, ref_vec, forward);
+	ft_vec3cross(&up, forward, right);
+	ft_max4init(max);
 	max->x.x = right.x;
 	max->x.y = right.y;
 	max->x.z = right.z;
@@ -43,16 +51,10 @@ static t_max4	*set_max(t_vec3 from, t_vec3 right, t_vec3 up, t_vec3 forward)
 	max->w.y = 0;
 	max->w.z = 0;
 	max->w.w = 1.0f;
-	return (max);
 }
 
 // this one maxes more sense to me
-
 /*
-static t_max4	*set_max(t_vec3 from, t_vec3 right, t_vec3 up, t_vec3 forward)
-{
-	t_max4	*max;
-
 	max->x.x = right.x;
 	max->x.y = right.y;
 	max->x.z = right.z;
@@ -69,20 +71,4 @@ static t_max4	*set_max(t_vec3 from, t_vec3 right, t_vec3 up, t_vec3 forward)
 	max->w.y = -ft_vec3dot(up, from);
 	max->w.z = -ft_vec3dot(forward, from);
 	max->w.w = 1.0f;
-	return (max);
-}
 */
-
-void		ft_maxlookat(t_max4 *max, t_vec3 from,
-			t_vec3 to, t_vec3 ref_vec)
-{
-	t_vec3 forward;
-	t_vec3 right;
-	t_vec3 up;
-
-	ft_vec3normalize(&ref_vec, ref_vec);
-	ft_vec3sub(&forward, from, to);
-	ft_vec3normalize(&forward, forward);
-	ft_vec3cross(&right, up, forward);
-	max = set_max(from, right, up, forward);
-}
