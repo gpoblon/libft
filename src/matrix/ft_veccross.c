@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 14:10:57 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/11/02 14:09:46 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/11/06 09:30:33 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,6 @@
 ** | c |    | f |    | ae - db |
 ** \---/    \---/    \---------/
 */
-
-// void	ft_vec3cross(t_vec3 a, t_vec3 b)
-// {
-// 	t_vec3	tmp;
-
-// 	ft_vec3cpy(tmp, a);
-// 	tmp.x = (a.y * b.z) - (a.z * b.y);
-// 	tmp.y = (b.x * a.z) - (a.x * b.z);
-// 	tmp.z = (a.x * b.y) - (a.y * b.x);
-// 	ft_vec3cpy(a, tmp);
-// }
 
 void	ft_vec3cross(t_vec3 *ret, t_vec3 a, t_vec3 b)
 {

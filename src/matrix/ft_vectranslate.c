@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 17:26:37 by gwojda            #+#    #+#             */
-/*   Updated: 2018/11/02 12:04:13 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/11/06 13:46:26 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,24 @@
 ** \------------/
 */
 
-void	ft_vec4translate(t_max4 max, t_vec3 vec)
+void	ft_vec4translate(t_max4 *max, t_vec3 vec)
 {
-	max[0] = 1;
-	max[1] = 0;
-	max[2] = 0;
-	max[3] = vec.x;
-	max[4] = 0;
-	max[5] = 1;
-	max[6] = 0;
-	max[7] = vec.y;
-	max[8] = 0;
-	max[9] = 0;
-	max[10] = 1;
-	max[11] = vec.z;
-	max[12] = 0;
-	max[13] = 0;
-	max[14] = 0;
-	max[15] = 1;
+	max->x.x = 1;
+	max->x.y = 0;
+	max->x.z = 0;
+	max->x.w = vec.x;
+	max->y.x = 0;
+	max->y.y = 1;
+	max->y.z = 0;
+	max->y.w = vec.y;
+	max->z.x = 0;
+	max->z.y = 0;
+	max->z.z = 1;
+	max->z.w = vec.z;
+	max->w.x = 0;
+	max->w.y = 0;
+	max->w.z = 0;
+	max->w.w = 1;
 }
 
 /*
@@ -51,15 +51,15 @@ void	ft_vec4translate(t_max4 max, t_vec3 vec)
 ** \---------/
 */
 
-void	ft_vec3translate(t_max3 max, t_vec3 vec)
+void	ft_vec3translate(t_max3 *max, t_vec3 vec)
 {
-	max[0] = 1;
-	max[1] = 0;
-	max[2] = vec.x;
-	max[3] = 0;
-	max[4] = 1;
-	max[5] = vec.y;
-	max[6] = 0;
-	max[7] = 0;
-	max[8] = 1;
+	max->x.x = 1;
+	max->x.y = 0;
+	max->x.z = vec.x;
+	max->y.x = 0;
+	max->y.y = 1;
+	max->y.z = vec.y;
+	max->z.x = 0;
+	max->z.y = 0;
+	max->z.z = 1;
 }

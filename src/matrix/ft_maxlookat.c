@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/16 14:04:39 by gwojda            #+#    #+#             */
-/*   Updated: 2018/10/31 15:20:57 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/11/06 13:50:29 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,47 +17,72 @@
 */
 
 /*
-** xaxis.x       xaxis.y         xaxis.z      -dot(xaxis, cam)
-** yaxis.x       yaxis.y         yaxis.z      -dot(yaxis, cam)
-** zaxis.x       zaxis.y         zaxis.z       -dot(zaxis, cam)
+** xaxis.x       xaxis.y         xaxis.z      -dot(xaxis, from)
+** yaxis.x       yaxis.y         yaxis.z      -dot(yaxis, from)
+** zaxis.x       zaxis.y         zaxis.z       -dot(zaxis, from)
 ** 0                 0                  0              1
 */
-
-static void	set_max(t_max4 max, t_vec3 x, t_vec3 y, t_vec3 z)
+// should i return t_max instea
+static t_max4	*set_max(t_vec3 from, t_vec3 right, t_vec3 up, t_vec3 forward)
 {
-	max[0] = x[0];
-	max[1] = x[1];
-	max[2] = x[2];
-	max[4] = y[0];
-	max[5] = y[1];
-	max[6] = y[2];
-	max[8] = z[0];
-	max[9] = z[1];
-	max[10] = z[2];
-	max[12] = 0;
-	max[13] = 0;
-	max[14] = 0;
-	max[15] = 1.0f;
+	t_max4	*max;
+
+	max->x.x = right.x;
+	max->x.y = right.y;
+	max->x.z = right.z;
+	max->x.w = -ft_vec3dot(right, from);
+	max->y.x = up.x;
+	max->y.y = up.y;
+	max->y.z = up.z;
+	max->y.w = -ft_vec3dot(up, from);
+	max->z.x = forward.x;
+	max->z.y = forward.y;
+	max->z.z = forward.z;
+	max->z.w = -ft_vec3dot(forward, from);
+	max->w.x = 0;
+	max->w.y = 0;
+	max->w.z = 0;
+	max->w.w = 1.0f;
+	return (max);
 }
 
-void		ft_maxlookat(t_max4 max, t_vec3 cam,
-			t_vec3 center, t_vec3 up)
-{
-	t_vec3	x;
-	t_vec3	y;
-	t_vec3	z;
+// this one maxes more sense to me
 
-	ft_vec3cpy(z, cam);
-	ft_vec3sub(z, center);
-	ft_vec3normalize(z);
-	ft_vec3cpy(x, up);
-	ft_vec3cross(x, z);
-	ft_vec3normalize(x);
-	ft_vec3cpy(y, z);
-	ft_vec3cross(y, x);
-	ft_vec3normalize(y);
-	max[3] = -ft_vec3dot(x, cam);
-	max[7] = -ft_vec3dot(y, cam);
-	max[11] = -ft_vec3dot(z, cam);
-	set_max(max, x, y, z);
+/*
+static t_max4	*set_max(t_vec3 from, t_vec3 right, t_vec3 up, t_vec3 forward)
+{
+	t_max4	*max;
+
+	max->x.x = right.x;
+	max->x.y = right.y;
+	max->x.z = right.z;
+	max->x.w = 0;
+	max->y.x = up.x;
+	max->y.y = up.y;
+	max->y.z = up.z;
+	max->y.w = 0;
+	max->z.x = forward.x;
+	max->z.y = forward.y;
+	max->z.z = forward.z;
+	max->z.w = 0;
+	max->w.x = -ft_vec3dot(right, from);
+	max->w.y = -ft_vec3dot(up, from);
+	max->w.z = -ft_vec3dot(forward, from);
+	max->w.w = 1.0f;
+	return (max);
+}
+*/
+
+void		ft_maxlookat(t_max4 *max, t_vec3 from,
+			t_vec3 to, t_vec3 ref_vec)
+{
+	t_vec3 forward;
+	t_vec3 right;
+	t_vec3 up;
+
+	ft_vec3normalize(&ref_vec, ref_vec);
+	ft_vec3sub(&forward, from, to);
+	ft_vec3normalize(&forward, forward);
+	ft_vec3cross(&right, up, forward);
+	max = set_max(from, right, up, forward);
 }

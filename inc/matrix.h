@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 15:36:03 by gwojda            #+#    #+#             */
-/*   Updated: 2018/11/02 17:11:23 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/11/06 13:51:17 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,47 @@
 
 # include <math.h>
 
-typedef double	t_max4d[16];
-typedef double	t_max3d[9];
-typedef double	t_max2d[4];
+typedef struct	s_matrix_4
+{
+	t_vec4		x;
+	t_vec4		y;
+	t_vec4		z;
+	t_vec4		w;
+}				t_max4;
 
-typedef float	t_max4[16];
-typedef float	t_max4[16];
-typedef float	t_max3[9];
-typedef float	t_max2[4];
+typedef struct	s_matrix_3
+{
+	t_vec3		x;
+	t_vec3		y;
+	t_vec3		z;
+}				t_max3;
+
+typedef struct	s_matrix_2
+{
+	t_vec2		x;
+	t_vec2		y;
+}				t_max2;
+
+typedef struct	s_matrix_4d
+{
+	t_vec4d		x;
+	t_vec4d		y;
+	t_vec4d		z;
+	t_vec4d		w;
+}				t_max4d;
+
+typedef struct	s_matrix_3d
+{
+	t_vec3d		x;
+	t_vec3d		y;
+	t_vec3d		z;
+}				t_max3d;
+
+typedef struct	s_matrix_2d
+{
+	t_vec2d		x;
+	t_vec2d		y;
+}				t_max2d;
 
 typedef struct	s_vector_4d
 {
@@ -110,15 +143,15 @@ float			ft_vec2len(t_vec2 a);
 ** normalize vecor
 */
 
-void			ft_vec4normalize(t_vec4 *vec);
-void			ft_vec3normalize(t_vec3 *vec);
-void			ft_vec2normalize(t_vec2 *vec);
+void			ft_vec4normalize(t_vec4 *ret, t_vec4 vec);
+void			ft_vec3normalize(t_vec3 *ret, t_vec3 vec);
+void			ft_vec2normalize(t_vec2 *ret, t_vec2 vec);
 
 /*
 ** cross vecor
 */
 
-void			ft_vec3cross(t_vec3 a, t_vec3 b);
+void			ft_vec3cross(t_vec3 *ret, t_vec3 a, t_vec3 b);
 
 /*
 ** dot vecor
@@ -130,12 +163,12 @@ float			ft_vec3dot(t_vec3 a, t_vec3 b);
 ** IN BETWEEN
 */
 
-void			ft_vec2transform(t_max2 matrix, t_vec2 *vec);
-void			ft_vec3transform(t_max3 matrix, t_vec3 *vec);
-void			ft_vec4transform(t_max4 matrix, t_vec4 *vec);
+void			ft_vec2transform(t_max2 max, t_vec2 *vec);
+void			ft_vec3transform(t_max3 max, t_vec3 *vec);
+void			ft_vec4transform(t_max4 max, t_vec4 *vec);
 
-void			ft_vec4translate(t_max4 matrix, t_vec3 vec);
-void			ft_vec3translate(t_max3 matrix, t_vec3 vec);
+void			ft_vec4translate(t_max4 *max, t_vec3 vec);
+void			ft_vec3translate(t_max3 *max, t_vec3 vec);
 
 /*
 ** MATRICES
@@ -145,28 +178,28 @@ void			ft_vec3translate(t_max3 matrix, t_vec3 vec);
 ** basic operations
 */
 
-void			ft_max4mult(t_max4 m, t_max4 n);
-void			ft_max3mult(t_max3 mat1, t_max3 mat2);
+void			ft_max4mult(t_max4 *m, t_max4 n);
+void			ft_max3mult(t_max3 *m, t_max3 n);
 
-void			ft_max4cpy(t_max4 mat1, t_max4 mat2);
-void			ft_max3cpy(t_max3 mat1, t_max3 mat2);
-void			ft_max2cpy(t_max2 mat1, t_max2 mat2);
+void			ft_max4cpy(t_max4 *max1, t_max4 max2);
+void			ft_max3cpy(t_max3 *max1, t_max3 max2);
+void			ft_max2cpy(t_max2 *max1, t_max2 max2);
 
 /*
 ** identity matrix init
 */
 
-void			ft_max4identity(t_max3 matrix);
-void			ft_max3identity(t_max3 matrix);
-void			ft_max2identity(t_max2 matrix);
+void			ft_max4identity(t_max3 *max);
+void			ft_max3identity(t_max3 *max);
+void			ft_max2identity(t_max2 *max);
 
 /*
 ** init matrix
 */
 
-void			ft_max4init(t_max3 matrix);
-void			ft_max3init(t_max3 matrix);
-void			ft_max2init(t_max2 matrix);
+void			ft_max4init(t_max3 *max);
+void			ft_max3init(t_max3 *max);
+void			ft_max2init(t_max2 *max);
 
 /*
 ** perspectie matrix for 3D with OpenGl
@@ -178,15 +211,15 @@ void			ft_max4perspective(t_max4 mat, t_perspective pers);
 ** lookat_max for 3D with OpenGl
 */
 
-void			ft_maxlookat(t_max4 mat, t_vec3 eye,
-				t_vec3 center, t_vec3 up);
+void			ft_maxlookat(t_max4 mat, t_vec3 from,
+				t_vec3 to, t_vec3 up);
 
 /*
 ** rotate matrix
 */
 
-void			ft_max4rotate_x(t_max4 mat, float angle);
-void			ft_max4rotate_y(t_max4 mat, float angle);
-void			ft_max4rotate_z(t_max4 mat, float angle);
+void			ft_max4rotate_x(t_max4 *max, float angle);
+void			ft_max4rotate_y(t_max4 *max, float angle);
+void			ft_max4rotate_z(t_max4 *max, float angle);
 
 #endif

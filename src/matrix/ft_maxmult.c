@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 17:26:37 by gwojda            #+#    #+#             */
-/*   Updated: 2018/10/31 15:20:51 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/11/06 14:15:46 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,27 @@
 ** \------------/
 */
 
-void	ft_max4mult(t_max4 m, t_max4 n)
+void	ft_max4mult(t_max4 *m, t_max4 n)
 {
 	t_max4	t;
 
-	ft_max4cpy(t, m);
-	m[0] = (t[0] * n[0]) + (t[1] * n[4]) + (t[2] * n[8]) + (t[3] * n[12]);
-	m[1] = (t[0] * n[1]) + (t[1] * n[5]) + (t[2] * n[9]) + (t[3] * n[13]);
-	m[2] = (t[0] * n[2]) + (t[1] * n[6]) + (t[2] * n[10]) + (t[3] * n[14]);
-	m[3] = (t[0] * n[3]) + (t[1] * n[7]) + (t[2] * n[11]) + (t[3] * n[15]);
-	m[4] = (t[4] * n[0]) + (t[5] * n[4]) + (t[6] * n[8]) + (t[7] * n[12]);
-	m[5] = (t[4] * n[1]) + (t[5] * n[5]) + (t[6] * n[9]) + (t[7] * n[13]);
-	m[6] = (t[4] * n[2]) + (t[5] * n[6]) + (t[6] * n[10]) + (t[7] * n[14]);
-	m[7] = (t[4] * n[3]) + (t[5] * n[7]) + (t[6] * n[11]) + (t[7] * n[15]);
-	m[8] = (t[8] * n[0]) + (t[9] * n[4]) + (t[10] * n[8]) + (t[11] * n[12]);
-	m[9] = (t[8] * n[1]) + (t[9] * n[5]) + (t[10] * n[9]) + (t[11] * n[13]);
-	m[10] = (t[8] * n[2]) + (t[9] * n[6]) + (t[10] * n[10]) + (t[11] * n[14]);
-	m[11] = (t[8] * n[3]) + (t[9] * n[7]) + (t[10] * n[11]) + (t[11] * n[15]);
-	m[12] = (t[12] * n[0]) + (t[13] * n[4]) + (t[14] * n[8]) + (t[15] * n[12]);
-	m[13] = (t[12] * n[1]) + (t[13] * n[5]) + (t[14] * n[9]) + (t[15] * n[13]);
-	m[14] = (t[12] * n[2]) + (t[13] * n[6]) + (t[14] * n[10]) + (t[15] * n[14]);
-	m[15] = (t[12] * n[3]) + (t[13] * n[7]) + (t[14] * n[11]) + (t[15] * n[15]);
+	ft_max4cpy(&t, *m);
+	m->x.x = t.x.x * n.x.x + t.x.y * n.y.x + t.x.z * n.z.x + t.x.w * n.w.x;
+	m->x.y = t.x.x * n.x.y + t.x.y * n.y.y + t.x.z * n.z.y + t.x.w * n.w.y;
+	m->x.z = t.x.x * n.x.z + t.x.y * n.y.z + t.x.z * n.z.z + t.x.w * n.w.z;
+	m->x.w = t.x.x * n.x.w + t.x.y * n.y.w + t.x.z * n.z.w + t.x.w * n.w.w;
+	m->y.x = t.y.x * n.x.x + t.y.y * n.y.x + t.y.z * n.z.x + t.y.w * n.w.x;
+	m->y.y = t.y.x * n.x.y + t.y.y * n.y.y + t.y.z * n.z.y + t.y.w * n.w.y;
+	m->y.z = t.y.x * n.x.z + t.y.y * n.y.z + t.y.z * n.z.z + t.y.w * n.w.z;
+	m->y.w = t.y.x * n.x.w + t.y.y * n.y.w + t.y.z * n.z.w + t.y.w * n.w.w;
+	m->z.x = t.z.x * n.x.x + t.z.y * n.y.x + t.z.z * n.z.x + t.z.w * n.w.x;
+	m->z.y = t.z.x * n.x.y + t.z.y * n.y.y + t.z.z * n.z.y + t.z.w * n.w.y;
+	m->z.z = t.z.x * n.x.z + t.z.y * n.y.z + t.z.z * n.z.z + t.z.w * n.w.z;
+	m->z.w = t.z.x * n.x.w + t.z.y * n.y.w + t.z.z * n.z.w + t.z.w * n.w.w;
+	m->w.x = t.w.x * n.x.x + t.w.y * n.y.x + t.w.z * n.z.x + t.w.w * n.w.x;
+	m->w.y = t.w.x * n.x.y + t.w.y * n.y.y + t.w.z * n.z.y + t.w.w * n.w.y;
+	m->w.z = t.w.x * n.x.z + t.w.y * n.y.z + t.w.z * n.z.z + t.w.w * n.w.z;
+	m->w.w = t.w.x * n.x.w + t.w.y * n.y.w + t.w.z * n.z.w + t.w.w * n.w.w;
 }
 
 /*
@@ -54,18 +54,18 @@ void	ft_max4mult(t_max4 m, t_max4 n)
 ** \---------/
 */
 
-void	ft_max3mult(t_max3 max1, t_max3 max2)
+void	ft_max3mult(t_max3 *m, t_max3 n)
 {
 	t_max3	tmp;
 
-	ft_max3cpy(tmp, max1);
-	max1[0] = (tmp[0] * max2[0]) + (tmp[1] * max2[3]) + (tmp[2] * max2[6]);
-	max1[1] = (tmp[0] * max2[1]) + (tmp[1] * max2[4]) + (tmp[2] * max2[7]);
-	max1[2] = (tmp[0] * max2[2]) + (tmp[1] * max2[5]) + (tmp[2] * max2[8]);
-	max1[3] = (tmp[3] * max2[0]) + (tmp[4] * max2[3]) + (tmp[5] * max2[6]);
-	max1[4] = (tmp[3] * max2[1]) + (tmp[4] * max2[4]) + (tmp[5] * max2[7]);
-	max1[5] = (tmp[3] * max2[2]) + (tmp[4] * max2[5]) + (tmp[5] * max2[8]);
-	max1[6] = (tmp[6] * max2[0]) + (tmp[7] * max2[1]) + (tmp[8] * max2[2]);
-	max1[7] = (tmp[6] * max2[3]) + (tmp[7] * max2[4]) + (tmp[8] * max2[5]);
-	max1[8] = (tmp[6] * max2[6]) + (tmp[7] * max2[7]) + (tmp[8] * max2[8]);
+	ft_max3cpy(&tmp, *m);
+	m->x.x = tmp.x.x * n.x.x + tmp.x.y * n.y.x + tmp.x.z * n.z.x;
+	m->x.y = tmp.x.x * n.x.y + tmp.x.y * n.y.y + tmp.x.z * n.z.y;
+	m->x.z = tmp.x.x * n.x.z + tmp.x.y * n.y.z + tmp.x.z * n.z.z;
+	m->y.x = tmp.y.x * n.x.x + tmp.y.y * n.y.x + tmp.y.z * n.z.x;
+	m->y.y = tmp.y.x * n.x.y + tmp.y.y * n.y.y + tmp.y.z * n.z.y;
+	m->y.z = tmp.y.x * n.x.z + tmp.y.y * n.y.z + tmp.y.z * n.z.z;
+	m->z.x = tmp.z.x * n.x.x + tmp.z.y * n.x.y + tmp.z.z * n.x.z;
+	m->z.y = tmp.z.x * n.y.x + tmp.z.y * n.y.y + tmp.z.z * n.y.z;
+	m->z.z = tmp.z.x * n.z.x + tmp.z.y * n.z.y + tmp.z.z * n.z.z;
 }
