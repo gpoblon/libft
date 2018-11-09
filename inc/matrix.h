@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 15:36:03 by gwojda            #+#    #+#             */
-/*   Updated: 2018/11/06 15:50:22 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/11/09 16:57:04 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define matrix_H
 
 # include <math.h>
+
+# define PI 3.141592
 
 typedef struct	s_vector_4d
 {
@@ -127,9 +129,9 @@ void			ft_vec2cpy(t_vec2 *a, t_vec2 b);
 void			ft_vec3cpy(t_vec3 *a, t_vec3 b);
 void			ft_vec4cpy(t_vec4 *a, t_vec4 b);
 
-void			ft_vec2mult(t_vec2 *vec, float mult);
-void			ft_vec3mult(t_vec3 *ret, float mult);
-void			ft_vec4mult(t_vec4 *ret, float mult);
+void			ft_vec2scale(t_vec2 *ret, t_vec2 vec, float mult);
+void			ft_vec3scale(t_vec3 *ret, t_vec3 vec, float mult);
+void			ft_vec4scale(t_vec4 *ret, t_vec4 vec, float mult);
 
 /*
 ** norm/length/magnitude vecor
