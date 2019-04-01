@@ -6,11 +6,12 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/21 16:54:11 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/07 15:48:58 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 13:34:32 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "sstr.h"
+#include "ft_printf.h"
 
 int	ft_sstrchr(char **map, char *str)
 {
@@ -21,7 +22,7 @@ int	ft_sstrchr(char **map, char *str)
 	{
 		ft_printf("%i, %s, %s\n", ft_strcmp(map[i], str), map[i], str);
 		if (!ft_strcmp(map[i], str))
-			return (TRUE);
+			return (1);
 	}
-	return (FALSE);
+	return (0);
 }

@@ -6,11 +6,12 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 15:29:21 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/07 15:46:15 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 12:20:22 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str.h"
+#include "char.h"
 
 char	*ft_str_toupper(char *str)
 {

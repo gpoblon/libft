@@ -6,11 +6,12 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/01 18:01:30 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/11/07 15:33:50 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 13:22:46 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str.h"
+#include "char.h"
 
 char	*ft_strtrim(char const *s)
 {

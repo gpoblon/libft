@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/20 18:55:55 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/03/31 22:37:53 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:49:12 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lst.h"
 
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {

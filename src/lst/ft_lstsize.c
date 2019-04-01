@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 14:45:29 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/04 14:46:06 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:49:19 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lst.h"
 
 size_t	ft_lstsize(t_list *list)
 {

@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 21:37:36 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 14:28:51 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:49:08 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lst.h"
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {

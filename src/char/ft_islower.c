@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/18 13:24:23 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 14:28:51 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:47:43 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "char.h"
 
 int		ft_islower(int c)
 {

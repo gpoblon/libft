@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sstrstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 15:49:51 by gwojda            #+#    #+#             */
-/*   Updated: 2017/11/07 15:49:52 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 11:51:33 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "sstr.h"
 
 char		*ft_sstrstr(char **sstr, char *find)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sstradd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 15:48:48 by gwojda            #+#    #+#             */
-/*   Updated: 2017/11/07 15:48:49 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 12:16:23 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "print.h"
 
 char	**ft_sstradd(char **sstr, char *new)
 {

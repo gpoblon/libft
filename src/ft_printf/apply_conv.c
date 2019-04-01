@@ -6,11 +6,12 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/20 18:55:28 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/04/30 14:48:17 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 13:32:39 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
+#include "char.h"
 
 static long long	ft_conv_signed(void *arg, t_rule *rule)
 {
@@ -124,7 +125,7 @@ void				ft_numeral_arg_to_str(t_info *info, t_rule *rule)
 		ft_apply_rules_to_int(info, rule);
 	}
 	else if (rule->conv == 'f' || rule->conv == 'F')
-		info->arg_str = ft_floats_conv(info, rule);
+		info->arg_str = ft_float_conv(info, rule);
 	else
 	{
 		info->arg = (void*)ft_conv_unsigned(info->arg, rule);

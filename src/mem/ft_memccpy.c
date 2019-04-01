@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/17 20:38:54 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 18:47:09 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:50:36 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "mem.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t len)
 {

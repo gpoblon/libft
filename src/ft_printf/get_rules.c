@@ -6,11 +6,12 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 20:00:41 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/12/17 12:54:24 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 13:33:25 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
+#include "char.h"
 
 int		ft_get_options(const char *s, int i, t_rule *r)
 {

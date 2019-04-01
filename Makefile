@@ -2,20 +2,20 @@ NAME		=	libft.a
 
 
 INC			=	\
-inc/char.h\
 inc/cb.h\
+inc/char.h\
 inc/err.h\
+inc/ft_math.h\
 inc/ft_printf.h\
+inc/get_next_line.h\
 inc/libft.h\
 inc/lst.h\
-inc/ftmath.h\
 inc/matrix.h\
 inc/mem.h\
 inc/net.h\
-inc/printing.h\
+inc/print.h\
 inc/sstr.h\
-inc/str.h\
-inc/get_next_line.h
+inc/str.h
 
 SRC			=	\
 char/ft_isalnum.c\
@@ -30,20 +30,25 @@ char/ft_isupper.c\
 char/ft_iswhitespace.c\
 char/ft_tolower.c\
 char/ft_toupper.c\
-circular_buffer/cb_append.c \
-circular_buffer/cb_clear.c \
-circular_buffer/cb_fclear.c \
-circular_buffer/cb_read.c \
-circular_buffer/cb_set_delim.c \
-circular_buffer/cb_write.c \
-circular_buffer/cb_len.c \
-circular_buffer/delete_cb.c \
-circular_buffer/init_cb.c \
-circular_buffer/cb_search_delim.c \
+\
+circular_buffer/ft_cbappend.c \
+circular_buffer/ft_cbclear.c \
+circular_buffer/ft_cbfclear.c \
+circular_buffer/ft_cbread.c \
+circular_buffer/ft_cbset_delim.c \
+circular_buffer/ft_cbwrite.c \
+circular_buffer/ft_cblen.c \
+circular_buffer/ft_cbdelete.c \
+circular_buffer/ft_cbinit.c \
+circular_buffer/ft_cbsearch_delim.c \
+\
 err/ft_usage.c\
 err/ft_exit_fd.c\
+err/ft_err_wrap.c\
+\
 gnl/ft_gnl.c\
 gnl/gnl2.c\
+\
 ft_printf/apply_conv.c\
 ft_printf/apply_options.c\
 ft_printf/bonus_color_base.c\
@@ -52,8 +57,9 @@ ft_printf/ft_printf.c\
 ft_printf/get_rules.c\
 ft_printf/tools.c\
 ft_printf/wide_char.c\
+\
 lst/ft_insert_lst.c\
-lst/ft_lst_swap.c\
+lst/ft_lstswap.c\
 lst/ft_lstadd.c\
 lst/ft_lstcpy.c\
 lst/ft_lstdel.c\
@@ -66,28 +72,31 @@ lst/ft_lstmap.c\
 lst/ft_lstnew.c\
 lst/ft_lstpushback.c\
 lst/ft_lstsize.c\
-lst/pop.c\
-lst/push.c\
-lst/top.c\
-math/deg_to_rad.c\
+lst/ft_lstpop.c\
+lst/ft_lstpush.c\
+lst/ft_lsttop.c\
+\
+math/ft_deg_to_rad.c\
 math/ft_pow.c\
-matrix/cpy_matrix.c\
-matrix/cross_vector.c\
-matrix/dot_vector.c\
-matrix/identity_matrix.c\
-matrix/init_matrix.c\
-matrix/lookat_matrix.c\
-matrix/mult_matrix.c\
-matrix/normalize_vector.c\
-matrix/norme_vector.c\
-matrix/perspective_matrix.c\
-matrix/rotation_matrix.c\
-matrix/sub_vector.c\
-matrix/sum_vector.c\
-matrix/transform_vector.c\
-matrix/translate_matrix.c\
-matrix/vector_mult.c\
-matrix/vector_cpy.c\
+\
+matrix/ft_maxcpy.c\
+matrix/ft_maxidentity.c\
+matrix/ft_maxinit.c\
+matrix/ft_maxlookat.c\
+matrix/ft_maxmult.c\
+matrix/ft_maxperspective.c\
+matrix/ft_maxrotate.c\
+matrix/ft_veccpy.c\
+matrix/ft_veccross.c\
+matrix/ft_vecdot.c\
+matrix/ft_veclen.c\
+matrix/ft_vecscale.c\
+matrix/ft_vecnormalize.c\
+matrix/ft_vecsub.c\
+matrix/ft_vecsum.c\
+matrix/ft_vectransform.c\
+matrix/ft_vectranslate.c\
+\
 mem/ft_bzero.c\
 mem/ft_free_ptr.c\
 mem/ft_free_sstr.c\
@@ -99,18 +108,21 @@ mem/ft_memcpy.c\
 mem/ft_memdel.c\
 mem/ft_memmove.c\
 mem/ft_memset.c\
-net/create_server.c\
-net/create_client.c\
-printing/ft_putchar.c\
-printing/ft_putchar_fd.c\
-printing/ft_putendl.c\
-printing/ft_putendl_fd.c\
-printing/ft_putnbr.c\
-printing/ft_putnbr_fd.c\
-printing/ft_putnstr.c\
-printing/ft_putsstr.c\
-printing/ft_putstr.c\
-printing/ft_putstr_fd.c\
+\
+net/ft_create_server.c\
+net/ft_create_client.c\
+\
+print/ft_putchar.c\
+print/ft_putchar_fd.c\
+print/ft_putendl.c\
+print/ft_putendl_fd.c\
+print/ft_putnbr.c\
+print/ft_putnbr_fd.c\
+print/ft_putnstr.c\
+print/ft_putsstr.c\
+print/ft_putstr.c\
+print/ft_putstr_fd.c\
+\
 sstr/ft_sstradd.c\
 sstr/ft_sstradd_front.c\
 sstr/ft_sstrcat.c\
@@ -125,6 +137,7 @@ sstr/ft_sstrprint.c\
 sstr/ft_sstrprint_fd.c\
 sstr/ft_sstrsort.c\
 sstr/ft_sstrstr.c\
+\
 str/ft_atof.c\
 str/ft_atoi.c\
 str/ft_atoi_base.c\

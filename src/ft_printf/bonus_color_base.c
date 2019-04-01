@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 11:59:13 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/01/18 12:25:26 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:48:47 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 void		ft_base_rule(const char *s, t_info *info, t_rule *rule, va_list va)
 {

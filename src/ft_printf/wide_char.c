@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 15:11:42 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/12/20 17:46:46 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:48:51 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static int	ft_wchar4(unsigned int nb, char *line)
 {

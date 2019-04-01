@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cb.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:22:48 by gwojda            #+#    #+#             */
-/*   Updated: 2018/03/05 14:27:44 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/11/02 16:03:18 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,17 @@ typedef struct	s_cbuffer
 	enum e_cbuffer	state;
 }				t_cbuffer;
 
-void			init_cb(t_cbuffer *cbuf, size_t size);
-t_cbuffer		*cb_append(size_t size);
-void			delete_cb(t_cbuffer **cbuf);
+void			ft_cbinit(t_cbuffer *cbuf, size_t size);
+t_cbuffer		*ft_cbappend(size_t size);
+void			ft_cbdelete(t_cbuffer **cbuf);
 
-void			cb_write(t_cbuffer *cbuf, char *str);
-void			cb_read(t_cbuffer *cbuf, char **output);
-void			cb_clear(t_cbuffer *cbuf);
-void			cb_fclear(t_cbuffer *cbuf);
-size_t			cb_len(t_cbuffer *cbuf);
+void			ft_cbwrite(t_cbuffer *cbuf, char *str);
+void			ft_cbread(t_cbuffer *cbuf, char **output);
+void			ft_cbclear(t_cbuffer *cbuf);
+void			ft_cbfclear(t_cbuffer *cbuf);
+size_t			ft_cblen(t_cbuffer *cbuf);
 
-void			cb_search_delim(t_cbuffer *cbuf);
-void			cb_set_delim(t_cbuffer *cbuf, char delim);
+void			ft_cbsearch_delim(t_cbuffer *cbuf);
+void			ft_cbset_delim(t_cbuffer *cbuf, char delim);
 
 #endif

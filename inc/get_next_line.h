@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 13:09:06 by gwojda            #+#    #+#             */
-/*   Updated: 2018/03/14 11:10:25 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/30 13:36:05 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct	s_gnllst
 	struct s_gnllst	*next;
 }				t_gnllst;
 
-void			ft_lst_push_back_gnl(t_gnllst **begin_list, int fd);
+void			ft_lstpush_back_gnl(t_gnllst **begin_list, int fd);
 int				get_next_line(int const fd, char **line);
 
 #endif

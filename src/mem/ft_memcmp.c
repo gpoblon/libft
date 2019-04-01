@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 12:48:24 by gpoblon           #+#    #+#             */
-/*   Updated: 2016/11/03 14:28:51 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:50:36 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "mem.h"
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {

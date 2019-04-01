@@ -6,11 +6,12 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 11:12:39 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/02/17 19:03:35 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 13:28:59 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "err.h"
+#include "ft_printf.h"
 
 void	ft_exit_fd(const char *message, int fd)
 {

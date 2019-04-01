@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sstradd_front.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 13:56:43 by gwojda            #+#    #+#             */
-/*   Updated: 2018/03/05 14:34:31 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 12:16:20 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "sstr.h"
 
 char	**ft_sstradd_front(char **sstr, char *new)
 {

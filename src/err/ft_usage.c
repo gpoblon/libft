@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_usage.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:33:05 by gwojda            #+#    #+#             */
-/*   Updated: 2018/03/05 14:33:06 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/31 11:57:11 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "err.h"
+#include "print.h"
 
 void	ft_usage(char *name, char *explain)
 {

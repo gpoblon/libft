@@ -6,11 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 14:41:49 by gpoblon           #+#    #+#             */
-/*   Updated: 2017/01/26 18:40:55 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/10/31 11:51:46 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str.h"
 
 double		ft_atof(const char *str)
 {

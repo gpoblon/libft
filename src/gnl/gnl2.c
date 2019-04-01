@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   gnl2.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gwojda <gwojda@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 11:09:06 by gwojda            #+#    #+#             */
-/*   Updated: 2018/03/14 11:10:58 by gwojda           ###   ########.fr       */
+/*   Updated: 2018/10/30 13:36:05 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	ft_lst_push_back_gnl(t_gnllst **begin_list, int fd)
+void	ft_lstpush_back_gnl(t_gnllst **begin_list, int fd)
 {
 	t_gnllst	*list;
 	t_gnllst	*list2;
