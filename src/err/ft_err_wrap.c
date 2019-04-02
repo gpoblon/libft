@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 11:12:39 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/10/31 13:32:04 by gpoblon          ###   ########.fr       */
+/*   Updated: 2019/01/07 16:31:05 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int		ft_err_struct(const char *message, char **err_buf)
 			free(*err_buf);
 		*err_buf = ft_strdup(message);
 	}
-
 	ft_printf("{R}%s{E}\n", message);
 	return (-1);
 }

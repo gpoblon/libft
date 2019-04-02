@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 10:40:44 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/10/30 13:36:05 by gpoblon          ###   ########.fr       */
+/*   Updated: 2018/12/18 18:15:01 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,7 @@ static int	ft_reader_2(char **line, t_gnllst *lst, char *buff)
 	{
 		i = tmp - buff;
 		tmp2 = ft_strsub(buff, 0, i);
-		*line = ft_strfjoin(*line, tmp2, F_1);
-		free(tmp2);
+		*line = ft_strfjoin(*line, tmp2, F_A);
 		lst->content = ft_strdup(buff + i + 1);
 		return (1);
 	}
@@ -78,7 +77,10 @@ int			ft_reader(char **line, t_gnllst *lst)
 			return (1);
 	}
 	if (ret == 0 && **line == '\0')
+	{
+		free(*line);
 		return (0);
+	}
 	else
 		return (1);
 }
@@ -91,8 +93,6 @@ int			get_next_line(int const fd, char **line)
 
 	if (!line || read(fd, &tmp, 0) == -1 || fd < 0)
 		return (-1);
-	if (*line)
-		*line = NULL;
 	*line = ft_strdup("");
 	lst = begin_list;
 	while (lst && lst->fd != fd)

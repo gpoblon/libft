@@ -6,13 +6,12 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 15:36:03 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/10/30 15:37:12 by gpoblon          ###   ########.fr       */
+/*   Updated: 2019/01/07 16:27:37 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef VECTOR_H
 # define VECTOR_H
-
 
 typedef double	t_max4d[16];
 typedef double	t_max3d[9];

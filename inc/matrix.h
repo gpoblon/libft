@@ -6,12 +6,12 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 15:36:03 by gwojda            #+#    #+#             */
-/*   Updated: 2018/11/09 16:57:04 by gpoblon          ###   ########.fr       */
+/*   Updated: 2019/01/07 16:27:05 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef matrix_H
-# define matrix_H
+#ifndef MATRIX_H
+# define MATRIX_H
 
 # include <math.h>
 
@@ -194,6 +194,14 @@ void			ft_max4cpy(t_max4 *max1, t_max4 max2);
 void			ft_max2identity(t_max2 *max);
 void			ft_max3identity(t_max3 *max);
 void			ft_max4identity(t_max4 *max);
+
+/*
+** identity matrix init
+*/
+
+void			ft_max2scaled(t_max2 *max, float scale);
+void			ft_max3scaled(t_max3 *max, float scale);
+void			ft_max4scaled(t_max4 *max, float scale);
 
 /*
 ** init matrix

@@ -6,16 +6,16 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:27:58 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/10/31 13:32:07 by gpoblon          ###   ########.fr       */
+/*   Updated: 2019/01/07 16:26:33 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <stdarg.h>
-#include <stdlib.h>
-#include "str.h"
+# include <stdarg.h>
+# include <stdlib.h>
+# include "str.h"
 
 # define XF					(1 << 0)
 # define F1					(1 << 1)

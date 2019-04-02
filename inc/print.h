@@ -6,12 +6,12 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/22 17:56:00 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/10/31 12:13:54 by gpoblon          ###   ########.fr       */
+/*   Updated: 2019/01/07 16:27:30 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTING_H
-# define PRINTING_H
+#ifndef PRINT_H
+# define PRINT_H
 
 # include <unistd.h>
 # include "mem.h"
