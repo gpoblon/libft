@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 14:27:58 by gpoblon           #+#    #+#             */
-/*   Updated: 2019/01/07 16:26:33 by gpoblon          ###   ########.fr       */
+/*   Updated: 2019/04/02 16:23:22 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include "str.h"
+# include "types.h"
 
 # define XF					(1 << 0)
 # define F1					(1 << 1)
@@ -38,12 +39,6 @@
 # define WC_MIN_W			(1 << 0)
 # define WC_PREC			(1 << 1)
 # define WC_BASE			(1 << 2)
-
-typedef unsigned char		t_uchar;
-typedef unsigned int		t_uint;
-typedef unsigned long		t_ulong;
-typedef unsigned long long	t_ullong;
-typedef unsigned short		t_ushort;
 
 typedef struct				s_lst
 {
