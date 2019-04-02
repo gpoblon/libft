@@ -86,6 +86,7 @@ matrix/ft_maxlookat.c\
 matrix/ft_maxmult.c\
 matrix/ft_maxperspective.c\
 matrix/ft_maxrotate.c\
+matrix/ft_maxscaled.c\
 matrix/ft_veccpy.c\
 matrix/ft_veccross.c\
 matrix/ft_vecdot.c\
@@ -188,7 +189,6 @@ OBJ_P		=	$(addprefix $(OBJ_D), $(SRC:.c=.o))
 CC			=	clang
 CFLAGS		=	-Wall -Werror -Wextra -g
 
-
 all: $(NAME)
 
 $(NAME): $(OBJ_D) $(OBJ_P)
@@ -198,7 +198,7 @@ $(NAME): $(OBJ_D) $(OBJ_P)
 
 $(OBJ_D)%.o: $(SRC_D)%.c $(INC)
 			@$(CC) -c $< -o $@ $(CFLAGS) -I $(INC_D)
-			@printf "$(OVERRIDE)$(CYAN)$(PROJECT) | $(GREEN)⌛  source to object files... $(YELLOW)%*s$(WHITE)" $(CURSOR_R) "$<"
+			@printf "$(OVERRIDE)$(CYAN)$(PROJECT) | $(GREEN)⌛  source to object files... $(YELLOW)%*s$(WHITE)" $(CURSOR_R) "$< "
 
 $(OBJ_D):
 	@mkdir -p $(OBJ_D)
@@ -212,7 +212,7 @@ GREEN		=	`echo "\033[32m"`
 RED			=	`echo "\033[31m"`
 YELLOW		=	`echo "\033[33m"`
 OVERRIDE	=	`echo "\r\033[K"`
-CURSOR_R	=	`echo "$$(tput cols) - 38"|bc`
+CURSOR_R	=	`echo "$$(tput cols) - 37"|bc`
 PROJECT		=	"LIBFT"
 
 clean:
@@ -229,3 +229,5 @@ re:	fclean all
 			@echo "$(CYAN)$(PROJECT) | re $(YELLOW)♻️  REBUIT$(WHITE)"
 
 .PHONY: all clean fclean re
+
+-include $(OBJ_P:.o=.d)
