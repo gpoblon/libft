@@ -6,17 +6,20 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 11:12:39 by gpoblon           #+#    #+#             */
-/*   Updated: 2019/01/07 16:31:05 by gpoblon          ###   ########.fr       */
+/*   Updated: 2019/04/16 16:40:48 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "err.h"
+#include "print.h"
 #include "ft_printf.h"
 #include "str.h"
 
 int		ft_err_print(const char *message)
 {
-	ft_printf("{R}%s{E}\n", message);
+	ft_putstr("\033[31m");
+	ft_putendl(message);
+	ft_putstr("\033[0m");
 	return (-1);
 }
 

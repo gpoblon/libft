@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/22 17:53:58 by gpoblon           #+#    #+#             */
-/*   Updated: 2018/10/31 12:10:38 by gpoblon          ###   ########.fr       */
+/*   Updated: 2019/04/03 11:53:47 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef unsigned char	t_uchar;
 
 void	ft_bzero(void *s, size_t n);
 void	ft_free_ptr(void **ptr);
-void	ft_free_sstr(char **tab);
+void	ft_free_arr(void **map, unsigned int len);
 void	*ft_memalloc(size_t size);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);

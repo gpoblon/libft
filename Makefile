@@ -78,6 +78,8 @@ lst/ft_lsttop.c\
 \
 math/ft_deg_to_rad.c\
 math/ft_pow.c\
+math/ft_qsort.c\
+math/ft_insert_sort.c\
 \
 matrix/ft_maxcpy.c\
 matrix/ft_maxidentity.c\
@@ -100,7 +102,7 @@ matrix/ft_vectranslate.c\
 \
 mem/ft_bzero.c\
 mem/ft_free_ptr.c\
-mem/ft_free_sstr.c\
+mem/ft_free_arr.c\
 mem/ft_memalloc.c\
 mem/ft_memccpy.c\
 mem/ft_memchr.c\
@@ -226,7 +228,7 @@ fclean:
 			@echo "$(CYAN)$(PROJECT) | fclean $(RED)❌  object files cleaned$(WHITE)"
 
 re:	fclean all
-			@echo "$(CYAN)$(PROJECT) | re $(YELLOW)♻️  REBUIT$(WHITE)"
+			@echo "$(CYAN)$(PROJECT) | re $(YELLOW)♻️  REBUILT$(WHITE)"
 
 .PHONY: all clean fclean re
 
