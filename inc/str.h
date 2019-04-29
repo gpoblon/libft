@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/22 17:55:32 by gpoblon           #+#    #+#             */
-/*   Updated: 2019/01/07 16:28:31 by gpoblon          ###   ########.fr       */
+/*   Updated: 2019/04/19 16:45:29 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef unsigned char	t_uchar;
 char		*ft_itoa_base_llu(unsigned long long nb, int base);
 int			ft_atoi_base(const char *nptr, int str_base);
 char		*ft_itoa_base(long long nb, int base);
+int			ft_atoin(const char *nptr, size_t len);
 int			ft_atoi(const char *nptr);
 double		ft_atof(const char *nptr);
 char		*ft_itoa(int n);

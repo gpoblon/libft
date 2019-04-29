@@ -143,6 +143,7 @@ sstr/ft_sstrstr.c\
 \
 str/ft_atof.c\
 str/ft_atoi.c\
+str/ft_atoin.c\
 str/ft_atoi_base.c\
 str/ft_itoa.c\
 str/ft_itoa_base.c\

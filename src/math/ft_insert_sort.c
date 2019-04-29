@@ -6,12 +6,11 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 14:27:34 by gpoblon           #+#    #+#             */
-/*   Updated: 2019/04/08 17:17:51 by gpoblon          ###   ########.fr       */
+/*   Updated: 2019/04/29 12:44:14 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
-
 
 static void	swap_addr(void *pta, void *ptb, unsigned int size)
 {

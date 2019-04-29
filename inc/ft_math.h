@@ -6,7 +6,7 @@
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/22 18:02:41 by gpoblon           #+#    #+#             */
-/*   Updated: 2019/04/11 15:31:28 by gpoblon          ###   ########.fr       */
+/*   Updated: 2019/04/29 12:43:35 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,12 @@
 
 # define PI 3.141592
 
-
-typedef struct	        s_qsort_metadata
+typedef struct			s_qsort_metadata
 {
-    unsigned int        size;
-    unsigned int        len;
-    void                *v;
-}				        t_qsort_meta;
+	unsigned int		size;
+	unsigned int		len;
+	void				*v;
+}						t_qsort_meta;
 
 unsigned long long		ft_pow(unsigned long long n, unsigned long long power);
 float					ft_deg_to_rad(float deg);

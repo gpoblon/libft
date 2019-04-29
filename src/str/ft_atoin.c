@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoin.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpoblon <gpoblon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/16 14:41:36 by gpoblon           #+#    #+#             */
-/*   Updated: 2019/04/19 16:43:49 by gpoblon          ###   ########.fr       */
+/*   Created: 2019/04/19 16:44:30 by gpoblon           #+#    #+#             */
+/*   Updated: 2019/04/19 16:45:05 by gpoblon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "str.h"
 
-int		ft_atoi(const char *nptr)
+int		ft_atoin(const char *nptr, size_t len)
 {
 	size_t	i;
 	int		result;
@@ -28,7 +28,7 @@ int		ft_atoi(const char *nptr)
 		sign = -1;
 	if (nptr[i] == '+' || nptr[i] == '-')
 		i++;
-	while (nptr[i] && (nptr[i] >= 48 && nptr[i] <= 57))
+	while (nptr[i] && i < len && (nptr[i] >= 48 && nptr[i] <= 57))
 	{
 		result = result * 10 + (nptr[i] - '0');
 		i++;
